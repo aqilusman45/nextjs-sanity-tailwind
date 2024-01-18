@@ -7,7 +7,6 @@ import { deskTool } from 'sanity/desk'
 import { defineUrlResolver, Iframe } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
 
-import { metaPlugin, metaPreviewView } from '~/lib/meta'
 // see https://www.sanity.io/docs/api-versioning for how versioning works
 import {
   apiVersion,
@@ -15,7 +14,7 @@ import {
   previewSecretId,
   projectId,
 } from '~/lib/sanity.api'
-import { PageTypes, resolveHref } from '~/lib/sanity.links'
+import { PageTypes } from '~/lib/sanity.links'
 import { documentTypesForWorkFlow, schemaTypes } from '~/schemas'
 import { structureResolver } from '~/schemas/desk'
 import { presentationTool } from 'sanity/presentation'
@@ -26,7 +25,7 @@ const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
 // Define the singleton document types
 const singletonTypes = new Set(['navigation'])
 
-const requiresSlug = [PageTypes['Page'], PageTypes['Post']]
+const requiresSlug = ['page']
 const iframeOptions = {
   url: defineUrlResolver({
     base: '/api/draft',
@@ -66,9 +65,6 @@ export default defineConfig({
           S.view.form(),
           // Preview
           previewView(S),
-          metaPreviewView(S, {
-            resolveHref,
-          }),
         ])
       },
     }),
@@ -81,16 +77,6 @@ export default defineConfig({
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
-    metaPlugin({
-      gtm: true,
-      icons: true,
-      metaPreview: {
-        twitterCard: {
-          name: 'Demo',
-          handle: 'demo',
-        },
-      },
-    }),
     presentationTool({
       locate,
       previewUrl: {

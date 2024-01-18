@@ -33,6 +33,12 @@ export const author = {
       ],
     },
     {
+      name: 'button',
+      title: 'Button',
+      type: 'link',
+     
+    },
+    {
       name: 'bio',
       title: 'Bio',
       type: 'array',
