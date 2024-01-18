@@ -1,0 +1,56 @@
+.h1,
+h1 {
+    @apply header-1 font-normal font-aeronik-pro text-blue-600;
+}
+
+.h2,
+h2 {
+    @apply header-2 font-normal font-aeronik-pro text-blue-600;
+}
+
+.h3,
+h3 {
+    @apply header-3 font-normal font-aeronik-pro text-blue-600;
+}
+
+.h4,
+h4 {
+    @apply header-4 font-normal font-aeronik-pro text-blue-600;
+}
+
+.h5,
+h5 {
+    @apply header-5 font-normal font-aeronik-pro text-blue-600;
+}
+
+.h6,
+h6 {
+    @apply header-6 font-normal font-aeronik-pro text-blue-600;
+}
+.caption,
+caption {
+    @apply text-16 font-bold uppercase  text-blue-600;
+}
+
+.p,
+p {
+    @apply text-16-more font-normal font-aeronik-pro text-blue-600;
+}
+
+.largeText,
+largeText {
+    @apply text-32  font-normal font-aeronik-pro text-gray-900;
+}
+
+
+.global-richtext-light{
+    p{
+        @apply text-base font-normal text-blue font-aeronik-pro;
+    }
+}
+
+.global-richtext-dark{
+    p{
+        @apply text-base font-normal text-white font-aeronik-pro;
+    }
+}
