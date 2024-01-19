@@ -7,8 +7,8 @@ import { lazy, Suspense } from 'react'
 import Footer from '~/components/footer'
 import Navbar from '~/components/navbar'
 
-const PreviewProvider = lazy(() => import('~/components/PreviewProvider'))
-const VisualEditing = lazy(() => import('~/components/VisualEditing'))
+const PreviewProvider = lazy(() => import('~/components/preview-provider'))
+const VisualEditing = lazy(() => import('~/components/visual-editing'))
 
 
 export default function App({

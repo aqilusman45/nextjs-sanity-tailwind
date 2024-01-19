@@ -25,19 +25,19 @@ export const structureResolver = (S) => {
               singletonItem(S, 'navigation', 'Navigation', NavigationArrow),
             ]),
         ),
-      S.divider(),
-      S.listItem()
-        .title('Blogs')
-        .icon(File)
-        .child(
-          S.list()
-            .title('Blogs')
-            .items([
-              S.documentTypeListItem('post').title('Posts').icon(File),
-              S.documentTypeListItem('author').title('Author').icon(File),
-              S.documentTypeListItem('category').title('Category').icon(File),
-            ]),
-        ),
+      // S.divider(),
+      // S.listItem()
+      //   .title('Blogs')
+      //   .icon(File)
+      //   .child(
+      //     S.list()
+      //       .title('Blogs')
+      //       .items([
+      //         S.documentTypeListItem('post').title('Posts').icon(File),
+      //         S.documentTypeListItem('author').title('Author').icon(File),
+      //         S.documentTypeListItem('category').title('Category').icon(File),
+      //       ]),
+      //   ),
       S.divider(),
       S.listItem()
         .title('Assigned to me')

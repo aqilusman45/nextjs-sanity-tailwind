@@ -20,6 +20,7 @@ import { structureResolver } from '~/schemas/desk'
 import { presentationTool } from 'sanity/presentation'
 import { locate } from '~/lib/presentation/locate'
 import { workflow } from 'sanity-plugin-workflow'
+import BrandLogo from './src/components/logo-cms'
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
 // Define the singleton document types
@@ -41,9 +42,10 @@ export const previewView = (S) =>
 export default defineConfig({
   basePath: '/studio',
   name: 'demo',
-  title: 'Demo',
+  title: 'Netacea',
   projectId,
   dataset,
+  icon: BrandLogo,
   //edit schemas in './src/schemas'
   schema: {
     types: schemaTypes,
