@@ -18,7 +18,8 @@ module.exports = {
         roboto: ["'Roboto', sans-serif"],
       },
       fontSize: {
-        12: ["0.75rem", "1.2rem"],  //[12px,19.2px]
+        "12-more": ["0.75rem", "1.2rem"],  //[12px,19.2px]
+        "12-less": ["0.75rem", "1.05rem"],  //[12px,16.8px]
         "xl:14": ["0.875rem", "1.225rem"],  // [14px,19.6px]
         "lg:14": ["0.875rem", "1.4rem"],  //[ 14px, 22.4px]
         16: ["1rem", "1.4rem"],  //[ 16px, 22.4px]
@@ -30,7 +31,6 @@ module.exports = {
         28: ["1.75rem", "2.45rem"], // [28px,39.2px ]
         32: ["2rem", "2.8rem"] //[32px,44.8px]
       },
-
       colors: {
         green: {
           DEFAULT:"#43980B",
@@ -39,6 +39,10 @@ module.exports = {
           300: "#ABF57A",
           400: "#65E411",
           500: "#43980B",
+        },
+        gray:{
+          DEFAULT:"#506071",
+          100:"#506071"
         },
         teal: {
           DEFAULT:"#1B7470",
@@ -81,7 +85,8 @@ module.exports = {
       },
       spacing: {
         120: "7.5rem",
-        108:"6.75rem"
+        108:"6.75rem",
+        92:"5.75rem"
       },
     },
   },
