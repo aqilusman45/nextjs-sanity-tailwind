@@ -1,30 +1,17 @@
-import { groq } from 'next-sanity'
-
-import { linkFragment } from '~/lib/sanity.fragments'
-
-export const fragment = groq`
-  address,
-  email,
-  footerLinks[] {
-    _key,
-    ${linkFragment}
-  },
-  socialLinks[] {
-    _key,
-    ${linkFragment}
-  },
-  "privacyLink": coalesce(privacyLink[0]{
-    ${linkFragment}
-  },[]),
-  "termsLink": coalesce(termsLink[0]{
-    ${linkFragment}
-  },[])
-`
-
-export default function Footer({}) {
+export default function Footer() {
   return (
-    <footer className="bg-primary text-primary-light lg:px-15 m-2 rounded p-10 tracking-[-.01em] md:m-5">
-      footer
+    <footer className=" bg-blue">
+      <div className="max-w-default mx-auto px-108 pt-20 pb-6" >
+        <div className="grid grid-cols-6 gap-6 text-white">
+          <p className="col-span-2 text-white">1</p>
+          <p className="text-white">1</p>
+          <p className="text-white">1</p>
+          <p className="text-white">1</p>
+          <p className="text-white">1</p>
+          
+
+        </div>
+      </div>
     </footer>
   )
 }
