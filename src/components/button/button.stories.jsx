@@ -1,21 +1,148 @@
+import Button from './Button'
 
+const onClick = (e) => {
+  e.preventDefault()
+  alert('I have been clicked')
+}
 
-import ButtonComponent from './Button'
-
-const meta= {
+export default {
   title: 'Components/Button',
-  component: ButtonComponent,
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/file/kfXq5YYWwBglld9MAXBbRj/Netacea---Design-System-v2.0?type=design&node-id=116-750&mode=design&t=FC3sMM8v43kwsa2m-0',
-      allowFullscreen: true,
+  component: Button,
+  argTypes: {
+    variant: {
+      defaultValue: 'primary',
+      options: [
+        'primary',
+        'primary-arrow',
+        'secondary',
+        'secondary-arrow',
+        'text-link',
+        'primary-dark',
+        'primary-dark-arrow',
+        'secondary-dark',
+        'secondary-arrow-dark',
+        'text-link-dark',
+        'text-link-arrow-dark',
+      ],
+      control: { type: 'select' },
+    },
+    label: {
+      defaultValue: 'Learn More',
+      control: { type: 'text' },
     },
   },
 }
 
-export default meta
+const Template = (args) => <Button {...args} />
 
-export const Primary= {
-  args: {},
+export const ButtonPrimary = Template.bind({})
+ButtonPrimary.args = {
+  variant: 'primary',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+
+export const ButtonPrimaryArrow = Template.bind({})
+ButtonPrimaryArrow.args = {
+  variant: 'primary-arrow',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+export const ButtonSecondary = Template.bind({})
+ButtonSecondary.args = {
+  variant: 'secondary',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+
+export const ButtonSecondaryArrow = Template.bind({})
+ButtonSecondaryArrow.args = {
+  variant: 'secondary-arrow',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+export const ButtonTextLink = Template.bind({})
+ButtonTextLink.args = {
+  variant: 'text-link',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+export const ButtonTextLinkArrow = Template.bind({})
+ButtonTextLinkArrow.args = {
+  variant: 'text-link-arrow',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+
+export const ButtonPrimaryDark = Template.bind({})
+ButtonPrimaryDark.args = {
+  variant: 'primary-dark',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+export const ButtonPrimaryDarkArrow = Template.bind({})
+ButtonPrimaryDarkArrow.args = {
+  variant: 'primary-dark-arrow',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+export const ButtonSecondaryDark = Template.bind({})
+ButtonSecondaryDark.args = {
+  variant: 'secondary-dark',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+export const ButtonSecondaryArrowDark = Template.bind({})
+ButtonSecondaryArrowDark.args = {
+  variant: 'secondary-arrow-dark',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+export const ButtonTextLinkDark = Template.bind({})
+ButtonTextLinkDark.args = {
+  variant: 'text-link-dark',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
+}
+export const ButtonTextLinkArrowDark = Template.bind({})
+ButtonTextLinkArrowDark.args = {
+  variant: 'text-link-arrow-dark',
+  label: 'Get A Quote',
+  onClick,
+  // slug: {
+  //   current: '/',
+  // },
 }
