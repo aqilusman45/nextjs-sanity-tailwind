@@ -1,8 +1,8 @@
-import FooterComponent from './index'
+import Layout from './index'
 
 const meta = {
-  title: 'Components/Footer',
-  component: FooterComponent,
+  title: 'Components/Layout',
+  component: Layout,
   parameters: {
     design: [
       {
