@@ -1,6 +1,5 @@
 import '~/styles/global.scss'
 
-
 import { useRouter } from 'next/router'
 import { lazy, Suspense } from 'react'
 
@@ -10,11 +9,7 @@ import Navbar from '~/components/navbar'
 const PreviewProvider = lazy(() => import('~/components/preview-provider'))
 const VisualEditing = lazy(() => import('~/components/visual-editing'))
 
-
-export default function App({
-  Component,
-  pageProps,
-}) {
+export default function App({ Component, pageProps }) {
   const { draftMode, token, navigation } = pageProps
   const router = useRouter()
   const pageKey = router.asPath

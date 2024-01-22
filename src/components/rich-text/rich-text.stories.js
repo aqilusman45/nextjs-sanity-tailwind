@@ -1,5 +1,5 @@
 import RichText from './index'
-import mocks from './mocks'
+import { richText } from './mocks'
 const meta = {
   title: 'Components/RichText',
   component: RichText,
@@ -23,5 +23,5 @@ const meta = {
 export default meta
 
 export const Default = {
-  args: { mocks },
+  args: { richText },
 }

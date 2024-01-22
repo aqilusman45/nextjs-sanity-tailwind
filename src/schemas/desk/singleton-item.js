@@ -1,11 +1,6 @@
 import { previewView } from 'sanity.config'
 
-export const singletonItem = (
-  S,
-  type,
-  title,
-  icon,
-) => {
+export const singletonItem = (S, type, title, icon) => {
   return S.listItem()
     .title(title)
     .icon(icon)

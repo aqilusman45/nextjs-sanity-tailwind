@@ -1,13 +1,14 @@
-import Link from "next/link";
-import Icon from "../icon";
+import Link from 'next/link'
+
+import Icon from '../icon'
 
 export default function Footer() {
   return (
     <footer className=" bg-blue">
-      <div className="max-w-default mx-auto px-108 pt-20 pb-6">
+      <div className="mx-auto max-w-default px-108 pb-6 pt-20">
         <div className="flex flex-col">
-          <div className="grid grid-cols-6 gap-6 pb-92 border-b-[1px] border-b-blue-500 text-white">
-            <div className="w-full flex flex-col gap-6 col-span-2 pr-24">
+          <div className="grid grid-cols-6 gap-6 border-b-[1px] border-b-blue-500 pb-92 text-white">
+            <div className="col-span-2 flex w-full flex-col gap-6 pr-24">
               <Link href="/" className="border-b-[1px] border-b-blue-500 pb-6">
                 <Icon
                   icon="footer-netacea-logo"
@@ -15,7 +16,7 @@ export default function Footer() {
                   iconWidth={88}
                 />
               </Link>
-              <div className="flex gap-6 w-full">
+              <div className="flex w-full gap-6">
                 <Link
                   href="https://www.youtube.com/channel/UCMLXUedkowSUnn5rSXKUzCQ"
                   target="_blank"
@@ -56,7 +57,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-5">
-                <p className="font-aeronik-pro text-12-less capitalize tracking-[0.48px] font-normal text-[#506071]">
+                <p className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-[#506071]">
                   Why Netacea?
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -67,7 +68,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="flex flex-col gap-5">
-                <p className="font-aeronik-pro text-12-less capitalize tracking-[0.48px] font-normal text-[#506071]">
+                <p className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-[#506071]">
                   Our company
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -80,7 +81,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex flex-col gap-5">
-              <p className="font-aeronik-pro text-12-less capitalize tracking-[0.48px] font-normal text-[#506071]">
+              <p className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-[#506071]">
                 THREAT SOLUTIONS
               </p>
               <ul className="flex flex-col gap-3">
@@ -96,7 +97,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-5">
-              <p className="font-aeronik-pro text-12-less capitalize tracking-[0.48px] font-normal text-[#506071]">
+              <p className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-[#506071]">
                 Industry SOLUTIONS
               </p>
               <ul className="flex flex-col gap-3">
@@ -108,7 +109,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-5">
-                <p className="font-aeronik-pro text-12-less capitalize tracking-[0.48px] font-normal text-[#506071]">
+                <p className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-[#506071]">
                   Resources
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -120,7 +121,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="flex flex-col gap-5">
-                <p className="font-aeronik-pro text-12-less capitalize tracking-[0.48px] font-normal text-[#506071]">
+                <p className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-[#506071]">
                   Education
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -136,5 +137,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

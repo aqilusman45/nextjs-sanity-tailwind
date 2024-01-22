@@ -1,7 +1,7 @@
 import { ArrayOfObjectsInputProps } from 'sanity'
 
-export function getArrayInput({ maxLength = 1 }: { maxLength: number }) {
-  return function ArrayInput(props: ArrayOfObjectsInputProps) {
+export function getArrayInput({ maxLength = 1 }) {
+  return function ArrayInput(props) {
     const { value, arrayFunctions } = props
     return props.renderDefault({
       ...props,

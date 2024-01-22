@@ -1,1 +1,30 @@
-{"icons":["arrow-right-blue","arrow-right-dark-blue","arrow-right-dark","arrow-right-green-dark","arrow-right-green","arrow-right-white","facebook","footer-netacea-logo","LeftArrow","linkedin","netacea-logo-dark","podcast","twitter","youtube"]}
+{
+  "icons": [
+    "LeftArrow",
+    "account-tackover",
+    "active-bot-protection",
+    "arrow-right-blue",
+    "arrow-right-dark-blue",
+    "arrow-right-dark",
+    "arrow-right-green-dark",
+    "arrow-right-green",
+    "arrow-right-white",
+    "bot-attack-intel",
+    "bussiness-login-icon",
+    "carding-fraud",
+    "chevron-down",
+    "credential-stuffing",
+    "facebook",
+    "footer-netacea-logo",
+    "linkedin",
+    "marketing-analytics",
+    "navbar-logo",
+    "navbar-search-icon",
+    "netacea-logo-dark",
+    "podcast",
+    "scaper-icon",
+    "twitter",
+    "user-icon",
+    "youtube"
+  ]
+}

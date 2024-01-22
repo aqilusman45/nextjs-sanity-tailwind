@@ -4,194 +4,200 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1440px",
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px',
     },
     extend: {
       fontFamily: {
         Inter: ["'Inter', sans-serif"],
-        "aeronik-pro": ["'Aeonik-Pro', sans-serif"],
-        "aeronik-pro-vf": ["'Aeonik-Pro-VF', sans-serif"],
-        "aeronik-pro-air": ["'Aeonik-Pro-Air', sans-serif"],
+        'aeronik-pro': ["'Aeonik-Pro', sans-serif"],
+        'aeronik-pro-vf': ["'Aeonik-Pro-VF', sans-serif"],
+        'aeronik-pro-air': ["'Aeonik-Pro-Air', sans-serif"],
         roboto: ["'Roboto', sans-serif"],
       },
       fontSize: {
-        "12-more": ["0.75rem", "1.2rem"],  //[12px,19.2px]
-        "12-less": ["0.75rem", "1.05rem"],  //[12px,16.8px]
-        "xl:14": ["0.875rem", "1.225rem"],  // [14px,19.6px]
-        "lg:14": ["0.875rem", "1.4rem"],  //[ 14px, 22.4px]
-        16: ["1rem", "1.4rem"],  //[ 16px, 22.4px]
-        "16-more": ["1rem", "1.6rem"],  //[ 16px, 25.6px]
-        18: ["1.125rem", "1.8rem"], //[18px,28.8px]
-        20: ["1.25rem", "2rem"],   //[20px,32px]
-        22: ["1.375rem", "2.2rem"],   //[22px,35.2px]
-        24: ["1.5rem", "2.4rem"], //[24px,38.4px]
-        28: ["1.75rem", "2.45rem"], // [28px,39.2px ]
-        32: ["2rem", "2.8rem"] //[32px,44.8px]
+        '12-more': ['0.75rem', '1.2rem'], //[12px,19.2px]
+        '12-less': ['0.75rem', '1.05rem'], //[12px,16.8px]
+        'xl:14': ['0.875rem', '1.225rem'], // [14px,19.6px]
+        'lg:14': ['0.875rem', '1.4rem'], //[ 14px, 22.4px]
+        16: ['1rem', '1.4rem'], //[ 16px, 22.4px]
+        '16-more': ['1rem', '1.6rem'], //[ 16px, 25.6px]
+        18: ['1.125rem', '1.8rem'], //[18px,28.8px]
+        20: ['1.25rem', '2rem'], //[20px,32px]
+        22: ['1.375rem', '2.2rem'], //[22px,35.2px]
+        24: ['1.5rem', '2.4rem'], //[24px,38.4px]
+        28: ['1.75rem', '2.45rem'], // [28px,39.2px ]
+        32: ['2rem', '2.8rem'], //[32px,44.8px]
       },
       colors: {
         green: {
-          DEFAULT:"#43980B",
-          100: "#ECFDE1",
-          200: "#C7F8A6",
-          300: "#ABF57A",
-          400: "#65E411",
-          500: "#43980B",
+          DEFAULT: '#43980B',
+          100: '#ECFDE1',
+          200: '#C7F8A6',
+          300: '#ABF57A',
+          400: '#65E411',
+          500: '#43980B',
         },
-        gray:{
-          DEFAULT:"#506071",
-          100:"#506071"
+        gray: {
+          DEFAULT: '#506071',
+          100: '#506071',
         },
         teal: {
-          DEFAULT:"#1B7470",
-          100: "#DDF7F6",
-          200: "#9AE7E4",
-          300: "#67DBD6",
-          400: "#29AEA8",
-          500: "#1B7470",
+          DEFAULT: '#1B7470',
+          100: '#DDF7F6',
+          200: '#9AE7E4',
+          300: '#67DBD6',
+          400: '#29AEA8',
+          500: '#1B7470',
         },
         blue: {
-          DEFAULT:"#001831",
-          100: "#D1E7FC",
-          200: "#79A8F7",
-          300: "#216EF2",
-          400: "#0B4CBB",
-          500: "#113161",
-          600: "#001831",
+          DEFAULT: '#001831',
+          100: '#D1E7FC',
+          200: '#79A8F7',
+          300: '#216EF2',
+          400: '#0B4CBB',
+          500: '#113161',
+          600: '#001831',
         },
         purple: {
-          DEFAULT:"#411797",
-          100: "#E2D7F9",
-          200: "#A886ED",
-          300: "#7C49E4",
-          400: "#561EC9",
-          500: "#411797",
+          DEFAULT: '#411797',
+          100: '#E2D7F9',
+          200: '#A886ED',
+          300: '#7C49E4',
+          400: '#561EC9',
+          500: '#411797',
         },
         neutral: {
-          DEFAULT:"#252729",
-          0: "#FFFFFF",
-          100: "#F5F5F5",
-          200: "#EBEEF0",
-          300: "#C8CCD0",
-          400: "#737980",
-          500: "#45484D",
-          600: "#252729",
+          DEFAULT: '#252729',
+          0: '#FFFFFF',
+          100: '#F5F5F5',
+          200: '#EBEEF0',
+          300: '#C8CCD0',
+          400: '#737980',
+          500: '#45484D',
+          600: '#252729',
         },
       },
       maxWidth: {
-        default: "94.5rem",
+        default: '96rem',
+        1320: '82.5rem',
+        720: '45rem',
+      },
+      minWidth: {
+        default: '96rem',
+        1320: '82.5rem',
+        720: '45rem',
       },
       spacing: {
-        120: "7.5rem",
-        108:"6.75rem",
-        92:"5.75rem"
+        120: '7.5rem',
+        108: '6.75rem',
+        92: '5.75rem',
+        88: '5.5rem',
       },
     },
   },
   plugins: [
-    function ({
-      addComponents
-    }) {
+    function ({ addComponents }) {
       addComponents({
         '.header-1': {
-          fontSize: "2.5rem",
-          lineHeight: "2.5rem",
+          fontSize: '2.5rem',
+          lineHeight: '2.5rem',
           '@media screen(md)': {
-            fontSize: "3.375rem",
-            lineHeight: "4.05rem"
+            fontSize: '3.375rem',
+            lineHeight: '4.05rem',
           },
           '@media screen(lg)': {
-            fontSize: "4.032rem",
-            lineHeight: "4.838rem"
+            fontSize: '4.032rem',
+            lineHeight: '4.838rem',
           },
           '@media screen(xl)': {
-            fontSize: "4rem",
-            lineHeight: "4rem"
-          }
+            fontSize: '4rem',
+            lineHeight: '4rem',
+          },
         },
         '.header-2': {
-          fontSize: "2rem",
-          lineHeight: "2.2rem",
+          fontSize: '2rem',
+          lineHeight: '2.2rem',
           '@media screen(md)': {
-            fontSize: "2.75rem",
-            lineHeight: "3.3rem"
+            fontSize: '2.75rem',
+            lineHeight: '3.3rem',
           },
           '@media screen(lg)': {
-            fontSize: "3.25rem",
-            lineHeight: "3.9rem"
+            fontSize: '3.25rem',
+            lineHeight: '3.9rem',
           },
           '@media screen(xl)': {
-            fontSize: "3rem",
-            lineHeight: "3.6rem"
-          }
+            fontSize: '3rem',
+            lineHeight: '3.6rem',
+          },
         },
         '.header-3': {
-          fontSize: "1.5rem",
-          lineHeight: "1.65rem",
+          fontSize: '1.5rem',
+          lineHeight: '1.65rem',
           '@media screen(md)': {
-            fontSize: "2.125rem",
-            lineHeight: "2.55rem"
+            fontSize: '2.125rem',
+            lineHeight: '2.55rem',
           },
           '@media screen(lg)': {
-            fontSize: "2.5rem",
-            lineHeight: "3rem"
+            fontSize: '2.5rem',
+            lineHeight: '3rem',
           },
           '@media screen(xl)': {
-            fontSize: "2rem",
-            lineHeight: "2.4rem"
-          }
+            fontSize: '2rem',
+            lineHeight: '2.4rem',
+          },
         },
         '.header-4': {
-          fontSize: "1.25rem",
-          lineHeight: "1.5rem",
+          fontSize: '1.25rem',
+          lineHeight: '1.5rem',
           '@media screen(md)': {
-            fontSize: "1.625rem",
-            lineHeight: "1.95rem"
+            fontSize: '1.625rem',
+            lineHeight: '1.95rem',
           },
           '@media screen(lg)': {
-            fontSize: "1.875rem",
-            lineHeight: "2.25rem"
+            fontSize: '1.875rem',
+            lineHeight: '2.25rem',
           },
           '@media screen(xl)': {
-            fontSize: "1.5rem",
-            lineHeight: "1.95rem"
-          }
+            fontSize: '1.5rem',
+            lineHeight: '1.95rem',
+          },
         },
         '.header-5': {
-          fontSize: "1.125rem",
-          lineHeight: "1.575rem",
+          fontSize: '1.125rem',
+          lineHeight: '1.575rem',
           '@media screen(md)': {
-            fontSize: "1.375rem",
-            lineHeight: "1.65rem"
+            fontSize: '1.375rem',
+            lineHeight: '1.65rem',
           },
           '@media screen(lg)': {
-            fontSize: "1.5rem",
-            lineHeight: "1.8rem"
+            fontSize: '1.5rem',
+            lineHeight: '1.8rem',
           },
           '@media screen(xl)': {
-            fontSize: "1.25rem",
-            lineHeight: "1.75rem"
-          }
+            fontSize: '1.25rem',
+            lineHeight: '1.75rem',
+          },
         },
         '.header-6': {
-          fontSize: "0.75rem",
-          lineHeight: "1.05rem",
+          fontSize: '0.75rem',
+          lineHeight: '1.05rem',
           '@media screen(md)': {
-            fontSize: "1.125rem",
-            lineHeight: "1.35rem"
+            fontSize: '1.125rem',
+            lineHeight: '1.35rem',
           },
           '@media screen(lg)': {
-            fontSize: "1.125rem",
-            lineHeight: "1.35rem"
+            fontSize: '1.125rem',
+            lineHeight: '1.35rem',
           },
           '@media screen(xl)': {
-            fontSize: "0.75rem",
-            lineHeight: "1.05rem"
-          }
-        }
+            fontSize: '0.75rem',
+            lineHeight: '1.05rem',
+          },
+        },
       })
-    }
-  ]
+    },
+  ],
 }

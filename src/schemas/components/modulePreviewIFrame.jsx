@@ -1,6 +1,6 @@
 import { getStorybookURL } from '../../lib/storybook-url'
 
-export const ModulePreviewIFrame = ({ id }: { id: string }) => {
+export const ModulePreviewIFrame = ({ id }) => {
   return (
     <div className="aspect-video overflow-hidden">
       <iframe

@@ -1,4 +1,4 @@
-export default [
+export const richText = [
   {
     _key: '6ff65e1ddd8d',
     _type: 'block',

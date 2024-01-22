@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 
 import { Link } from '~/utils/types'
 
-
 export function resolveHref(documentType, slug) {
   switch (documentType) {
     case PageTypes.Page:
@@ -37,11 +36,7 @@ export const resolveLabel = (link) => {
   return ''
 }
 
-export const resolvePageLink = ({
-  type,
-  slug = '',
-  label = '',
-}) => {
+export const resolvePageLink = ({ type, slug = '', label = '' }) => {
   return {
     type: PageTypes.Page,
     page: {
@@ -51,7 +46,6 @@ export const resolvePageLink = ({
     },
   }
 }
-
 
 export const useActiveLink = (link, exact = false) => {
   const router = useRouter()

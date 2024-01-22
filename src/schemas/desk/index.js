@@ -1,4 +1,5 @@
 import { File, Gear, NavigationArrow } from '@phosphor-icons/react'
+
 import { singletonItem } from './singleton-item'
 
 export const structureResolver = (S) => {

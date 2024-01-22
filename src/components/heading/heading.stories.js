@@ -24,8 +24,8 @@ export default meta
 
 const Template = (args) => <Heading {...args} />
 
-export const largeText = Template.bind({})
-largeText.args = {
+export const LargeText = Template.bind({})
+LargeText.args = {
   type: 'h6',
   otherClasses:
     'font-Roboto-Slab text-[42px] lg:text-[52px] leading-[55.39px] lg:leading-[68.58px] font-bold text-primary_typography',

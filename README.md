@@ -1,4 +1,4 @@
-# Netacea 
+# Netacea
 
 ## NOTES/LINKS
 
@@ -9,4 +9,3 @@
 
 - Cms route https://localhost:3000/studio
 - local Site https://localhost:3000/
-

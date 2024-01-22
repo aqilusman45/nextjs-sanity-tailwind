@@ -97,15 +97,7 @@ export const link = {
       newTab: 'targetBlank',
       label: 'label',
     },
-    prepare: ({
-      type,
-      pageType,
-      page,
-      slug,
-      link,
-      newTab,
-      label,
-    }) => {
+    prepare: ({ type, pageType, page, slug, link, newTab, label }) => {
       const isLink = type === 'link'
       return {
         title: isLink

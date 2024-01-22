@@ -36,7 +36,6 @@ export const author = {
       name: 'button',
       title: 'Button',
       type: 'link',
-     
     },
     {
       name: 'bio',
