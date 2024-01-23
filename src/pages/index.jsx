@@ -1,7 +1,6 @@
 import { groq } from 'next-sanity'
 import React from 'react'
 import { getClient } from '~/lib/sanity.client'
-import Layout from '../components/layout'
 
 export const getPageQuery = () => groq`
 *[_type == "navigation"][0]{
@@ -22,7 +21,8 @@ export const getPageQuery = () => groq`
 `
 
 const index = (props) => {
-  return <Layout navData={props?.navData}>Index</Layout>
+
+  return <div>Index</div>
 }
 
 export const getStaticProps = async () => {
@@ -31,7 +31,7 @@ export const getStaticProps = async () => {
   const navigation = await client.fetch(pageQuery)
   return {
     props: {
-      navData: navigation,
+      navigation: navigation,
     },
   }
 }

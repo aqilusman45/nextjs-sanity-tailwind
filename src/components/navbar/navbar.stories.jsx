@@ -1,4 +1,5 @@
 import NavbarComponent from './index'
+import {mocks} from './mocks'
 
 const meta = {
   title: 'Components/Navbar',
@@ -24,5 +25,5 @@ const meta = {
 export default meta
 
 export const Default = {
-  args: {},
+  args: {...mocks},
 }
