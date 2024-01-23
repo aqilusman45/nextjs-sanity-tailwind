@@ -6,7 +6,7 @@
 }
 
 .menu-container {
-  > div {
+  > .category-menu-link {
     transition: all 0.3s;
     height: auto;
     max-height: 0px;
@@ -18,7 +18,7 @@
     }
   }
   &:hover {
-    > div {
+    > .category-menu-link {
       height: auto;
       overflow: visible;
       max-height: 750px;
