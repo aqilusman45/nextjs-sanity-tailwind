@@ -5,17 +5,18 @@ import { useState } from 'react'
 import Button from '../button/Button'
 import Heading from '../heading'
 import Icon from '../icon'
+import NextImage from '../next-image'
 
-export default function Navbar() {
+export default function Navbar({ button, logo, nestedLinks }) {
   const [state, setState] = useState({
     toggle: false,
   })
   return (
     <nav className="fixed left-0 top-0 w-full bg-blue-600">
-      <div className="relative mx-auto flex w-full max-w-default items-center justify-between px-4 py-2 lg:px-20 lg:py-0 xl:px-108">
+      <div className="xl:px-108 relative mx-auto flex w-full max-w-default items-center justify-between px-4 py-2 lg:px-20 lg:py-0">
         <div className="flex items-center justify-between gap-10 lg:justify-start">
           <Link href="/">
-            <Icon icon="navbar-logo" iconHeight={20} iconWidth={118.073} />
+            <NextImage {...logo} otherClasses="w-28 h-5" />
           </Link>
           <div
             className={classNames(
@@ -24,7 +25,7 @@ export default function Navbar() {
             )}
           >
             <ul className="flex flex-col items-center gap-6 lg:flex-row">
-              <li className="menu-container group flex w-full flex-col items-start lg:h-88 lg:w-auto lg:flex-row lg:items-center">
+              {/* <li className="menu-container lg:h-88 group flex w-full flex-col items-start lg:w-auto lg:flex-row lg:items-center">
                 <Link
                   href="/"
                   className="hidden items-center gap-1 font-aeronik-pro text-base font-normal text-white lg:flex"
@@ -46,7 +47,7 @@ export default function Navbar() {
                     otherClasses="group-hover:rotate-180 transition-all duration-300"
                   />
                 </button>
-                <div className="mx-auto w-full  max-w-1320 bg-blue-600  group-hover:mt-6 lg:absolute lg:left-2/4 lg:top-88 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8">
+                <div className="max-w-1320 lg:top-88  mx-auto w-full  bg-blue-600 group-hover:mt-6 lg:absolute lg:left-2/4 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8">
                   <div className="mb-10 hidden lg:flex lg:justify-between">
                     <Heading type="h4" otherClasses="text-white">
                       Solutions
@@ -304,7 +305,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </li>
-              <li className="menu-container group relative flex w-full flex-col items-start lg:h-88 lg:w-auto lg:flex-row lg:items-center">
+              <li className="menu-container lg:h-88 group relative flex w-full flex-col items-start lg:w-auto lg:flex-row lg:items-center">
                 <Link
                   href="/"
                   className="hidden items-center gap-1 font-aeronik-pro text-base font-normal text-white lg:flex"
@@ -326,7 +327,7 @@ export default function Navbar() {
                     otherClasses="group-hover:rotate-180 transition-all duration-300"
                   />
                 </button>
-                <div className="mx-auto  w-full bg-blue-600 group-hover:mt-6  lg:absolute lg:left-2/4 lg:top-88 lg:min-w-720 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8">
+                <div className="lg:top-88  lg:min-w-720 mx-auto w-full  bg-blue-600 group-hover:mt-6 lg:absolute lg:left-2/4 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8">
                   <div className="mb-10 hidden lg:flex lg:justify-between">
                     <Heading type="h4" otherClasses="text-white">
                       Why Netacea
@@ -486,7 +487,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </li>
-              <li className="menu-container group flex w-full flex-col items-start lg:h-88 lg:w-auto lg:flex-row lg:items-center">
+              <li className="menu-container lg:h-88 group flex w-full flex-col items-start lg:w-auto lg:flex-row lg:items-center">
                 <Link
                   href="/"
                   className="hidden items-center gap-1 font-aeronik-pro text-base font-normal text-white lg:flex"
@@ -497,7 +498,7 @@ export default function Navbar() {
                   Pricing
                 </button>
               </li>
-              <li className="menu-container group relative flex w-full flex-col items-start lg:h-88 lg:w-auto lg:flex-row lg:items-center">
+              <li className="menu-container lg:h-88 group relative flex w-full flex-col items-start lg:w-auto lg:flex-row lg:items-center">
                 <Link
                   href="/"
                   className="hidden items-center gap-1 font-aeronik-pro text-base font-normal text-white lg:flex"
@@ -519,7 +520,7 @@ export default function Navbar() {
                     otherClasses="group-hover:rotate-180 transition-all duration-300"
                   />
                 </button>
-                <div className="mx-auto  w-full bg-blue-600 group-hover:mt-6  lg:absolute lg:left-2/4 lg:top-88 lg:min-w-720 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8">
+                <div className="lg:top-88  lg:min-w-720 mx-auto w-full  bg-blue-600 group-hover:mt-6 lg:absolute lg:left-2/4 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8">
                   <div className="mb-10 hidden lg:flex lg:justify-between">
                     <Heading type="h4" otherClasses="text-white">
                       Resource Hub
@@ -692,7 +693,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </li>
-              <li className="menu-container group relative flex w-full flex-col items-start lg:h-88 lg:w-auto lg:flex-row lg:items-center">
+              <li className="menu-container lg:h-88 group relative flex w-full flex-col items-start lg:w-auto lg:flex-row lg:items-center">
                 <Link
                   href="/"
                   className="hidden items-center gap-1 font-aeronik-pro text-base font-normal text-white lg:flex"
@@ -714,7 +715,7 @@ export default function Navbar() {
                     otherClasses="group-hover:rotate-180 transition-all duration-300"
                   />
                 </button>
-                <div className="mx-auto  w-full bg-blue-600 group-hover:mt-6  lg:absolute lg:left-2/4 lg:top-88 lg:min-w-80 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8">
+                <div className="lg:top-88  mx-auto w-full bg-blue-600  group-hover:mt-6 lg:absolute lg:left-2/4 lg:min-w-80 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8">
                   <div className="mb-10 hidden lg:flex lg:justify-between">
                     <Heading type="h4" otherClasses="text-white">
                       Company
@@ -802,7 +803,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </li>
-              <li className="menu-container group flex w-full flex-col items-start lg:h-88 lg:w-auto lg:flex-row lg:items-center">
+              <li className="menu-container lg:h-88 group flex w-full flex-col items-start lg:w-auto lg:flex-row lg:items-center">
                 <Link
                   href="/"
                   className="hidden items-center gap-1 font-aeronik-pro text-base font-normal text-white lg:flex"
@@ -812,7 +813,286 @@ export default function Navbar() {
                 <button className="flex w-full items-center justify-between gap-1 font-aeronik-pro text-20 font-normal text-white lg:hidden">
                   Partners
                 </button>
-              </li>
+              </li> */}
+              {nestedLinks.map((node) => {
+                return (
+                  <li className="menu-container lg:h-88 group flex w-full flex-col items-start lg:w-auto lg:flex-row lg:items-center">
+                    <Link
+                      href={node?.slug?.current}
+                      className="hidden items-center gap-1 font-aeronik-pro text-base font-normal text-white lg:flex"
+                    >
+                      {node?.title}
+                      <Icon
+                        icon="chevron-down"
+                        iconHeight={16}
+                        iconWidth={16}
+                        otherClasses="group-hover:rotate-180 transition-all duration-300"
+                      />
+                    </Link>
+                    <button className="flex w-full items-center justify-between gap-1 font-aeronik-pro text-20 font-normal text-white lg:hidden">
+                      {node?.title}
+                      <Icon
+                        icon="chevron-down"
+                        iconHeight={16}
+                        iconWidth={16}
+                        otherClasses="group-hover:rotate-180 transition-all duration-300"
+                      />
+                    </button>
+                    <div className="max-w-1320 lg:top-88  mx-auto w-full  bg-blue-600 group-hover:mt-6 lg:absolute lg:left-2/4 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8">
+                      <div className="mb-10 hidden lg:flex lg:justify-between">
+                        <Heading type="h4" otherClasses="text-white">
+                          {node?.title}
+                        </Heading>
+                        <Button
+                          label="View all"
+                          variant="text-link-arrow"
+                          mode="dark"
+                          slug={node?.slug}
+                        />
+                      </div>
+                      <div className="grid gap-6 lg:grid-cols-3 lg:gap-16 xl:gap-28">
+                        {node.subLinks.map((nestedNode) => {
+                          // console.log(nestedNode)
+                          return (
+                            <div className="group/nested-menu menu-container-nested flex flex-col hover:gap-4 lg:gap-6 lg:hover:gap-6">
+                              {nestedNode.url ? (
+                                <Link
+                                  href={`/${nestedNode?.slug?.current}`}
+                                  className="flex justify-between font-aeronik-pro text-lg font-normal text-white/50 lg:justify-start lg:text-xs"
+                                >
+                                  {nestedNode?.category}
+                                  <Icon
+                                    icon="chevron-down"
+                                    iconHeight={16}
+                                    iconWidth={16}
+                                    otherClasses="lg:hidden block group-hover/nested-menu:rotate-180 transition-all duration-300"
+                                  />
+                                </Link>
+                              ) : (
+                                <p className="flex justify-between font-aeronik-pro text-lg font-normal text-white/50 lg:justify-start lg:text-xs">
+                                  {nestedNode?.category}
+                                  <Icon
+                                    icon="chevron-down"
+                                    iconHeight={16}
+                                    iconWidth={16}
+                                    otherClasses="lg:hidden block group-hover/nested-menu:rotate-180 transition-all duration-300"
+                                  />
+                                </p>
+                              )}
+                              <ul className="group-hover/nested-menu:block lg:block">
+                                {nestedNode?.links.map((linksNode) => {
+                                  return (
+                                    <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                                      <Link
+                                        href={`/${linksNode?.slug?.current}`}
+                                        className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                                      >
+                                        <Icon
+                                          icon={linksNode?.icon}
+                                          iconHeight={16}
+                                          iconWidth={16}
+                                        />
+                                        {linksNode?.title}
+                                      </Link>
+                                    </li>
+                                  )
+                                })}
+                              </ul>
+                              <Button
+                                {...nestedNode?.button}
+                                otherClasses="hidden lg:flex"
+                              />
+                            </div>
+                          )
+                        })}
+                        {/* <div className="group/nested-menu menu-container-nested flex flex-col hover:gap-4 lg:gap-6 lg:hover:gap-6">
+                          <p className="flex justify-between font-aeronik-pro text-lg font-normal text-white/50 lg:justify-start lg:text-xs">
+                            Solutions For Threats
+                            <Icon
+                              icon="chevron-down"
+                              iconHeight={16}
+                              iconWidth={16}
+                              otherClasses="group-hover/nested-menu:rotate-180 transition-all duration-300 lg:hidden"
+                            />
+                          </p>
+                          <ul className="group-hover/nested-menu:block lg:block">
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="account-tackover"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Account takeover
+                              </Link>
+                            </li>
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="carding-fraud"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Carding fraud
+                              </Link>
+                            </li>
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="credential-stuffing"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Credential stuffing
+                              </Link>
+                            </li>
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="credential-stuffing"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Fake account creation
+                              </Link>
+                            </li>
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="credential-stuffing"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Loyalty point fraud
+                              </Link>
+                            </li>
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="marketing-analytics"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Skewed marketing analytics
+                              </Link>
+                            </li>
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="scaper-icon"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Scalper bots
+                              </Link>
+                            </li>
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="scaper-icon"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Web scraping
+                              </Link>
+                            </li>
+                          </ul>
+                          <Button
+                            label="View All"
+                            variant="text-link-arrow"
+                            mode="dark"
+                            otherClasses="hidden lg:flex"
+                            slug={{ current: '/' }}
+                          />
+                        </div>
+                        <div className="group/nested-menu menu-container-nested flex flex-col hover:gap-4 lg:gap-6 lg:hover:gap-6">
+                          <p className="flex justify-between font-aeronik-pro text-lg font-normal text-white/50 lg:justify-start lg:text-xs">
+                            Solutions For INdustry
+                            <Icon
+                              icon="chevron-down"
+                              iconHeight={16}
+                              iconWidth={16}
+                              otherClasses="group-hover/nested-menu:rotate-180 transition-all duration-300 lg:hidden"
+                            />
+                          </p>
+                          <ul className="group-hover/nested-menu:block lg:block">
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="account-tackover"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                eCommerce & Retail
+                              </Link>
+                            </li>
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="account-tackover"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Financial Services
+                              </Link>
+                            </li>
+                            <li className="border-b-[1px] border-b-blue-200 py-4 ">
+                              <Link
+                                href="/"
+                                className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                              >
+                                <Icon
+                                  icon="account-tackover"
+                                  iconHeight={16}
+                                  iconWidth={16}
+                                />
+                                Telco & ISPs
+                              </Link>
+                            </li>
+                          </ul>
+                          <Button
+                            label="View All"
+                            variant="text-link-arrow"
+                            mode="dark"
+                            otherClasses="hidden lg:flex"
+                            slug={{ current: '/' }}
+                          />
+                        </div> */}
+                      </div>
+                    </div>
+                  </li>
+                )
+              })}
             </ul>
             <div className="w-full lg:hidden">
               <Button
@@ -832,19 +1112,15 @@ export default function Navbar() {
               Search
             </span>
           </button>
-          <Button
-            label="Login"
-            variant="secondary"
-            mode="dark"
-            otherClasses="lg:block hidden"
-            slug={{ current: '/' }}
-          />
-          <Button
-            label="Login"
-            variant="primary-arrow"
-            mode="dark"
-            slug={{ current: '/' }}
-          />
+          {button.map((node, i) => {
+            return (
+              <Button
+                {...node}
+                otherClasses={classNames(i === 0 && 'lg:flex hidden')}
+              />
+            )
+          })}
+
           <button
             className="flex h-10 w-10 flex-col items-center justify-center gap-1 overflow-hidden lg:hidden"
             onClick={() =>

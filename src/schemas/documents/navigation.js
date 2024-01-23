@@ -9,66 +9,10 @@ export const navigation = {
   ],
   fields: [
     {
-      name: 'navbarLinks',
-      title: 'Links',
-      type: 'array',
-      of: [
-        {
-          type: 'link',
-        },
-      ],
+      title: 'Navbar',
+      name: 'links',
+      type: 'navbarObject',
       group: 'top',
-    },
-    {
-      name: 'footerLinks',
-      title: 'Links',
-      type: 'array',
-      of: [
-        {
-          type: 'link',
-        },
-      ],
-      group: 'footer',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'address',
-      title: 'Address',
-      type: 'text',
-      group: 'footer',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'email',
-      title: 'Email',
-      type: 'string',
-      group: 'footer',
-      validation: (Rule) => Rule.required(),
-    },
-    // {
-    //   name: 'privacyLink',
-    //   title: 'Privacy Link',
-    //   group: 'footer',
-    //   type: 'optionalLink',
-    //   validation: (Rule: any) => Rule.max(1),
-    // },
-    // {
-    //   name: 'termsLink',
-    //   title: 'Terms Link',
-    //   group: 'footer',
-    //   type: 'optionalLink',
-    //   validation: (Rule: any) => Rule.max(1),
-    // },
-    {
-      name: 'socialLinks',
-      title: 'Social Links',
-      type: 'array',
-      group: 'social',
-      of: [
-        {
-          type: 'link',
-        },
-      ],
       validation: (Rule) => Rule.required(),
     },
   ],
