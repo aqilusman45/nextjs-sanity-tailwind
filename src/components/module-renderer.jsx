@@ -2,7 +2,7 @@ import { groq } from 'next-sanity'
 
 import { moduleComponents } from '~/lib/modules'
 
-export const fragment = groq`
+export const MODULE_FRAGMENT = groq`
   modules[] {
     ...,
 

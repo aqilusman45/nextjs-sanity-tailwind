@@ -1,3 +1,5 @@
+import { getModulesField } from '../modules/modules-field'
+
 export const page = {
   name: 'page',
   title: 'Page',
@@ -5,8 +7,21 @@ export const page = {
   groups: [
     { name: 'general', title: 'General' },
     { name: 'content', title: 'Content', default: true },
+    { name: 'meta', title: 'Meta' },
   ],
   fields: [
+    {
+      title: 'SEO Title',
+      name: 'seoTitle',
+      type: 'string',
+      group: 'meta',
+    },
+    {
+      title: 'Meta Description',
+      name: 'metaDescription',
+      type: 'text',
+      group: 'meta',
+    },
     {
       name: 'title',
       type: 'string',
@@ -22,6 +37,7 @@ export const page = {
       },
       validation: (Rule) => Rule.required(),
     },
+    getModulesField('content'),
   ],
   preview: {
     select: {

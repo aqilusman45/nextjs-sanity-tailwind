@@ -11,11 +11,11 @@ export default function Navbar({ button, logo, nestedLinks }) {
   const [state, setState] = useState({
     toggle: false,
   })
-  
+
   return (
     <nav className="fixed left-0 top-0 w-full bg-blue-600">
-      <div className="xl:px-108 relative mx-auto flex w-full max-w-default items-center justify-between px-4 py-2 lg:px-20 lg:py-0">
-        <div className="flex items-center justify-between gap-10 lg:justify-start">
+      <div className="relative mx-auto flex w-full max-w-default items-center justify-between px-4 py-2 lg:px-16 lg:py-0 xl:px-108">
+        <div className="flex items-center justify-between gap-10 lg:justify-start lg:gap-4 xl:gap-10">
           <Link href="/">
             <NextImage {...logo} otherClasses="w-28 h-5" />
           </Link>
@@ -25,10 +25,13 @@ export default function Navbar({ button, logo, nestedLinks }) {
               state.toggle ? 'block' : 'hidden lg:block',
             )}
           >
-            <ul className="flex flex-col items-center gap-6 lg:flex-row">
-              {nestedLinks?.map((node,index) => {
+            <ul className="flex flex-col items-center gap-6 lg:flex-row lg:gap-3 xl:gap-6">
+              {nestedLinks?.map((node, index) => {
                 return (
-                  <li key={`${index}-${node?.title}`} className="menu-container lg:h-88 group flex w-full flex-col items-start lg:w-auto lg:flex-row lg:items-center">
+                  <li
+                    key={`${index}-${node?.title}`}
+                    className="menu-container group flex w-full flex-col items-start lg:h-88 lg:w-auto lg:flex-row lg:items-center"
+                  >
                     <div className="flex w-full items-center justify-between gap-1 lg:w-auto lg:justify-start">
                       <Link
                         href={node?.slug?.current}
@@ -48,7 +51,7 @@ export default function Navbar({ button, logo, nestedLinks }) {
                     {node?.subLinks?.length > 0 && (
                       <div
                         className={classNames(
-                          'lg:top-88 category-menu-link mx-auto w-full bg-blue-600 group-hover:mt-6 lg:absolute lg:left-2/4 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8',
+                          'category-menu-link mx-auto w-full bg-blue-600 group-hover:mt-6 lg:absolute lg:left-2/4 lg:top-88 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8',
                           node?.subLinks?.length === 1 && 'lg:max-w-80',
                           node?.subLinks?.length === 2 && 'lg:max-w-720',
                           node?.subLinks?.length === 3 && 'lg:max-w-1320',
@@ -73,9 +76,12 @@ export default function Navbar({ button, logo, nestedLinks }) {
                             node?.subLinks?.length === 3 && 'lg:grid-cols-3',
                           )}
                         >
-                          {node.subLinks.map((nestedNode,index) => {
+                          {node.subLinks.map((nestedNode, index) => {
                             return (
-                              <div  key={`${index}-${nestedNode?.category}`}  className="group/nested-menu menu-container-nested flex flex-col hover:gap-4 lg:gap-6 lg:hover:gap-6">
+                              <div
+                                key={`${index}-${nestedNode?.category}`}
+                                className="group/nested-menu menu-container-nested flex flex-col hover:gap-4 lg:gap-6 lg:hover:gap-6"
+                              >
                                 {nestedNode.url ? (
                                   <div className="flex justify-between">
                                     <Link
@@ -103,9 +109,12 @@ export default function Navbar({ button, logo, nestedLinks }) {
                                   </p>
                                 )}
                                 <ul className="group-hover/nested-menu:block lg:block">
-                                  {nestedNode?.links.map((linksNode,index) => {
+                                  {nestedNode?.links.map((linksNode, index) => {
                                     return (
-                                      <li  key={`${index}-${linksNode?.title}`}  className="border-b-[1px] border-b-blue-200 py-4 ">
+                                      <li
+                                        key={`${index}-${linksNode?.title}`}
+                                        className="border-b-[1px] border-b-blue-200 py-4 "
+                                      >
                                         <Link
                                           href={`/${linksNode?.slug?.current}`}
                                           className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
@@ -135,18 +144,26 @@ export default function Navbar({ button, logo, nestedLinks }) {
                 )
               })}
             </ul>
-           {button?.length>0&& <div className="w-full lg:hidden">
-              <Button
-                {...button[0]}
-                otherClasses="w-full block text-center justify-center"
-              />
-            </div>}
+            {button?.length > 0 && (
+              <div className="w-full lg:hidden">
+                <Button
+                  {...button[0]}
+                  otherClasses="w-full block text-center justify-center"
+                />
+              </div>
+            )}
           </div>
         </div>
-        <div className="flex items-center gap-3 lg:gap-6">
+        <div className="flex items-center gap-3 xl:gap-6">
           <button className="flex items-center gap-1">
-            <Icon icon="navbar-search-icon" iconHeight={14} iconWidth={14} />
-            <span className="hidden font-aeronik-pro text-base text-white lg:block">
+            <span className="block h-6 w-6 xl:h-4 xl:w-4">
+              <Icon
+                icon="navbar-search-icon"
+                iconHeight="100%"
+                iconWidth="100%"
+              />
+            </span>
+            <span className="hidden font-aeronik-pro text-base text-white xl:block">
               Search
             </span>
           </button>

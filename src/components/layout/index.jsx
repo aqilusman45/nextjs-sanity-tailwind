@@ -1,9 +1,15 @@
 import React from 'react'
 import Navbar from '../navbar'
 import Footer from '../footer'
+import { groq } from 'next-sanity'
 
-export default function Layout({ children, links ,footerLinks,socials,footerBottom}) {
- 
+export default function Layout({
+  children,
+  links,
+  footerLinks,
+  socials,
+  footerBottom,
+}) {
   return (
     <>
       <Navbar {...links} />
@@ -12,3 +18,21 @@ export default function Layout({ children, links ,footerLinks,socials,footerBott
     </>
   )
 }
+
+export const navFragment = groq`
+  *[_type == "navigation"][0]{
+  ...,
+  links{
+    ...,
+    "logo": logo.asset->{
+      ...,
+   },
+  nestedLinks[]{
+    ...,
+    subLinks[]{
+      ...,
+    }
+  }
+ }
+}
+`

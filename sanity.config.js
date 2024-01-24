@@ -14,12 +14,12 @@ import {
   previewSecretId,
   projectId,
 } from '~/lib/sanity.api'
-import { PageTypes } from '~/lib/sanity.links'
+// import { PageTypes } from '~/lib/sanity.links'
 import { documentTypesForWorkFlow, schemaTypes } from '~/schemas'
 import { structureResolver } from '~/schemas/desk'
 import { presentationTool } from 'sanity/presentation'
 import { locate } from '~/lib/presentation/locate'
-import { workflow } from 'sanity-plugin-workflow'
+// import { workflow } from 'sanity-plugin-workflow'
 import BrandLogo from './src/components/logo-cms'
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
@@ -87,9 +87,9 @@ export default defineConfig({
         },
       },
     }),
-    workflow({
-      schemaTypes: documentTypesForWorkFlow,
-    }),
+    // workflow({
+    //   schemaTypes: documentTypesForWorkFlow,
+    // }),
   ],
   document: {
     // For singleton types, filter out actions that are not explicitly included

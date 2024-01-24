@@ -11,17 +11,17 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-    <Layout {...navigation}>
-      {draftMode ? (
-        <PreviewProvider token={token}>
+      <Layout {...navigation}>
+        {draftMode ? (
+          <PreviewProvider token={token}>
+            <Component {...pageProps} />
+            <Suspense>
+              <VisualEditing />
+            </Suspense>
+          </PreviewProvider>
+        ) : (
           <Component {...pageProps} />
-          <Suspense>
-            <VisualEditing />
-          </Suspense>
-        </PreviewProvider>
-      ) : (
-        <Component {...pageProps} />
-      )}
+        )}
       </Layout>
     </>
   )

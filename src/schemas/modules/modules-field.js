@@ -1,18 +1,18 @@
-// // import { ModulesInput } from '../components/modulesInput'
+import { ModulesInput } from '../components/modulesInput'
 
-// export const getModulesField = (group?: string) => {
-//   return {
-//     name: 'modules',
-//     type: 'array',
-//     title: 'Modules',
-//     group,
-//     of: [
-//       // {
-//       //   type: 'projectsHighlight',
-//       // },
-//     ],
-//     components: {
-//       input: ModulesInput,
-//     },
-//   }
-// }
+export const getModulesField = (group) => {
+  return {
+    name: 'modules',
+    type: 'array',
+    title: 'Modules',
+    group,
+    of: [
+      {
+        type: 'twoColumnHeroSection',
+      },
+    ],
+    components: {
+      input: ModulesInput,
+    },
+  }
+}

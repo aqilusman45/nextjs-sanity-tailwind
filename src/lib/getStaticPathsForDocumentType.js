@@ -8,7 +8,8 @@ export const getStaticPathsForDocumentType = async (type) => {
     groq`*[_type == '${type}']{'slug': slug.current}`,
   )
   return {
-    paths: slugs.map(({ slug }) => ({ params: { slug } })),
-    fallback: false,
+    paths:
+      slugs?.map(({ slug }) => (slug !== '/' ? `/${slug}` : `${slug}`)) || [],
+    fallback: 'blocking',
   }
 }

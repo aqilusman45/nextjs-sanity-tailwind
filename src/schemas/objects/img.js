@@ -1,7 +1,7 @@
 export const img = {
-  name: 'img',
   title: 'Image',
   type: 'image',
+  name: 'img',
   fields: [
     {
       name: 'caption',

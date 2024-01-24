@@ -39,15 +39,15 @@ export const structureResolver = (S) => {
       //         S.documentTypeListItem('category').title('Category').icon(File),
       //       ]),
       //   ),
-      S.divider(),
-      S.listItem()
-        .title('Assigned to me')
-        .schemaType('workflow.metadata')
-        .child(
-          S.documentList()
-            .title('Assigned to me')
-            .filter('_type == "workflow.metadata" && identity() in assignees'),
-        ),
-      S.documentTypeListItem('workflow.metadata').title('Workflow Metadata'),
+      // S.divider(),
+      // S.listItem()
+      //   .title('Assigned to me')
+      //   .schemaType('workflow.metadata')
+      //   .child(
+      //     S.documentList()
+      //       .title('Assigned to me')
+      //       .filter('_type == "workflow.metadata" && identity() in assignees'),
+      //   ),
+      // S.documentTypeListItem('workflow.metadata').title('Workflow Metadata'),
     ])
 }
