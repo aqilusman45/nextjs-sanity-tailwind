@@ -1,0 +1,33 @@
+.video-with-text-container {
+  background: linear-gradient(180deg, #113161 0%, #0f3161 100%);
+}
+
+.video-inner-container {
+  &::after {
+    @media (min-width: 1024px) {
+      height: 32px;
+    }
+    content: '';
+    height: 24px;
+    width: 60%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    clip-path: polygon(0 0, 100% 0%, 97% 100%, 0% 100%);
+    background: #113161;
+  }
+  &::before {
+    @media (min-width: 1024px) {
+      height: 32px;
+    }
+    content: '';
+    z-index: 10;
+    height: 24px;
+    width: 60%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(3% 0, 100% 0%, 100% 100%, 0% 100%);
+    background: #113161;
+  }
+}

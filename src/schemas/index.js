@@ -10,6 +10,7 @@ import { youtube } from './objects/youtube'
 import { twoColumnHeroSection } from './objects/twoColumnHeroSection'
 import { netaceaDifference } from './documents/netaceaDifference'
 import { staticSliceSections } from './objects/staticSliceSections'
+import { videoWithTextSection } from './objects/videoWithTextSection'
 
 export const schemaTypes = [
   page,
@@ -24,12 +25,11 @@ export const schemaTypes = [
   twoColumnHeroSection,
   netaceaDifference,
   staticSliceSections,
+  videoWithTextSection,
 ]
 
 // Add name of the document here in quotations so the workflow works find on that name as well
 export const documentTypesForWorkFlow = ['page']
-
-
 
 export const STATIC_SLICES = [
   {

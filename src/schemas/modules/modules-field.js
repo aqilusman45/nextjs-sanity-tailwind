@@ -13,6 +13,9 @@ export const getModulesField = (group) => {
       {
         type: 'staticSliceSections',
       },
+      {
+        type: 'videoWithTextSection',
+      },
     ],
     components: {
       input: ModulesInput,

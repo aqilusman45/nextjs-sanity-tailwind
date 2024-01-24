@@ -2,11 +2,13 @@ import { groq } from 'next-sanity'
 
 import { moduleComponents } from '~/lib/modules'
 import { TWO_COLUMN_HERO_SECTIO_FRAGMENT } from '../modules/two-column-hero-section'
+import { VIDEO_WITH_SECTIO_FRAGMET } from '../modules/video-with-section'
 
 export const MODULE_FRAGMENT = groq`
   modules[] {
     ...,
-    ${TWO_COLUMN_HERO_SECTIO_FRAGMENT}
+    ${TWO_COLUMN_HERO_SECTIO_FRAGMENT},
+    ${VIDEO_WITH_SECTIO_FRAGMET}
 
   }
 `
@@ -23,6 +25,7 @@ export default function ModuleRenderer({ modules = [] }) {
       console.error(`No component found for module type "${module._type}"`)
       return null
     }
+
     return (
       <div key={module._key}>
         <Component {...module} />

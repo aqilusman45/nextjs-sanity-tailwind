@@ -65,7 +65,7 @@ export default function TwoColumnHeroSection({
               )}
             />
             <div className="flex items-center gap-4">
-              {buttons.map((node,index) => {
+              {buttons?.map((node, index) => {
                 return <Button key={index} {...node} />
               })}
             </div>
@@ -88,7 +88,7 @@ export default function TwoColumnHeroSection({
             {title}
           </Heading>
           <div className="grid grid-cols-3 items-center gap-x-12 gap-y-6 sm:flex sm:justify-between">
-            {logos.map((node,i) => {
+            {logos?.map((node, i) => {
               return (
                 <div key={i} className="w-auto min-w-10">
                   <NextImage {...node} otherClasses="w-full" />
