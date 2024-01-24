@@ -131,12 +131,12 @@ export default function Footer({
                 </Link>
               </div>
             </div>
-            {footerLinks?.map(({ parentLinks }) => {
+            {footerLinks?.map(({ parentLinks },i) => {
               return (
-                <div className="flex flex-col gap-10">
+                <div key={i} className="flex flex-col gap-10">
                   {parentLinks?.map(({ childLinks, title }) => {
                     return (
-                      <div className="flex flex-col gap-10">
+                      <div key={title} className="flex flex-col gap-10">
                         <div className="flex flex-col gap-5">
                           <p className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-gray">
                             {title}
@@ -144,7 +144,7 @@ export default function Footer({
                           <ul className="flex flex-col gap-3">
                             {childLinks?.map(({ title, slug: { current } }) => {
                               return (
-                                <li>
+                                <li key={title}>
                                   <Link
                                     className="font-aeronik-pro text-base font-normal text-white hover:text-blue-200"
                                     href={`/${current}`}

@@ -23,8 +23,6 @@ export default function ModuleRenderer({ modules = [] }) {
       console.error(`No component found for module type "${module._type}"`)
       return null
     }
-
-    console.log(module)
     return (
       <div key={module._key}>
         <Component {...module} />

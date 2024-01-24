@@ -10,6 +10,9 @@ export const getModulesField = (group) => {
       {
         type: 'twoColumnHeroSection',
       },
+      {
+        type: 'staticSliceSections',
+      },
     ],
     components: {
       input: ModulesInput,
