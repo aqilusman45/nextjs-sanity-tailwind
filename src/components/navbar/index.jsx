@@ -13,7 +13,7 @@ export default function Navbar({ button, logo, nestedLinks }) {
   })
 
   return (
-    <nav className="fixed left-0 top-0 w-full bg-blue-600">
+    <nav className="fixed left-0 top-0 z-20 w-full bg-blue-600">
       <div className="relative mx-auto flex w-full max-w-default items-center justify-between px-4 py-2 lg:px-16 lg:py-0 xl:px-108">
         <div className="flex items-center justify-between gap-10 lg:justify-start lg:gap-4 xl:gap-10">
           <Link href="/">

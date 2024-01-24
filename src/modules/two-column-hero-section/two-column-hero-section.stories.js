@@ -1,4 +1,5 @@
 import TwoColumnHeroSection from './index'
+import { heroTwoColumnMock } from './mock'
 const meta = {
   title: 'Modules/TwoColumnHeroSection',
   component: TwoColumnHeroSection,
@@ -23,5 +24,7 @@ const meta = {
 export default meta
 
 export const Default = {
-  args: {},
+  args: {
+    ...heroTwoColumnMock,
+  },
 }

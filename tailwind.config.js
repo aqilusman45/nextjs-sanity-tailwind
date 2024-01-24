@@ -84,6 +84,7 @@ module.exports = {
         default: '96rem',
         1320: '82.5rem',
         720: '45rem',
+        648: '40.5rem',
       },
       minWidth: {
         default: '96rem',

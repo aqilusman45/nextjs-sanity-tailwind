@@ -71,7 +71,7 @@ export const twoColumnHeroSection = {
     preview: ModulePreview,
   },
   storybook: {
-    id: 'modules-twocolumnnherosectionn--default',
+    id: 'modules-twocolumnherosection--default',
   },
   preview: {
     select: {

@@ -12,7 +12,12 @@ export default function Layout({
 }) {
   return (
     <>
-      {Object?.keys(links || {})?.length > 0 && <Navbar {...links} />}{' '}
+      {Object?.keys(links || {})?.length > 0 && (
+        <>
+          <div className="h-14 w-full bg-blue-600 lg:h-88"></div>{' '}
+          <Navbar {...links} />
+        </>
+      )}
       <main>{children}</main>
       {footerLinks?.length > 0 && (
         <Footer {...footerBottom} footerLinks={footerLinks} {...socials} />
