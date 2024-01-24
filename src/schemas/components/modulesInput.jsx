@@ -1,22 +1,12 @@
 import { Button, Grid, Stack } from '@sanity/ui'
 import { useCallback, useState } from 'react'
-import {
-  ArrayInputFunctionsProps,
-  ArrayOfObjectsInputProps,
-  ArraySchemaType,
-  ObjectItem,
-} from 'sanity'
-
 // Most code is copied from https://github.com/sanity-io/sanity/blob/e607be828dec1c7903731faed601a848ac545335/packages/sanity/src/core/form/inputs/arrays/ArrayOfObjectsInput/ArrayOfObjectsFunctions.tsx
 import { AddModuleButton } from './addModuleButton'
-export function ArrayOfObjectsFunctions<
-  Item extends ObjectItem,
-  SchemaType extends ArraySchemaType,
->(props: ArrayInputFunctionsProps<Item, SchemaType>) {
+export function ArrayOfObjectsFunctions(props) {
   const { schemaType, onValueCreate, onItemAppend } = props
 
   const insertItem = useCallback(
-    (itemType: any) => {
+    (itemType) => {
       const item = onValueCreate(itemType)
 
       onItemAppend(item)
@@ -36,7 +26,7 @@ export function ArrayOfObjectsFunctions<
   }
 
   const handleAddBtnClick = useCallback(
-    (module: any) => {
+    (module) => {
       insertItem(module)
     },
     [insertItem],
@@ -73,7 +63,7 @@ export function ArrayOfObjectsFunctions<
   )
 }
 
-export function ModulesInput(props: ArrayOfObjectsInputProps) {
+export function ModulesInput(props) {
   return (
     <Stack space={3}>
       {/* Use custom arrayFunctions to remove the default add item button */}

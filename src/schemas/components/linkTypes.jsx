@@ -1,12 +1,11 @@
-// import { Button, Grid, Stack } from '@sanity/ui'
-// import { ArrayOfObjectsInputProps } from 'sanity'
+import { Button, Grid, Stack } from '@sanity/ui'
 
-// export function LinkTypes(props: ArrayOfObjectsInputProps) {
-//   return (
-//     <Stack space={3}>
-//       <Grid columns={3} gap={1}>
-//         <Button>One button</Button>
-//       </Grid>
-//     </Stack>
-//   )
-// }
+export function LinkTypes(props) {
+  return (
+    <Stack space={3}>
+      <Grid columns={3} gap={1}>
+        <Button>One button</Button>
+      </Grid>
+    </Stack>
+  )
+}

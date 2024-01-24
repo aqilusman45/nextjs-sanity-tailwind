@@ -1,5 +1,7 @@
 import NextImage from './index'
 
+import {mocks}from './mocks'
+
 const meta = {
   title: 'Components/NextImage',
   component: NextImage,
@@ -23,5 +25,5 @@ const meta = {
 export default meta
 
 export const Default = {
-  args: {},
+  args: {...mocks},
 }
