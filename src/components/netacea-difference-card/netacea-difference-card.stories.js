@@ -1,13 +1,8 @@
----
-to: src/modules/<%= h.projectCase(name) %>/<%=  h.projectCase(name) %>.stories.js
----
-
-import <%= h.changeCase.pascal(name) %> from './index'
-import {mocks} from './mocks'
+import NetaceaDifferenceCard from './index'
 
 const meta = {
-  title: 'Modules/<%= h.changeCase.pascal(name) %>',
-  component: <%= h.changeCase.pascal(name) %>,
+  title: 'Components/NetaceaDifferenceCard',
+  component: NetaceaDifferenceCard,
   parameters: {
     design: [
       {
@@ -25,9 +20,8 @@ const meta = {
     ],
   },
 }
-
 export default meta;
 
 export const Default = {
-   args: {...mocks},
+   args: {},
 }

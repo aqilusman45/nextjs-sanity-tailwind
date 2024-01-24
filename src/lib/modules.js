@@ -5,8 +5,10 @@ const videoWithTextSection = dynamic(
   () => import('../modules/video-with-section/index'),
   { ssr: false },
 )
+import { default as staticSliceSections } from '../modules/static-slice-sections/index'
 
 export const moduleComponents = {
   twoColumnHeroSection,
   videoWithTextSection,
+  staticSliceSections
 }

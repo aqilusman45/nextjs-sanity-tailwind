@@ -12,7 +12,7 @@ export default function Button({
   mode = 'light',
 }) {
   const buttonClasses = classnames(
-    otherClasses,
+    otherClasses,"h-fit whitespace-nowrap",
     variant === 'primary' &&
       `${
         mode === 'light'

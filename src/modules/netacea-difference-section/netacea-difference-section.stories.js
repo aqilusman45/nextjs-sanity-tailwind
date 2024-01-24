@@ -1,18 +1,10 @@
-import StaticSliceSections from './index'
+import NetaceaDifferenceSection from './index'
+
 import {mocks} from './mocks'
 
 const meta = {
-  title: 'Modules/StaticSliceSections',
-  component: StaticSliceSections,
-  argTypes: {
-    storybook_Type: {
-      defaultValue: 'netaceaDifference',
-      options: [
-        'netaceaDifference',
-      ],
-      control: { type: 'select' },
-    },
-  },
+  title: 'Modules/NetaceaDifferenceSection',
+  component: NetaceaDifferenceSection,
   parameters: {
     design: [
       {

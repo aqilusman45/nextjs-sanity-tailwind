@@ -83,7 +83,9 @@ module.exports = {
       maxWidth: {
         default: '96rem',
         1320: '82.5rem',
+        760: '47.5rem',
         720: '45rem',
+        
         648: '40.5rem',
       },
       minWidth: {
@@ -95,8 +97,9 @@ module.exports = {
         120: '7.5rem',
         108: '6.75rem',
         92: '5.75rem',
-        88: '5.5rem',
         710: '44.375rem',
+        88: '5.5rem', 
+        30: '7.5rem', 
       },
     },
   },

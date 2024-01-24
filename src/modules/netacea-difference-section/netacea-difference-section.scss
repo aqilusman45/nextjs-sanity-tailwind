@@ -1,0 +1,32 @@
+.background-gradient-difference-section {
+  background: linear-gradient(180deg, #103061 0%, #0f3777 100%);
+}
+
+.difference-card-border {
+  //     background: linear-gradient(#113161
+  //     , #113161
+  //     ) padding-box,
+  //     linear-gradient(92.19deg, rgba(54, 124, 243, 0.5) -21.93%, rgba(54, 124, 243, 0) 20.59%),
+  //     linear-gradient(136.39deg, rgba(54, 124, 243, 0.5) -14.01%, rgba(54, 124, 243, 0) 17.78%),
+  //     linear-gradient(312.21deg, rgba(54, 124, 243, 0.5) -1.83%, rgba(54, 124, 243, 0) 16.05%) border-box;
+  //   border: 1px solid transparent;
+
+  background: linear-gradient(#113161, #113161) padding-box,
+    linear-gradient(
+      556deg,
+      rgba(54, 124, 243, 0.5) -21.93%,
+      rgba(54, 124, 243, 0) 20.59%
+    ),
+    linear-gradient(
+      420deg,
+      rgba(54, 124, 243, 0.5) -14.01%,
+      rgba(54, 124, 243, 0) 17.78%
+    ),
+    linear-gradient(
+        50deg,
+        rgba(54, 124, 243, 0.5) -1.83%,
+        rgba(54, 124, 243, 0) 16.05%
+      )
+      border-box;
+  border: 1px solid transparent;
+}
