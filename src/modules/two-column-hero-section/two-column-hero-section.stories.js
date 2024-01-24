@@ -1,7 +1,7 @@
-import TwoColumnnHeroSectionn from './index'
+import TwoColumnHeroSection from './index'
 const meta = {
-  title: 'Modules/TwoColumnnHeroSectionn',
-  component: TwoColumnnHeroSectionn,
+  title: 'Modules/TwoColumnHeroSection',
+  component: TwoColumnHeroSection,
   parameters: {
     design: [
       {
@@ -20,8 +20,8 @@ const meta = {
   },
 }
 
-export default meta;
+export default meta
 
 export const Default = {
-   args: {},
+  args: {},
 }

@@ -1,10 +1,12 @@
 import { groq } from 'next-sanity'
 
 import { moduleComponents } from '~/lib/modules'
+import { TWO_COLUMN_HERO_SECTIO_FRAGMENT } from '../modules/two-column-hero-section'
 
 export const MODULE_FRAGMENT = groq`
   modules[] {
     ...,
+    ${TWO_COLUMN_HERO_SECTIO_FRAGMENT}
 
   }
 `
@@ -22,9 +24,10 @@ export default function ModuleRenderer({ modules = [] }) {
       return null
     }
 
+    console.log(module)
     return (
       <div key={module._key}>
-        <Component data={module} />
+        <Component {...module} />
       </div>
     )
   })

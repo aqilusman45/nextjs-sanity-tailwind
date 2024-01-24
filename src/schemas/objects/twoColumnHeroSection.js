@@ -12,6 +12,18 @@ export const twoColumnHeroSection = {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Variant',
+      name: 'variant',
+      type: 'string',
+      initialValue: 'light',
+      options: {
+        list: [
+          { title: 'Light', value: 'light' },
+          { title: 'Dark', value: 'dark' },
+        ],
+      },
+    },
+    {
       title: 'Heading',
       name: 'heading',
       type: 'string',
@@ -49,7 +61,7 @@ export const twoColumnHeroSection = {
     },
     {
       title: 'Logos',
-      name: 'xlogos',
+      name: 'logos',
       type: 'array',
       of: [{ type: 'img' }],
       validation: (Rule) => Rule.required(),

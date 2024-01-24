@@ -12,9 +12,11 @@ export default function Layout({
 }) {
   return (
     <>
-      <Navbar {...links} />
+      {Object?.keys(links || {})?.length > 0 && <Navbar {...links} />}{' '}
       <main>{children}</main>
-      <Footer {...footerBottom} footerLinks={footerLinks} {...socials} />
+      {footerLinks?.length > 0 && (
+        <Footer {...footerBottom} footerLinks={footerLinks} {...socials} />
+      )}
     </>
   )
 }

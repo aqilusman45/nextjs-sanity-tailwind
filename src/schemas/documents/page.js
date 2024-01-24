@@ -37,6 +37,18 @@ export const page = {
       },
       validation: (Rule) => Rule.required(),
     },
+    {
+      title: 'Navbar Variant',
+      name: 'navbarVariant',
+      type: 'string',
+      initial: 'light',
+      options: {
+        list: [
+          { title: 'Light', value: 'light' },
+          { title: 'Dark', value: 'dark' },
+        ],
+      },
+    },
     getModulesField('content'),
   ],
   preview: {

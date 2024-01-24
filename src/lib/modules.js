@@ -1,5 +1,5 @@
-// import { default as projectsHighlight } from '~/components/example'
+import { default as twoColumnHeroSection } from '../modules/two-column-hero-section/index'
 
 export const moduleComponents = {
-  // example
+  twoColumnHeroSection,
 }
