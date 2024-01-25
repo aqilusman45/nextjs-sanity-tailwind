@@ -1,0 +1,41 @@
+.with-or-without-netacea-continer {
+  background: linear-gradient(180deg, #0e3877 0%, #0d4094 100%);
+}
+.border-gradient-container-dark {
+  background: linear-gradient(-270deg, #d1e7fc 0%, rgba(209, 231, 252, 0) 100%);
+}
+
+.border-gradient-container-light {
+  background: linear-gradient(-270deg, #001831 0%, rgba(209, 231, 252, 0) 100%);
+}
+
+.list-last-heading {
+  background:
+    linear-gradient(#0f376f, #0f376f) padding-box,
+    linear-gradient(
+      232.19deg,
+      rgba(54, 124, 243, 0.5) -21.93%,
+      rgba(54, 124, 243, 0) 20.59%
+    ),
+    linear-gradient(
+      86.39deg,
+      rgba(54, 124, 243, 0.5) -14.01%,
+      rgba(54, 124, 243, 0) 17.78%
+    ),
+    linear-gradient(
+        312.21deg,
+        rgba(54, 124, 243, 0.5) -1.83%,
+        rgba(54, 124, 243, 0) 16.05%
+      )
+      border-box;
+  border: 1px solid transparent;
+}
+
+.conatiner-list {
+  li:nth-last-child(1) {
+    border-bottom: 0px;
+  }
+  li:nth-last-child(2) {
+    border-bottom: 0px;
+  }
+}

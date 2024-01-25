@@ -12,6 +12,7 @@ import { netaceaDifference } from './documents/netaceaDifference'
 import { staticSliceSections } from './objects/staticSliceSections'
 import { videoWithTextSection } from './objects/videoWithTextSection'
 import { testimonialAndStatsSlider } from './documents/testimonialAndStatsSlider'
+import { withOrWithoutNetacea } from './documents/withOrWithOutNetacea'
 
 export const schemaTypes = [
   page,
@@ -27,7 +28,8 @@ export const schemaTypes = [
   netaceaDifference,
   staticSliceSections,
   videoWithTextSection,
-  testimonialAndStatsSlider
+  testimonialAndStatsSlider,
+  withOrWithoutNetacea,
 ]
 
 // Add name of the document here in quotations so the workflow works find on that name as well
@@ -41,5 +43,9 @@ export const STATIC_SLICES = [
   {
     sectionType: 'testimonialAndStatsSlider',
     sectionTitle: 'Testimonial And Stats Slider',
+  },
+  {
+    sectionType: 'withOrWithoutNetacea',
+    sectionTitle: 'With Or Without Netacea',
   },
 ]

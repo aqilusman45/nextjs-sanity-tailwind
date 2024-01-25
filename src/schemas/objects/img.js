@@ -7,6 +7,7 @@ export const img = {
       name: 'caption',
       title: 'Caption (in-image)',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
   ],
 }

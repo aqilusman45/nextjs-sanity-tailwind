@@ -1,30 +1,29 @@
-import { ModulePreview } from "../components/modulePreview";
+import { ModulePreview } from '../components/modulePreview'
 
 export const staticSliceSections = {
-  title: "Static Slice Sections",
-  name: "staticSliceSections",
-  type: "object",
+  title: 'Static Slice Sections',
+  name: 'staticSliceSections',
+  type: 'object',
   fields: [
     {
-      title: "Identifier",
-      name: "identifier",
-      type: "string",
+      title: 'Identifier',
+      name: 'identifier',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Section",
-      name: "section",
-      type: "reference",
+      title: 'Section',
+      name: 'section',
+      type: 'reference',
       validation: (Rule) => Rule.required(),
       options: {
         disableNew: true,
       },
       to: [
+        { type: 'netaceaDifference' },
+        { type: 'withOrWithoutNetacea' },
         {
-          type: "netaceaDifference",
-        },
-        {
-          type: "testimonialAndStatsSlider",
+          type: 'testimonialAndStatsSlider',
         },
       ],
     },
@@ -33,16 +32,16 @@ export const staticSliceSections = {
     preview: ModulePreview,
   },
   storybook: {
-    id: "modules-staticslicesections--default",
+    id: 'modules-staticslicesections--default',
   },
   preview: {
     select: {
-      title: "identifier",
+      title: 'identifier',
     },
-    prepare({ title = "No Label" }) {
+    prepare({ title = 'No Label' }) {
       return {
         title,
-      };
+      }
     },
   },
-};
+}
