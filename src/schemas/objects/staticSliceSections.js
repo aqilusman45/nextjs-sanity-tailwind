@@ -25,6 +25,9 @@ export const staticSliceSections = {
         {
           type: 'testimonialAndStatsSlider',
         },
+        {
+          type: 'productCardsSection',
+        },
       ],
     },
   ],
