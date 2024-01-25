@@ -4,6 +4,7 @@ import Heading from '../../components/heading'
 import NextImage from '../../components/next-image'
 import RichText from '../../components/rich-text'
 import Icon from '../../components/icon'
+import { Fragment } from 'react'
 
 export const WITH_OR_WITHOUT_NETACEA_FRAGMET = groq`
     "logo":logo.asset->{
@@ -11,8 +12,7 @@ export const WITH_OR_WITHOUT_NETACEA_FRAGMET = groq`
     },
     "backPattern":backPattern.asset->{
       ...,
-    },
-
+    }
 `
 
 export default function WithOrWithoutNetacea({
@@ -95,7 +95,7 @@ export default function WithOrWithoutNetacea({
           <ul className="conatiner-list mt-2 grid grid-cols-2 overflow-hidden rounded border-[1px] border-[#1655C7]">
             {tbody.map(({ withNetacea, withoutNetacea }, i) => {
               return (
-                <>
+                <Fragment key={i}>
                   <li className="flex items-start gap-2 border-b-[1px] border-r-[1px] border-blue-500 bg-blue-400 px-2 py-4 font-aeronik-pro text-base font-normal text-white lg:p-4">
                     <Icon
                       icon="checklist-cancel-icon"
@@ -114,7 +114,7 @@ export default function WithOrWithoutNetacea({
                     />
                     {withNetacea}
                   </li>
-                </>
+                </Fragment>
               )
             })}
           </ul>

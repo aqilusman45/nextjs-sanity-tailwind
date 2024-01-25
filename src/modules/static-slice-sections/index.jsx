@@ -1,11 +1,11 @@
 import { groq } from 'next-sanity'
-import classnames from 'classnames'
 import NetaceaDifferenceSection, {
   NETACEA_DIFFERENCE,
 } from '../netacea-difference-section'
 import WithOrWithoutNetacea, {
   WITH_OR_WITHOUT_NETACEA_FRAGMET,
 } from '../with-or-without-netacea'
+import TestimonialAndStatsSlider, { TESTIMONIAL_AND_STATS_SLIDER } from '../testimonial-and-stats-slider';
 
 export const STATIC_SLICE_SECTION = groq`
 _type == 'staticSliceSections' =>{
@@ -13,8 +13,8 @@ _type == 'staticSliceSections' =>{
     "section":section->{
     ...,
     ${NETACEA_DIFFERENCE},
-    ${WITH_OR_WITHOUT_NETACEA_FRAGMET}
-   
+    ${WITH_OR_WITHOUT_NETACEA_FRAGMET},
+   ${TESTIMONIAL_AND_STATS_SLIDER}
   }
 }
 `
@@ -25,8 +25,11 @@ export default function StaticSliceSections({ section, storybook_Type }) {
     case 'netaceaDifference':
       return <NetaceaDifferenceSection {...section} />
     case 'withOrWithoutNetacea':
-      console.log(section)
       return <WithOrWithoutNetacea {...section} />
+    case "testimonialAndStatsSlider":
+        return (
+          <TestimonialAndStatsSlider {...section} />
+        );
     default:
       return null
   }

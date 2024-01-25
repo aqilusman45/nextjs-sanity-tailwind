@@ -1,7 +1,7 @@
 import VideoWithSection from './index'
 import { mock } from './mock'
 const meta = {
-  title: 'Modules/VideoWithSection',
+  title: 'Modules/VideoWithTextSection',
   component: VideoWithSection,
   parameters: {
     design: [

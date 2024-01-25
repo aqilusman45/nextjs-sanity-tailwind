@@ -28,7 +28,6 @@ export default function NetaceaDifferenceSection({
       : "background-gradient-difference-section",
     " relative w-full"
   );
-  console.log(variant);
 
   return (
     <section
@@ -51,10 +50,10 @@ export default function NetaceaDifferenceSection({
         />
       )}
       <div className="max-w-default mx-auto px-4 lg:px-20 xl:px-108 py-20 lg:pt-40 lg:pb-30 relative">
-        <div className="flex flex-col lg:flex-row justify-between gap-6">
+        <div className="flex flex-col lg:flex-row justify-between gap-6 items-center">
           <Heading
             type="h3"
-            otherClasses={classnames( variant==="light"?"text-blue":"text-white", "capitalize font-aeronik-pro font-normal w-full lg:max-w-760")}
+            otherClasses={classnames( variant==="light"?"text-blue":"text-white", "capitalize font-aeronik-pro font-normal w-full lg:max-w-760 xl:max-w-full")}
           >
             {heading}
           </Heading>
