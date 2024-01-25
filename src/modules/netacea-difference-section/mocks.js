@@ -333,7 +333,7 @@ export const mocks = {
           current: "#",
           _type: "slug",
         },
-        mode: "dark",
+        mode: "light",
         externalLink: false,
       },
       identifier: "Netacea Difference",

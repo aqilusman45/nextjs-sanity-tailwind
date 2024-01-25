@@ -37,7 +37,7 @@ export default function VideoWithSection({
             controls={false}
             playsInline
             loop
-            mute
+            muted
             src={backVideo?.url}
             className="absolute left-0 top-0 h-full w-full object-cover"
           />

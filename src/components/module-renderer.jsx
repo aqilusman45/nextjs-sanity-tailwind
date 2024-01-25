@@ -9,7 +9,7 @@ export const MODULE_FRAGMENT = groq`
   modules[] {
     ...,
     ${TWO_COLUMN_HERO_SECTIO_FRAGMENT},
-    ${VIDEO_WITH_SECTIO_FRAGMET}
+    ${VIDEO_WITH_SECTIO_FRAGMET},
     ${STATIC_SLICE_SECTION}
 
   }

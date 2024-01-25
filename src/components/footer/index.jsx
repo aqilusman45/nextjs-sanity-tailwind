@@ -23,7 +23,7 @@ export default function Footer({
             <div className="col-span-1 flex w-full flex-col gap-6 sm:col-span-2 md:col-span-4 md:w-2/4 xl:col-span-2 xl:w-full xl:pr-24">
               <Link
                 href="/"
-                className="group border-b-[1px] border-b-blue-500 pb-6"
+                className="group w-fit"
               >
                 <Icon
                   icon="footer-netacea-logo"
@@ -38,6 +38,7 @@ export default function Footer({
                   otherClasses="hidden group-hover:block"
                 />
               </Link>
+              <hr className='border-[1px] border-blue-500 mb-6' />
               <div className="flex w-full gap-6">
                 <Link
                   href={youtubeUrl}
