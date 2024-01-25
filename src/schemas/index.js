@@ -11,6 +11,7 @@ import { twoColumnHeroSection } from './objects/twoColumnHeroSection'
 import { netaceaDifference } from './documents/netaceaDifference'
 import { staticSliceSections } from './objects/staticSliceSections'
 import { videoWithTextSection } from './objects/videoWithTextSection'
+import { testimonialAndStatsSlider } from './documents/testimonialAndStatsSlider'
 
 export const schemaTypes = [
   page,
@@ -26,6 +27,7 @@ export const schemaTypes = [
   netaceaDifference,
   staticSliceSections,
   videoWithTextSection,
+  testimonialAndStatsSlider
 ]
 
 // Add name of the document here in quotations so the workflow works find on that name as well
@@ -35,5 +37,9 @@ export const STATIC_SLICES = [
   {
     sectionType: 'netaceaDifference',
     sectionTitle: 'Netacea Difference',
+  },
+  {
+    sectionType: 'testimonialAndStatsSlider',
+    sectionTitle: 'Testimonial And Stats Slider',
   },
 ]

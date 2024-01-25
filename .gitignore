@@ -6,8 +6,14 @@
 /node_modules
 /studio/node_modules
 /.pnp
-.pnp.js
-.yarn/*
+.yarn/cache
+.yarn/sdks
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.cjs
+.pnp.loader.mjs
+.vscode
 # testing
 /coverage
 

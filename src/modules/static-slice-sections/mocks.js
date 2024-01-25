@@ -1,7 +1,7 @@
 export const mocks = {
   section: {
     heading: "Agentless across all APIs, websites and applications",
-    variant: "light",
+    variant: "dark",
     _createdAt: "2024-01-24T12:17:45Z",
     _type: "netaceaDifference",
     _id: "69fa8646-bf93-4b3a-a6ec-bbc851e3ceba",

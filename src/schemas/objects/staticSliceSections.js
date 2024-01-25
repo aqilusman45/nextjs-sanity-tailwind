@@ -23,6 +23,9 @@ export const staticSliceSections = {
         {
           type: "netaceaDifference",
         },
+        {
+          type: "testimonialAndStatsSlider",
+        },
       ],
     },
   ],
