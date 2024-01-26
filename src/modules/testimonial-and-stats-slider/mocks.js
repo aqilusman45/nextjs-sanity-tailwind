@@ -3,36 +3,36 @@ export const mocks = {
   identifier: "Netacea Graph Slider Dark",
   _createdAt: "2024-01-25T09:47:52Z",
   testimonial: {
-    subText: [
-      {
-        style: "normal",
-        _key: "cc4df2a59638",
-        markDefs: [],
-        children: [
-          {
-            text:
-              "We saw 49% more carding and account takeover attacks than PerimeterX/Human. Agentless in nature, easy to test, and even easier to implement.",
-            _key: "edfc4454acf70",
-            _type: "span",
-            marks: [],
-          },
-        ],
-        _type: "block",
-      },
-    ],
     button: {
-      mode: "dark",
       externalLink: false,
       _type: "button",
-      variant: "primary-arrow",
+      variant: "text-link-arrow",
       label: "Explore Netacea Bot Attack Detection",
       slug: {
         current: "#",
         _type: "slug",
       },
+      mode: "dark",
     },
     name: "CISO IN CONSUMER GOODS",
     rating: 5,
+    subText: [
+      {
+        markDefs: [],
+        children: [
+          {
+            _type: "span",
+            marks: [],
+            text:
+              "“We saw 49% more carding and account takeover attacks than PerimeterX/Human. Agentless in nature, easy to test, and even easier to implement.”",
+            _key: "666f8a2b5f190",
+          },
+        ],
+        _type: "block",
+        style: "normal",
+        _key: "24e4718c3a3b",
+      },
+    ],
   },
   button: {
     variant: "primary-arrow",
