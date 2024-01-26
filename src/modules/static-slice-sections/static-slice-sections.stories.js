@@ -1,5 +1,5 @@
 import StaticSliceSections from './index'
-import {mocks} from './mocks'
+import { mocks } from './mocks'
 
 const meta = {
   title: 'Modules/StaticSliceSections',
@@ -7,9 +7,7 @@ const meta = {
   argTypes: {
     storybook_Type: {
       defaultValue: 'netaceaDifference',
-      options: [
-        'netaceaDifference',
-      ],
+      options: ['netaceaDifference'],
       control: { type: 'select' },
     },
   },
@@ -31,8 +29,8 @@ const meta = {
   },
 }
 
-export default meta;
+export default meta
 
 export const Default = {
-   args: {...mocks},
+  args: { ...mocks },
 }

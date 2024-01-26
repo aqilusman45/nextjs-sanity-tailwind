@@ -28,10 +28,6 @@ export default function ModuleRenderer({ modules = [] }) {
       return null
     }
 
-    return (
-      <div key={module._key}>
-        <Component {...module} />
-      </div>
-    )
+    return <Component key={module._key} {...module} />
   })
 }

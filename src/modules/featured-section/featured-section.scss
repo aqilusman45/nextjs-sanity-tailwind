@@ -1,0 +1,30 @@
+.featured-section-container {
+  background: linear-gradient(180deg, #0d4093 0%, #0f3161 100%);
+}
+
+.featured-card-container-white {
+  &::after {
+    @media (min-width: 1024px) {
+      height: 32px;
+    }
+    content: '';
+    height: 24px;
+    width: 60%;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    clip-path: polygon(0% 0%, 97% 0%, 100% 100%, 0% 100%);
+    background: #113263;
+  }
+}
+
+.featured-card-container {
+  border: 1px solid transparent;
+  box-shadow: 4px 4px 8px 0px #0000000a;
+
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(211.3deg, #c8ccd0 -32.02%, rgba(200, 204, 208, 0) 59.64%),
+    linear-gradient(-165.6deg, #c8ccd0 -60.67%, rgba(200, 204, 208, 0) 47.35%)
+      border-box;
+}

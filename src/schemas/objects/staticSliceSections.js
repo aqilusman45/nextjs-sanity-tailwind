@@ -28,6 +28,9 @@ export const staticSliceSections = {
         {
           type: 'productCardsSection',
         },
+        {
+          type: 'featureSection',
+        },
       ],
     },
   ],

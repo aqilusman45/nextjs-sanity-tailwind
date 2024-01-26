@@ -11,6 +11,7 @@ import TestimonialAndStatsSlider, {
 import ProductCardSection, {
   PRODUCT_CARD_SECTION_FRAGMENT,
 } from '../product-card-section'
+import FeaturedSection, { FEATURED_SECTION_FRAGMENT } from '../featured-section'
 
 export const STATIC_SLICE_SECTION = groq`
 _type == 'staticSliceSections' =>{
@@ -20,7 +21,9 @@ _type == 'staticSliceSections' =>{
     ${NETACEA_DIFFERENCE},
     ${WITH_OR_WITHOUT_NETACEA_FRAGMET},
     ${TESTIMONIAL_AND_STATS_SLIDER},
-    ${PRODUCT_CARD_SECTION_FRAGMENT}
+    ${PRODUCT_CARD_SECTION_FRAGMENT},
+    ${FEATURED_SECTION_FRAGMENT},
+
   }
 }
 `
@@ -34,8 +37,10 @@ export default function StaticSliceSections({ section, storybook_Type }) {
       return <WithOrWithoutNetacea {...section} />
     case 'testimonialAndStatsSlider':
       return <TestimonialAndStatsSlider {...section} />
-    case 'productCardsSection':
+    case 'featureSection':
       console.log(section)
+      return <FeaturedSection {...section} />
+    case 'productCardsSection':
       return <ProductCardSection {...section} />
     default:
       return null
