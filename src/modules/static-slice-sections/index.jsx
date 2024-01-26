@@ -38,7 +38,6 @@ export default function StaticSliceSections({ section, storybook_Type }) {
     case 'testimonialAndStatsSlider':
       return <TestimonialAndStatsSlider {...section} />
     case 'featureSection':
-      console.log(section)
       return <FeaturedSection {...section} />
     case 'productCardsSection':
       return <ProductCardSection {...section} />
