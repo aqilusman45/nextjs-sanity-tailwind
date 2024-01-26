@@ -1,28 +1,73 @@
 .background-gradient-testimonial-and-stats-slider {
-    background: linear-gradient(180deg, #0d4094 0%, #0d4094 100%);
+  background: linear-gradient(180deg, #0d4094 0%, #0d4094 100%);
+}
+
+.border-gradient-testimonial-and-stats-slider {
+  background:
+    linear-gradient(#113161, #113161) padding-box,
+    linear-gradient(
+      556deg,
+      rgba(54, 124, 243, 0.5) -21.93%,
+      rgba(54, 124, 243, 0) 20.59%
+    ),
+    linear-gradient(
+      420deg,
+      rgba(54, 124, 243, 0.5) -14.01%,
+      rgba(54, 124, 243, 0) 17.78%
+    ),
+    linear-gradient(
+        50deg,
+        rgba(54, 124, 243, 0.5) -1.83%,
+        rgba(54, 124, 243, 0) 16.05%
+      )
+      border-box;
+  border: 1px solid transparent;
+}
+
+.testimonial-slider {
+  .slick-dots {
+    width: fit-content;
+    right: 0px;
+    height: fit-content;
+    top: 14px;
+    display: flex !important;
+    gap: 4px;
+    padding: 0px !important;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem 0;
+    list-style-type: none;
+
+    li {
+      margin: 0px;
+      width: fit-content !important;
+      height: fit-content !important;
+    }
+
+    button {
+      transition: 0.3s;
+      display: block;
+      width: 8px !important;
+      height: 4px !important;
+      padding: 0;
+
+      border: none;
+      border-radius: 2px;
+      background-color: #376267 !important;
+      position: relative !important;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    li.slick-active button {
+      transition: 0.3s;
+
+      background-color: #abf57a !important;
+      border-radius: 4px;
+      width: 24px !important;
+      height: 4px;
+    }
   }
-
-
-  .border-gradient-testimonial-and-stats-slider {
-
-    background: linear-gradient(#113161, #113161) padding-box,
-      linear-gradient(
-        556deg,
-        rgba(54, 124, 243, 0.5) -21.93%,
-        rgba(54, 124, 243, 0) 20.59%
-      ),
-      linear-gradient(
-        420deg,
-        rgba(54, 124, 243, 0.5) -14.01%,
-        rgba(54, 124, 243, 0) 17.78%
-      ),
-      linear-gradient(
-          50deg,
-          rgba(54, 124, 243, 0.5) -1.83%,
-          rgba(54, 124, 243, 0) 16.05%
-        )
-        border-box;
-    border: 1px solid transparent;
-  }
-  
-  
+}
