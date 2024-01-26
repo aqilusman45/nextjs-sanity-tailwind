@@ -24,12 +24,10 @@ export default function FeaturedSection({
     'w-full featured-section-container',
   )
 
-  console.log(props)
-
   return (
     <section className={featuredSectionClasses} data-testid="featured-section">
       <div className="mx-auto max-w-default px-4 lg:px-6">
-        <div className="featured-card-container-white relative w-full bg-white px-4 py-20 lg:px-20 lg:py-120">
+        <div className="featured-card-container-white relative w-full bg-white px-4 py-20 pt-20 lg:px-20 lg:pb-120">
           <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:gap-10">
             <Heading type="h3" otherClasses="">
               {heading}
