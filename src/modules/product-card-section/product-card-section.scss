@@ -1,5 +1,5 @@
 .product-card-section-main-container {
-  background: linear-gradient(180deg, #0a4bba 0%, #0d4094 100%);
+  background: linear-gradient(180deg, #0b4cba 0%, #0d4094 100%);
 }
 
 .product-card-container-white {
@@ -12,7 +12,7 @@
     width: 60%;
     position: absolute;
     z-index: 10;
-    right: 0;
+    right: -1px;
     top: -1px;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 3% 100%);
     background: #0a4bba;

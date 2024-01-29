@@ -23,7 +23,6 @@ export default function FeaturedSection({
     otherClasses,
     'w-full featured-section-container',
   )
-
   return (
     <section className={featuredSectionClasses} data-testid="featured-section">
       <div className="mx-auto max-w-default px-4 lg:px-6">

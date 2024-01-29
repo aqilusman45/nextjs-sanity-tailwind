@@ -37,7 +37,7 @@ export const videoWithTextSection = {
     preview: ModulePreview,
   },
   storybook: {
-    id: 'modules-videowithsection--default',
+    id: 'modules-videowithtextsection--default',
   },
   preview: {
     select: {

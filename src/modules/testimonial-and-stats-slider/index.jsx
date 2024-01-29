@@ -92,7 +92,9 @@ export default function TestimonialAndStatsSlider({
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
-
+  console.log({
+    testimonial,
+  });
   return (
     <section
       className={testimonialAndStatsSliderClasses}
@@ -139,7 +141,7 @@ export default function TestimonialAndStatsSlider({
             </div>
           </div>
           <Slider
-          refs={sliderRef}
+            refs={sliderRef}
             customSettings={settings}
             customClass="relative testimonial-slider"
           >
@@ -150,49 +152,61 @@ export default function TestimonialAndStatsSlider({
             })}
           </Slider>
         </div>
-        <div className="flex w-full flex-col gap-6 text-white lg:flex-row ">
-          {Object.keys(testimonial)?.length > 0 && (
-            <div className="border-gradient-testimonial-and-stats-slider flex w-full flex-col gap-20  p-8 lg:p-10 lg:w-2/4 lg:justify-between lg:gap-0">
-              <div className="flex flex-col gap-6">
-                <ReactStars
-                  value={testimonial?.rating}
-                  count={5}
-                  size={20}
-                  color1={"#dfeefd"}
-                  color2={"#ABF57A"}
-                />
-                <RichText
-                  otherClasses="[&>p]:text-2xl [&>p]:font-aeronik-pro  [&>p]:font-normal [&>p]:capitalize [&>p]:text-white "
-                  richText={testimonial?.subText}
-                />
-                <p className="font-aeronik-pro text-16 font-normal leading-6 text-white">
-                  {testimonial?.name}
-                </p>
+        {(statsCards?.length > 0 ||
+          (Object.keys(testimonial)?.length > 0 && testimonial?.rating)) && (
+          <div className="flex w-full flex-col gap-6 text-white lg:flex-row ">
+            {Object.keys(testimonial)?.length > 0 && testimonial?.rating && (
+              <div className="border-gradient-testimonial-and-stats-slider flex w-full flex-col gap-20  p-8 lg:p-10 lg:w-2/4 lg:justify-between lg:gap-0">
+                <div className="flex flex-col gap-6">
+                  <ReactStars
+                    value={testimonial?.rating}
+                    count={5}
+                    size={20}
+                    color1={"#dfeefd"}
+                    color2={"#ABF57A"}
+                  />
+                  <RichText
+                    otherClasses="[&>p]:text-2xl [&>p]:font-aeronik-pro  [&>p]:font-normal [&>p]:capitalize [&>p]:text-white "
+                    richText={testimonial?.subText}
+                  />
+                  <p className="font-aeronik-pro text-16 font-normal leading-6 text-white">
+                    {testimonial?.name}
+                  </p>
+                </div>
+                {testimonial?.button?.slug?.current && (
+                  <Button {...testimonial?.button} />
+                )}
               </div>
-              <Button {...testimonial?.button} />
-            </div>
-          )}
-          {statsCards?.length > 0 && (
-            <div className="border-gradient-testimonial-and-stats-slider grid w-full grid-cols-2 gap-20 p-8 lg:p-10 lg:w-2/4 ">
-              {statsCards?.map(({ stats, description }, i) => {
-                return (
-                  <div
-                    key={stats}
-                    className="flex flex-col gap-6 border-t-[1px] border-t-blue-400 text-white"
-                  >
-                    <p className="h2 pt-6 capitalize !text-green-300">
-                      {stats}
-                    </p>
+            )}
+            {statsCards?.length > 0 && (
+              <div
+                className={classnames(
+                  "border-gradient-testimonial-and-stats-slider grid w-full p-8 lg:p-10 ",
+                  !Object.keys(testimonial)?.length > 0 && !testimonial?.rating
+                    ? "lg:w-full  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 "
+                    : "lg:w-2/4  grid-cols-1 md:grid-cols-2 gap-20"
+                )}
+              >
+                {statsCards?.map(({ stats, description }, i) => {
+                  return (
+                    <div
+                      key={stats}
+                      className="flex flex-col gap-6 border-t-[1px] border-t-blue-400 text-white"
+                    >
+                      <p className="h2 pt-6 capitalize !text-green-300">
+                        {stats}
+                      </p>
 
-                    <p className="font-aeronik-pro text-16 font-normal leading-6 text-white ">
-                      {description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </div>
+                      <p className="font-aeronik-pro text-16 font-normal leading-6 text-white ">
+                        {description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );

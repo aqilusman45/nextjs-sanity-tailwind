@@ -22,19 +22,7 @@ export const testimonialAndStatsSlider = {
         title: 'Description',
         type: 'bodyPortableText',
     },
-      {
-        title: 'Variant',
-        name: 'variant',
-        type: 'string',
-        initialValue: 'light',
-        options: {
-          list: [
-            { title: 'Light', value: 'light' },
-            { title: 'Dark', value: 'dark' },
-          ],
-        },
-      },
-      {
+     {
         name: 'button',
         title: 'Button',
         type: 'button',

@@ -23,6 +23,9 @@ const meta = {
 }
 export default meta;
 
-export const Default = {
-   args: {...mocks},
+const Template = (args) =><div className='border-gradient-testimonial-and-stats-slider px-10 py-10'>  <TestimonialStatsCard {...args} /></div> 
+
+export const Default = Template.bind({})
+Default.args = {
+ ...mocks
 }
