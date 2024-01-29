@@ -1,3 +1,5 @@
+import TestimonialPreview from "../components/TestimonialPreview";
+
 export const testimonialAndStatsSlider = {
     name: 'testimonialAndStatsSlider',
     title: 'Testimonial And Stats Slider',
@@ -76,6 +78,14 @@ export const testimonialAndStatsSlider = {
                         validation: (Rule) => Rule.required(), 
                       },
                 ],
+                components: {
+                  preview: TestimonialPreview,
+                },
+                preview: {
+                  select: {
+                    title: 'graph',
+                  },
+                },
             }
         ] 
       },
