@@ -1,13 +1,14 @@
-import { groq } from "next-sanity";
-import classnames from "classnames";
-import Button from "../../components/button/Button";
-import Heading from "../../components/heading";
-import ReactStars from "react-stars";
-import RichText from "../../components/rich-text";
-import Slider from "../../components/slider";
-import TestimonialStatsCard from "../../components/testimonial-stats-card";
-import Icon from "../../components/icon";
-import { useEffect, useRef, useState } from "react";
+import classnames from 'classnames'
+import { groq } from 'next-sanity'
+import { useEffect, useRef, useState } from 'react'
+import ReactStars from 'react-stars'
+
+import Button from '../../components/button/Button'
+import Heading from '../../components/heading'
+import Icon from '../../components/icon'
+import RichText from '../../components/rich-text'
+import Slider from '../../components/slider'
+import TestimonialStatsCard from '../../components/testimonial-stats-card'
 
 export const TESTIMONIAL_AND_STATS_SLIDER = groq`
  statsCards[]{
@@ -16,7 +17,7 @@ export const TESTIMONIAL_AND_STATS_SLIDER = groq`
     sliderCards[]{
       ...,
     }
-`;
+`
 
 // function NextArrow(props) {
 //   const { onClick } = props
@@ -60,25 +61,25 @@ export default function TestimonialAndStatsSlider({
 }) {
   const testimonialAndStatsSliderClasses = classnames(
     otherClasses,
-    "background-gradient-testimonial-and-stats-slider"
-  );
-  const [index, setIndex] = useState(0);
+    'background-gradient-testimonial-and-stats-slider',
+  )
+  const [index, setIndex] = useState(0)
 
-  const sliderRef = useRef(null);
+  const sliderRef = useRef(null)
 
   const goToSlide = (index) => {
-    sliderRef.current.slickGoTo(index);
-  };
+    sliderRef.current.slickGoTo(index)
+  }
 
   function NextArrow(props) {
-    const { onClick, currentSlide } = props;
+    const { onClick, currentSlide } = props
     useEffect(() => {
-      setIndex(currentSlide);
-    }, [currentSlide]);
-    return null;
+      setIndex(currentSlide)
+    }, [currentSlide])
+    return null
   }
   function PrevArrow(props) {
-    return null;
+    return null
   }
 
   const settings = {
@@ -91,10 +92,7 @@ export default function TestimonialAndStatsSlider({
     // autoplaySpeed:2000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-  };
-  console.log({
-    testimonial,
-  });
+  }
   return (
     <section
       className={testimonialAndStatsSliderClasses}
@@ -105,18 +103,18 @@ export default function TestimonialAndStatsSlider({
           <Heading
             type="h3"
             otherClasses={classnames(
-              variant === "light" ? "text-blue" : "text-white",
-              "capitalize font-aeronik-pro font-normal w-full text-center lg:text-start lg:max-w-760 xl:max-w-full"
+              variant === 'light' ? 'text-blue' : 'text-white',
+              'capitalize font-aeronik-pro font-normal w-full text-center lg:text-start lg:max-w-760 xl:max-w-full',
             )}
           >
             {heading}
           </Heading>
           <Button {...button} />
         </div>
-        <div className="border-gradient-testimonial-and-stats-slider mt-10 p-8 lg:p-4 xl:p-10 text-white">
-          <div className="flex flex-col lg:flex-row gap-0 lg:gap-6 w-full">
+        <div className="border-gradient-testimonial-and-stats-slider mt-10 p-8 text-white lg:p-4 xl:p-10">
+          <div className="flex w-full flex-col gap-0 lg:flex-row lg:gap-6">
             <div className="w-2/4 text-white"></div>
-            <div className="w-2/4 -mb-10 px-0 lg:px-8 xl:px-16 flex gap-4">
+            <div className="-mb-10 flex w-2/4 gap-4 px-0 lg:px-8 xl:px-16">
               <button
                 className="z-10 hover:scale-110"
                 onClick={() => goToSlide(index - 1)}
@@ -148,7 +146,7 @@ export default function TestimonialAndStatsSlider({
             {sliderCards?.map((node, i) => {
               return (
                 <TestimonialStatsCard onClick={goToSlide} {...node} key={i} />
-              );
+              )
             })}
           </Slider>
         </div>
@@ -156,14 +154,14 @@ export default function TestimonialAndStatsSlider({
           (Object.keys(testimonial)?.length > 0 && testimonial?.rating)) && (
           <div className="flex w-full flex-col gap-6 text-white lg:flex-row ">
             {Object.keys(testimonial)?.length > 0 && testimonial?.rating && (
-              <div className="border-gradient-testimonial-and-stats-slider flex w-full flex-col gap-20  p-8 lg:p-10 lg:w-2/4 lg:justify-between lg:gap-0">
+              <div className="border-gradient-testimonial-and-stats-slider flex w-full flex-col gap-20  p-8 lg:w-2/4 lg:justify-between lg:gap-0 lg:p-10">
                 <div className="flex flex-col gap-6">
                   <ReactStars
                     value={testimonial?.rating}
                     count={5}
                     size={20}
-                    color1={"#dfeefd"}
-                    color2={"#ABF57A"}
+                    color1={'#dfeefd'}
+                    color2={'#ABF57A'}
                   />
                   <RichText
                     otherClasses="[&>p]:text-2xl [&>p]:font-aeronik-pro  [&>p]:font-normal [&>p]:capitalize [&>p]:text-white "
@@ -181,10 +179,10 @@ export default function TestimonialAndStatsSlider({
             {statsCards?.length > 0 && (
               <div
                 className={classnames(
-                  "border-gradient-testimonial-and-stats-slider grid w-full p-8 lg:p-10 ",
+                  'border-gradient-testimonial-and-stats-slider grid w-full p-8 lg:p-10 ',
                   !Object.keys(testimonial)?.length > 0 && !testimonial?.rating
-                    ? "lg:w-full  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 "
-                    : "lg:w-2/4  grid-cols-1 md:grid-cols-2 gap-20"
+                    ? 'grid-cols-1  gap-20 md:grid-cols-2 lg:w-full lg:grid-cols-4 '
+                    : 'grid-cols-1  gap-20 md:grid-cols-2 lg:w-2/4',
                 )}
               >
                 {statsCards?.map(({ stats, description }, i) => {
@@ -201,7 +199,7 @@ export default function TestimonialAndStatsSlider({
                         {description}
                       </p>
                     </div>
-                  );
+                  )
                 })}
               </div>
             )}
@@ -209,5 +207,5 @@ export default function TestimonialAndStatsSlider({
         )}
       </div>
     </section>
-  );
+  )
 }

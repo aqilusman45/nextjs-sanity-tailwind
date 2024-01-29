@@ -1,10 +1,11 @@
-import { groq } from 'next-sanity'
 import classnames from 'classnames'
+import { groq } from 'next-sanity'
+import { Fragment } from 'react'
+
 import Heading from '../../components/heading'
+import Icon from '../../components/icon'
 import NextImage from '../../components/next-image'
 import RichText from '../../components/rich-text'
-import Icon from '../../components/icon'
-import { Fragment } from 'react'
 
 export const WITH_OR_WITHOUT_NETACEA_FRAGMET = groq`
     "logo":logo.asset->{

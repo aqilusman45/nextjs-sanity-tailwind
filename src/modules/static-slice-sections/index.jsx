@@ -1,17 +1,18 @@
 import { groq } from 'next-sanity'
+
+import FeaturedSection, { FEATURED_SECTION_FRAGMENT } from '../featured-section'
 import NetaceaDifferenceSection, {
   NETACEA_DIFFERENCE,
 } from '../netacea-difference-section'
-import WithOrWithoutNetacea, {
-  WITH_OR_WITHOUT_NETACEA_FRAGMET,
-} from '../with-or-without-netacea'
-import TestimonialAndStatsSlider, {
-  TESTIMONIAL_AND_STATS_SLIDER,
-} from '../testimonial-and-stats-slider'
 import ProductCardSection, {
   PRODUCT_CARD_SECTION_FRAGMENT,
 } from '../product-card-section'
-import FeaturedSection, { FEATURED_SECTION_FRAGMENT } from '../featured-section'
+import TestimonialAndStatsSlider, {
+  TESTIMONIAL_AND_STATS_SLIDER,
+} from '../testimonial-and-stats-slider'
+import WithOrWithoutNetacea, {
+  WITH_OR_WITHOUT_NETACEA_FRAGMET,
+} from '../with-or-without-netacea'
 
 export const STATIC_SLICE_SECTION = groq`
 _type == 'staticSliceSections' =>{

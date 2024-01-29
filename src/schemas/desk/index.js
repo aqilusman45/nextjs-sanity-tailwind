@@ -1,7 +1,7 @@
 import { File, Gear, NavigationArrow } from '@phosphor-icons/react'
 
-import { singletonItem } from './singleton-item'
 import { STATIC_SLICES } from '../index'
+import { singletonItem } from './singleton-item'
 
 export const structureResolver = (S) => {
   return S.list()
@@ -15,8 +15,8 @@ export const structureResolver = (S) => {
             .title('Pages')
             .items([S.documentTypeListItem('page').title('Pages').icon(File)]),
         ),
-        S.divider(), 
-        S.listItem()
+      S.divider(),
+      S.listItem()
         .title('Static Slices')
         .child(
           S.list()
@@ -31,17 +31,17 @@ export const structureResolver = (S) => {
               }),
             ),
         ),
-        S.divider(),
-        S.listItem()
-          .title('Site Settings')
-          .icon(Gear)
-          .child(
-            S.list()
-              .title('Settings')
-              .items([
-                singletonItem(S, 'navigation', 'Navigation', NavigationArrow),
-              ]),
-          ),
+      S.divider(),
+      S.listItem()
+        .title('Site Settings')
+        .icon(Gear)
+        .child(
+          S.list()
+            .title('Settings')
+            .items([
+              singletonItem(S, 'navigation', 'Navigation', NavigationArrow),
+            ]),
+        ),
       // S.divider(),
       // S.listItem()
       //   .title('Blogs')

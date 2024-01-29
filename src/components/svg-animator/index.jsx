@@ -1,7 +1,7 @@
-import { groq } from "next-sanity";
-import classnames from "classnames";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import classnames from 'classnames'
+import { motion, useAnimation } from 'framer-motion'
+import { groq } from 'next-sanity'
+import { useEffect } from 'react'
 
 const netaceaAkamaiTransition = {
   duration: 4,
@@ -9,23 +9,23 @@ const netaceaAkamaiTransition = {
   repeatDelay: 3,
   ease: [0.6, 0.5, 0.4, 0.9],
   delay: 1,
-};
+}
 
 const netaceaAkamaiTextTransition = {
   duration: 4,
-  ease: "linear",
+  ease: 'linear',
   repeat: Infinity,
   repeatDelay: 3,
   delay: 1,
-};
+}
 
-export default function SvgAnimator({ otherClasses, type = "netacea-fastly" }) {
-  const svgAnimatorClasses = classnames(otherClasses);
+export default function SvgAnimator({ otherClasses, type = 'netacea-fastly' }) {
+  const svgAnimatorClasses = classnames(otherClasses)
 
-  const controls = useAnimation();
-  const textControls = useAnimation();
+  const controls = useAnimation()
+  const textControls = useAnimation()
 
-  if (type === "netacea-fastly") {
+  if (type === 'netacea-fastly') {
     return (
       <motion.svg
         // onHoverStart={() => {
@@ -344,9 +344,9 @@ export default function SvgAnimator({ otherClasses, type = "netacea-fastly" }) {
           </clipPath>
         </defs>
       </motion.svg>
-    );
+    )
   }
-  if (type === "netacea-shape-security") {
+  if (type === 'netacea-shape-security') {
     return (
       <motion.svg
         // onHoverStart={() => {
@@ -980,27 +980,27 @@ export default function SvgAnimator({ otherClasses, type = "netacea-fastly" }) {
           </clipPath>
         </defs>
       </motion.svg>
-    );
+    )
   }
 
   return (
     <motion.svg
       onHoverStart={() => {
         // Stop the main animation on hover start
-        controls.stop();
+        controls.stop()
         // Stop the text animation on hover start
-        textControls.stop();
+        textControls.stop()
       }}
       onHoverEnd={() => {
         controls.start({
           x: 100,
           ...netaceaAkamaiTransition,
-        });
+        })
         textControls.start({
           opacity: 1,
           ...netaceaAkamaiTextTransition,
-          when: "beforeChildren",
-        });
+          when: 'beforeChildren',
+        })
       }}
       className={svgAnimatorClasses}
       width="100%"
@@ -1480,5 +1480,5 @@ export default function SvgAnimator({ otherClasses, type = "netacea-fastly" }) {
         transition={netaceaAkamaiTransition}
       />
     </motion.svg>
-  );
+  )
 }

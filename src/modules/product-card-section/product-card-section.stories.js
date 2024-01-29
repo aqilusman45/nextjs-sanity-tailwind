@@ -1,5 +1,5 @@
 import ProductCardSection from './index'
-import {mocks} from './mocks'
+import { mocks } from './mocks'
 
 const meta = {
   title: 'Modules/ProductCardSection',
@@ -22,8 +22,8 @@ const meta = {
   },
 }
 
-export default meta;
+export default meta
 
 export const Default = {
-   args: {...mocks},
+  args: { ...mocks },
 }

@@ -1,8 +1,9 @@
-import { groq } from 'next-sanity'
 import classnames from 'classnames'
 import Image from 'next/image'
-import Heading from '../../components/heading'
+import { groq } from 'next-sanity'
+
 import Button from '../../components/button/Button'
+import Heading from '../../components/heading'
 import NetaceaDifferenceCard from '../../components/netacea-difference-card'
 
 export const NETACEA_DIFFERENCE = groq`
@@ -41,6 +42,7 @@ export default function NetaceaDifferenceSection({
           width={1229}
           height={604}
           className="absolute right-0 top-0 h-full w-3/4"
+          alt="background"
         />
       ) : (
         <Image
@@ -48,9 +50,10 @@ export default function NetaceaDifferenceSection({
           width={1229}
           height={604}
           className="absolute right-0 top-0 h-full w-3/4"
+          alt="background"
         />
       )}
-      <div className="lg:pb-30 relative mx-auto max-w-default px-4 py-20 lg:px-20 lg:pt-40 xl:px-108">
+      <div className="relative mx-auto max-w-default px-4 py-20 lg:px-20 lg:pb-30 lg:pt-40 xl:px-108">
         <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
           <Heading
             type="h3"

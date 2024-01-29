@@ -1,85 +1,85 @@
 const protocols = ['http', 'https', 'mailto', 'tel']
 export const navigation = {
-  name: "navigation",
-  title: "Navigation",
-  type: "document",
+  name: 'navigation',
+  title: 'Navigation',
+  type: 'document',
   groups: [
-    { name: "top", title: "Top" },
-    { name: "footer", title: "Footer", default: true },
-    { name: "social", title: "Social" },
-    { name: "footerBottom", title: "Footer Bottom" },
+    { name: 'top', title: 'Top' },
+    { name: 'footer', title: 'Footer', default: true },
+    { name: 'social', title: 'Social' },
+    { name: 'footerBottom', title: 'Footer Bottom' },
   ],
   fields: [
     {
-      title: "Navbar",
-      name: "links",
-      type: "navbarObject",
-      group: "top",
+      title: 'Navbar',
+      name: 'links',
+      type: 'navbarObject',
+      group: 'top',
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Social",
-      name: "socials",
-      type: "socialsObject",
-      group: "social",
+      title: 'Social',
+      name: 'socials',
+      type: 'socialsObject',
+      group: 'social',
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Footer Bottom",
-      name: "footerBottom",
-      type: "object",
+      title: 'Footer Bottom',
+      name: 'footerBottom',
+      type: 'object',
       fields: [
         {
-          title: "Copyright",
-          name: "copyright",
-          type: "bodyPortableText",
+          title: 'Copyright',
+          name: 'copyright',
+          type: 'bodyPortableText',
         },
         {
-          title: "Contact Title",
-          name: "contactTitle",
-          type: "string",
+          title: 'Contact Title',
+          name: 'contactTitle',
+          type: 'string',
         },
         {
-          title: "Contact Href",
-          name: "contactHref",
-          type: "string",
+          title: 'Contact Href',
+          name: 'contactHref',
+          type: 'string',
           description: `add with mailto`,
           validation: (Rule) =>
-          Rule.required().custom((value) => {
-            if (!value?.startsWith(`mailto:`)) {
-              return 'Add mailto in start'
-            }
-            return true
-          }),
+            Rule.required().custom((value) => {
+              if (!value?.startsWith(`mailto:`)) {
+                return 'Add mailto in start'
+              }
+              return true
+            }),
         },
         {
-          title: "Links",
-          name: "links",
-          type: "array",
+          title: 'Links',
+          name: 'links',
+          type: 'array',
           of: [
             {
-              type: "object",
-              name: "inlineLinks",
+              type: 'object',
+              name: 'inlineLinks',
               fields: [
-                { type: "string", name: "title", title: "Title" },
-                { type: "slug", name: "slug", title: "Slug" },
+                { type: 'string', name: 'title', title: 'Title' },
+                { type: 'slug', name: 'slug', title: 'Slug' },
               ],
             },
           ],
         },
       ],
-      group: "footerBottom",
+      group: 'footerBottom',
     },
     {
       title: 'Footer Links',
       name: 'footerLinks',
-      group: "footer",
+      group: 'footer',
       type: 'array',
-    
+
       of: [
         {
           type: 'object',
-          title:"Column",
+          title: 'Column',
           name: 'column',
           fields: [
             { type: 'string', name: 'title', title: 'Title' },
@@ -108,7 +108,6 @@ export const navigation = {
                         },
                       ],
                     },
-                   
                   ],
                 },
               ],
@@ -117,19 +116,19 @@ export const navigation = {
         },
       ],
       validation: (Rule) =>
-      Rule.required().custom((value) => {
-        if (value.length > 4) {
-          return 'Maximum of 4 Columns allowed as per designs'
-        }
-        return true
-      }),
+        Rule.required().custom((value) => {
+          if (value.length > 4) {
+            return 'Maximum of 4 Columns allowed as per designs'
+          }
+          return true
+        }),
     },
   ],
   preview: {
     prepare() {
       return {
-        title: "Navigation",
-      };
+        title: 'Navigation',
+      }
     },
   },
-};
+}

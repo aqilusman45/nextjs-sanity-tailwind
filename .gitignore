@@ -56,3 +56,5 @@ studio/.env.development
 # storybook build files
 storybook-static
 build-storybook.log
+# Local Netlify folder
+.netlify

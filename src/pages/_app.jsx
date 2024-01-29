@@ -1,6 +1,7 @@
 import '~/styles/global.scss'
 
 import { lazy, Suspense } from 'react'
+
 import Layout from '../components/layout'
 
 const PreviewProvider = lazy(() => import('~/components/preview-provider'))

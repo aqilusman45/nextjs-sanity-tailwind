@@ -1,9 +1,10 @@
-import { groq } from 'next-sanity'
 import classnames from 'classnames'
-import Heading from '../../components/heading'
+import { groq } from 'next-sanity'
+
 import Button from '../../components/button/Button'
-import ProductCard from '../../components/product-card'
+import Heading from '../../components/heading'
 import NextImage from '../../components/next-image'
+import ProductCard from '../../components/product-card'
 
 export const PRODUCT_CARD_SECTION_FRAGMENT = groq`
  "backVector":backVector.asset->{

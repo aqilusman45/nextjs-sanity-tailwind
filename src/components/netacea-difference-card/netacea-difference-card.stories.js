@@ -1,5 +1,5 @@
 import NetaceaDifferenceCard from './index'
-import { mocks } from './mocks';
+import { mocks } from './mocks'
 const meta = {
   title: 'Components/NetaceaDifferenceCard',
   component: NetaceaDifferenceCard,
@@ -20,8 +20,8 @@ const meta = {
     ],
   },
 }
-export default meta;
+export default meta
 
 export const Default = {
-   args: {...mocks},
+  args: { ...mocks },
 }

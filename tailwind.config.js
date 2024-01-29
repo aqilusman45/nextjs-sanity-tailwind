@@ -29,8 +29,8 @@ module.exports = {
         22: ['1.375rem', '2.2rem'], //[22px,35.2px]
         24: ['1.5rem', '2.4rem'], //[24px,38.4px]
         28: ['1.75rem', '2.45rem'], // [28px,39.2px ]
-        "32-less": ['2rem', '2.4rem'], //[32px,38.4px]
-        "32-more": ['2rem', '2.8rem'], //[32px,44.8px]
+        '32-less': ['2rem', '2.4rem'], //[32px,38.4px]
+        '32-more': ['2rem', '2.8rem'], //[32px,44.8px]
       },
       colors: {
         green: {
@@ -86,7 +86,7 @@ module.exports = {
         1320: '82.5rem',
         760: '47.5rem',
         720: '45rem',
-        
+
         648: '40.5rem',
       },
       minWidth: {
@@ -99,8 +99,8 @@ module.exports = {
         108: '6.75rem',
         92: '5.75rem',
         710: '44.375rem',
-        88: '5.5rem', 
-        30: '7.5rem', 
+        88: '5.5rem',
+        30: '7.5rem',
       },
     },
   },

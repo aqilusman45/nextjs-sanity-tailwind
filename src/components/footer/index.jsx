@@ -21,10 +21,7 @@ export default function Footer({
         <div className="flex flex-col">
           <div className="grid grid-cols-1 gap-6 border-b-[1px] border-b-blue-500 pb-92 text-white sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6">
             <div className="col-span-1 flex w-full flex-col gap-6 sm:col-span-2 md:col-span-4 md:w-2/4 xl:col-span-2 xl:w-full xl:pr-24">
-              <Link
-                href="/"
-                className="group w-fit"
-              >
+              <Link href="/" className="group w-fit">
                 <Icon
                   icon="footer-netacea-logo"
                   iconHeight={88}
@@ -38,7 +35,7 @@ export default function Footer({
                   otherClasses="hidden group-hover:block"
                 />
               </Link>
-              <hr className='border-[1px] border-blue-500 mb-6' />
+              <hr className="mb-6 border-[1px] border-blue-500" />
               <div className="flex w-full gap-6">
                 <Link
                   href={youtubeUrl}
@@ -132,7 +129,7 @@ export default function Footer({
                 </Link>
               </div>
             </div>
-            {footerLinks?.map(({ parentLinks },i) => {
+            {footerLinks?.map(({ parentLinks }, i) => {
               return (
                 <div key={i} className="flex flex-col gap-10">
                   {parentLinks?.map(({ childLinks, title }) => {

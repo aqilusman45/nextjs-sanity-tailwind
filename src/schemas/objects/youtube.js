@@ -1,6 +1,6 @@
 import YoutubePreview from '../components/YoutubePreview'
 
-export const youtube =  {
+export const youtube = {
   name: 'youtube',
   type: 'object',
   title: 'YouTube',

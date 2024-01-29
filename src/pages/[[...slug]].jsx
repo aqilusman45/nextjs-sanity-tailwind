@@ -1,9 +1,11 @@
 import { groq } from 'next-sanity'
 import React from 'react'
+
 import { getClient } from '~/lib/sanity.client'
-import { getStaticPathsForDocumentType } from '../lib/getStaticPathsForDocumentType'
+
 import { navFragment } from '../components/layout'
 import ModuleRenderer, { MODULE_FRAGMENT } from '../components/module-renderer'
+import { getStaticPathsForDocumentType } from '../lib/getStaticPathsForDocumentType'
 
 export const getPageQuery = (slug) => groq`
 [

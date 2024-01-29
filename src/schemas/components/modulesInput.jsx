@@ -1,5 +1,6 @@
 import { Button, Grid, Stack } from '@sanity/ui'
 import { useCallback, useState } from 'react'
+
 // Most code is copied from https://github.com/sanity-io/sanity/blob/e607be828dec1c7903731faed601a848ac545335/packages/sanity/src/core/form/inputs/arrays/ArrayOfObjectsInput/ArrayOfObjectsFunctions.tsx
 import { AddModuleButton } from './addModuleButton'
 export function ArrayOfObjectsFunctions(props) {

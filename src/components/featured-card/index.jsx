@@ -1,9 +1,10 @@
-import { groq } from 'next-sanity'
 import classnames from 'classnames'
-import NextImage from '../next-image'
-import Heading from '../heading'
-import RichText from '../rich-text'
+import { groq } from 'next-sanity'
+
 import Button from '../button/Button'
+import Heading from '../heading'
+import NextImage from '../next-image'
+import RichText from '../rich-text'
 
 export const fragment = groq`
 `

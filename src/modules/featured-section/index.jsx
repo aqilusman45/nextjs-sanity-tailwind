@@ -1,8 +1,9 @@
-import { groq } from 'next-sanity'
 import classnames from 'classnames'
-import Heading from '../../components/heading'
+import { groq } from 'next-sanity'
+
 import Button from '../../components/button/Button'
 import FeaturedCard from '../../components/featured-card'
+import Heading from '../../components/heading'
 
 export const FEATURED_SECTION_FRAGMENT = groq`
  featuredCards[]{

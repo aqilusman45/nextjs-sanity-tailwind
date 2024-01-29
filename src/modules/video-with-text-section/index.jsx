@@ -1,7 +1,8 @@
-import { groq } from 'next-sanity'
 import classnames from 'classnames'
-import Heading from '../../components/heading'
+import { groq } from 'next-sanity'
 import ReactPlayer from 'react-player'
+
+import Heading from '../../components/heading'
 import Icon from '../../components/icon'
 
 export const VIDEO_WITH_SECTIO_FRAGMET = groq`
@@ -46,7 +47,7 @@ export default function VideoWithSection({
               {heading}
             </Heading>
           </div>
-          <div className="lg:h-710 4 relative z-10 w-full lg:w-2/4 lg:py-20">
+          <div className="4 relative z-10 w-full lg:h-710 lg:w-2/4 lg:py-20">
             <ReactPlayer
               // onClickPreview={() => setIsPlaying(true)}
               url={videoUrl}

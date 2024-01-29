@@ -1,9 +1,10 @@
-import { groq } from 'next-sanity'
 import classnames from 'classnames'
-import NextImage from '../../components/next-image'
-import Heading from '../../components/heading'
-import RichText from '../../components/rich-text'
+import { groq } from 'next-sanity'
+
 import Button from '../../components/button/Button'
+import Heading from '../../components/heading'
+import NextImage from '../../components/next-image'
+import RichText from '../../components/rich-text'
 
 export const TWO_COLUMN_HERO_SECTIO_FRAGMENT = groq`
  _type == 'twoColumnHeroSection' =>{
@@ -78,7 +79,7 @@ export default function TwoColumnHeroSection({
             <NextImage {...mobileImage} otherClasses="w-full lg:hidden" />
           </div>
         </div>
-        <div className="max-w-648 flex flex-col gap-6">
+        <div className="flex max-w-648 flex-col gap-6">
           <Heading
             type="h5"
             otherClasses={classnames(

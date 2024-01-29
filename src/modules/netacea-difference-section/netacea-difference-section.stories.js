@@ -1,6 +1,5 @@
 import NetaceaDifferenceSection from './index'
-
-import {mocks} from './mocks'
+import { mocks } from './mocks'
 
 const meta = {
   title: 'Modules/NetaceaDifferenceSection',
@@ -23,8 +22,8 @@ const meta = {
   },
 }
 
-export default meta;
+export default meta
 
 export const Default = {
-   args: {...mocks},
+  args: { ...mocks },
 }

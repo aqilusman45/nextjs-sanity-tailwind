@@ -1,6 +1,6 @@
 import IframePreview from '../components/IframePreview'
 
-export const iframe =  {
+export const iframe = {
   name: 'iframe',
   type: 'object',
   title: 'Iframe',

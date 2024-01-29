@@ -1,6 +1,5 @@
 import NextImage from './index'
-
-import {mocks}from './mocks'
+import { mocks } from './mocks'
 
 const meta = {
   title: 'Components/NextImage',
@@ -25,5 +24,5 @@ const meta = {
 export default meta
 
 export const Default = {
-  args: {...mocks},
+  args: { ...mocks },
 }

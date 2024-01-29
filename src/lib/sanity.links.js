@@ -4,9 +4,9 @@ import { Link } from '~/utils/types'
 
 export function resolveHref(documentType, slug) {
   switch (documentType) {
-    case PageTypes.Page:
+    case 'page':
       return slug ? (slug === '/' ? slug : `/${slug}`) : '/'
-    case PageTypes.Post:
+    case 'post':
       return slug ? `/blogs/${slug}` : '/blogs/'
     default:
       return '/'

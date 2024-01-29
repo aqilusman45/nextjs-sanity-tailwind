@@ -1,7 +1,8 @@
-import React from 'react'
-import Navbar from '../navbar'
-import Footer from '../footer'
 import { groq } from 'next-sanity'
+import React from 'react'
+
+import Footer from '../footer'
+import Navbar from '../navbar'
 
 export default function Layout({
   children,

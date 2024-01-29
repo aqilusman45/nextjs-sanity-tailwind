@@ -1,5 +1,5 @@
 import Layout from './index'
-import {mocks} from './mocks'
+import { mocks } from './mocks'
 
 const meta = {
   title: 'Components/Layout',
@@ -25,5 +25,5 @@ const meta = {
 export default meta
 
 export const Default = {
-  args: {...mocks},
+  args: { ...mocks },
 }
