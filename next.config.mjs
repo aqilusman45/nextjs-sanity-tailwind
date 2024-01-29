@@ -1,7 +1,15 @@
 /** @type {import('next').NextConfig} */
 
 const config = {
-  images: { remotePatterns: [{ hostname: 'cdn.sanity.io' }] },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+    formats: ["image/webp"],
+  },
   rewrites: async () => [
     {
       source: '/storybook',
