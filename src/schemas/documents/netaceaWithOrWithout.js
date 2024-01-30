@@ -1,4 +1,4 @@
-export const withOrWithoutNetacea = {
+export const netaceaWithOrWithout = {
   title: 'With Or Without Netacea',
   name: 'withOrWithoutNetacea',
   type: 'document',

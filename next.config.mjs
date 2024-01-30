@@ -4,11 +4,11 @@ const config = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
+        protocol: 'https',
+        hostname: '**',
       },
     ],
-    formats: ["image/webp"],
+    formats: ['image/webp'],
   },
   rewrites: async () => [
     {

@@ -28,7 +28,7 @@ export const getStaticPaths = () => getStaticPathsForDocumentType('page')
 export const getStaticProps = async ({ draftMode = false, params }) => {
   let slug = '/'
   if (Object.keys(params || {}).length) {
-    const { slug: currentSlug } = params
+    const { slug: currentSlug } = params || {}
     slug = currentSlug?.join('/')
   }
 

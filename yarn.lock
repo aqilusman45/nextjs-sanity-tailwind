@@ -2829,9 +2829,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/plugin-nextjs@npm:^4.41.3":
-  version: 4.41.3
-  resolution: "@netlify/plugin-nextjs@npm:4.41.3"
+"@netlify/plugin-nextjs@npm:4.41.2":
+  version: 4.41.2
+  resolution: "@netlify/plugin-nextjs@npm:4.41.2"
   dependencies:
     "@netlify/blobs": "npm:^2.2.0"
     "@netlify/esbuild": "npm:0.14.39"
@@ -2857,7 +2857,7 @@ __metadata:
     semver: "npm:^7.3.5"
     slash: "npm:^3.0.0"
     tiny-glob: "npm:^0.2.9"
-  checksum: 139322f736348b3bbe0f91b1dffd47e300d9111532a84823f2299feb211d7bc8ce0081288069a6f08fe38c4d5d921774bc247fcc58052a13032d7bc849f5ec67
+  checksum: 62374615086bf036ae543b594d31f535d01f732a2c729f412f0902f5f7c7182f2ba4e71d5157df015b6fcf0e498976da2deba7cb7dc9172e429c77553edbde4a
   languageName: node
   linkType: hard
 
@@ -8422,9 +8422,9 @@ __metadata:
   linkType: hard
 
 "crossws@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "crossws@npm:0.1.0"
-  checksum: 1bdfefa7b520ac590640e6757fd9accac0af891f9521d8f31e6fdccbdc5861e6021592b39078f54effc87561a5105b9d9dfcdbb0dba6e836e43db34f59214016
+  version: 0.1.1
+  resolution: "crossws@npm:0.1.1"
+  checksum: 87a98b4af1b09f7ad5d180e1eff3caddc76289cc21aa9d7b6160846cc060ba4962dfc0dc7687aee2dec12cea13abfbfdc05f44bcbf6a6f662b3bbd0df1774d37
   languageName: node
   linkType: hard
 
@@ -16404,7 +16404,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@netlify/plugin-nextjs": "npm:^4.41.3"
+    "@netlify/plugin-nextjs": "npm:4.41.2"
     "@phosphor-icons/react": "npm:^2.0.14"
     "@portabletext/react": "npm:3.0.4"
     "@portabletext/types": "npm:^2.0.8"

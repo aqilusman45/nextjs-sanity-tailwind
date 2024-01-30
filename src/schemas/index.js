@@ -1,10 +1,10 @@
 import { featureSection } from './documents/featureSection'
 import { navigation } from './documents/navigation'
 import { netaceaDifference } from './documents/netaceaDifference'
+import { netaceaWithOrWithout } from './documents/netaceaWithOrWithout'
 import { page } from './documents/page'
 import { productCardsSection } from './documents/productCardsSection'
 import { testimonialAndStatsSlider } from './documents/testimonialAndStatsSlider'
-import { withOrWithoutNetacea } from './documents/withOrWithOutNetacea'
 import { bodyPortableText } from './objects/bodyPortableText'
 import { button } from './objects/button'
 import { iframe } from './objects/iframe'
@@ -31,9 +31,9 @@ export const schemaTypes = [
   staticSliceSections,
   videoWithTextSection,
   testimonialAndStatsSlider,
-  withOrWithoutNetacea,
   productCardsSection,
   featureSection,
+  netaceaWithOrWithout,
 ]
 
 // Add name of the document here in quotations so the workflow works find on that name as well
