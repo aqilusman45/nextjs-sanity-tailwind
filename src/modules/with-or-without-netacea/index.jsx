@@ -40,9 +40,9 @@ export default function WithOrWithoutNetacea({
       <div className="relative mx-auto flex w-full max-w-default flex-col gap-10 px-4 lg:flex-row lg:gap-16 lg:px-20 xl:gap-20 xl:px-108">
         <NextImage
           {...backPattern}
-          otherClasses="w-auto h-auto absolute left-0 bottom-0 lg:block hidden"
+          otherClasses="w-auto h-auto absolute left-0 -bottom-36 lg:block hidden opacity-50"
         />
-        <div className="relative w-full lg:w-2/5">
+        <div className="relative w-full lg:w-2/5  ">
           <div className="flex flex-col items-center gap-10 lg:flex-row xl:gap-14">
             <NextImage {...logo} otherClasses="min-w-[75px] h-20" />
             <div

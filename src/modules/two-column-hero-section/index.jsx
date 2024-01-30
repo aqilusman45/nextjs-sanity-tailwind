@@ -45,7 +45,7 @@ export default function TwoColumnHeroSection({
       data-testid="two-columnn-hero-sectionn"
     >
       <div className="mx-auto max-w-default px-4 lg:px-20 xl:px-108 ">
-        <div className="flex flex-col items-center gap-6 py-20 lg:flex-row">
+        <div className="flex flex-col items-center gap-6 py-14 lg:py-20 lg:flex-row">
           <div className="w-full lg:w-2/4">
             <Heading
               type="h2"
@@ -65,7 +65,7 @@ export default function TwoColumnHeroSection({
                   : 'global-richtext-light',
               )}
             />
-            <div className="flex items-center gap-4">
+            <div className="flex justify-center lg:justify-start items-center gap-4">
               {buttons?.map((node, index) => {
                 return <Button key={index} {...node} />
               })}

@@ -27,6 +27,7 @@ export default function ProductCard({
           src={videoFile?.url}
           muted
           loop
+          playsInline
           autoPlay
           controls={false}
           className="h-40 w-40"

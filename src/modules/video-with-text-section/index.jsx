@@ -53,6 +53,7 @@ export default function VideoWithSection({
               url={videoUrl}
               controls
               width={340}
+              playsinline
               height={475}
               light={<div className="h-full w-full bg-transparent"></div>}
               // playing={isplaying}

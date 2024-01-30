@@ -11,6 +11,7 @@ const NextImage = ({ otherClasses, url, originalFilename, metadata }) => {
       alt={originalFilename}
       width={width ? width : 200}
       height={height ? height : 200}
+      priority
     />
   )
 }

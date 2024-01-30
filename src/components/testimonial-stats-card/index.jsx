@@ -33,7 +33,7 @@ export default function TestimonialStatsCard({
           richText={text}
           otherClasses="[&>p]:text-white [&>p]:font-aeronik-pro [&>p]:header-3 [&>p]:font-normal [&>p]:capitalize "
         />
-        <Button {...button} />
+        <Button {...button} otherClasses="z-10" />
       </div>
     </div>
   )
