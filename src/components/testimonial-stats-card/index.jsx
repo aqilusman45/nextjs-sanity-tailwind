@@ -1,12 +1,8 @@
 import classnames from 'classnames'
-import { groq } from 'next-sanity'
 
 import Button from '../button/Button'
 import RichText from '../rich-text'
 import SvgAnimator from '../svg-animator'
-
-export const fragment = groq`
-`
 
 export default function TestimonialStatsCard({
   otherClasses,
@@ -14,6 +10,7 @@ export default function TestimonialStatsCard({
   button,
   graph,
   onClick,
+  mode,
 }) {
   const testimonialStatsCardClasses = classnames(
     otherClasses,
@@ -33,7 +30,7 @@ export default function TestimonialStatsCard({
           richText={text}
           otherClasses="[&>p]:text-white [&>p]:font-aeronik-pro [&>p]:header-3 [&>p]:font-normal [&>p]:capitalize "
         />
-        <Button {...button} otherClasses="z-10" />
+        <Button {...button} otherClasses="z-10" mode={mode} />
       </div>
     </div>
   )

@@ -1,24 +1,21 @@
 import classnames from 'classnames'
-import { groq } from 'next-sanity'
 
 import Heading from '../heading'
 import NextImage from '../next-image'
 import RichText from '../rich-text'
 
-export const fragment = groq`
-`
-
 export default function NetaceaDifferenceCard({
   otherClasses,
   image,
-  heading,
   subText,
   variant,
 }) {
   const netaceaDifferenceCardClasses = classnames(
     otherClasses,
-    variant === 'light' ? 'bg-white' : 'difference-card-border',
-    ' p-6 flex flex-col gap-6',
+    variant === 'light'
+      ? 'bg-white hover:border-blue-300'
+      : 'difference-card-border hover:border-green-300/50',
+    ' p-6 flex flex-col gap-6 hover:border-[1px]  hover:scale-105 transition-all duration-300',
   )
 
   return (
@@ -27,20 +24,11 @@ export default function NetaceaDifferenceCard({
       data-testid="netacea-difference-card"
     >
       <NextImage {...image} />
-      <Heading
-        type="h4"
-        otherClasses={classnames(
-          variant === 'light' ? 'text-blue' : 'text-white',
-          'capitalize font-aeronik-pro max-w-[50%] ',
-        )}
-      >
-        {heading}
-      </Heading>
       <RichText
         richText={subText}
         otherClasses={classnames(
           variant === 'light'
-            ? '.global-richtext-light'
+            ? 'global-richtext-light'
             : 'global-richtext-dark',
         )}
       />

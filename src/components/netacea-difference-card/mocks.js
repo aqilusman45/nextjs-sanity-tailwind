@@ -85,18 +85,46 @@ export const mocks = {
   _key: '7d9a96a4d679',
   subText: [
     {
+      markDefs: [],
       children: [
         {
-          _key: '32e82e19be020',
           _type: 'span',
           marks: [],
-          text: 'A single edge integration for simple management',
+          text: 'No blindspots. ',
+          _key: 'c10c88dc15c40',
         },
       ],
       _type: 'block',
-      style: 'normal',
-      _key: '440d9f82411f',
+      style: 'h4',
+      _key: '73c11e397c92',
+    },
+    {
       markDefs: [],
+      children: [
+        {
+          _key: '5d3fedbe5ac2',
+          _type: 'span',
+          marks: [],
+          text: 'No complexity',
+        },
+      ],
+      _type: 'block',
+      style: 'h4',
+      _key: 'ee05540ed4fb',
+    },
+    {
+      _type: 'block',
+      style: 'normal',
+      _key: '18fbb22dfc1f',
+      markDefs: [],
+      children: [
+        {
+          text: 'A single edge integration for simple management',
+          _key: '400c95ac525e0',
+          _type: 'span',
+          marks: [],
+        },
+      ],
     },
   ],
 }

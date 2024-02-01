@@ -21,7 +21,11 @@ const meta = {
   },
 }
 export default meta
+const Template = (args) => (
+  <NetaceaDifferenceCard {...args} otherClasses="w-fit" />
+)
 
-export const Default = {
-  args: { ...mocks },
+export const Default = Template.bind({})
+Default.args = {
+  ...mocks,
 }

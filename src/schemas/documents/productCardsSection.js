@@ -33,10 +33,14 @@ export const productCardsSection = {
           type: 'object',
           fields: [
             {
-              title: 'Video File',
-              name: 'videoFile',
+              title: 'Lottie File',
+              description: 'Upload the Lottie animation file here',
+              name: 'lottieFile',
               type: 'file',
               validation: (Rule) => Rule.required(),
+              options: {
+                accept: '.json',
+              },
             },
             {
               title: 'Heading',

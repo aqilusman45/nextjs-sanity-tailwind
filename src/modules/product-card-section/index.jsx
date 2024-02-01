@@ -1,10 +1,14 @@
 import classnames from 'classnames'
+import dynamic from 'next/dynamic'
 import { groq } from 'next-sanity'
 
 import Button from '../../components/button/Button'
 import Heading from '../../components/heading'
 import NextImage from '../../components/next-image'
-import ProductCard from '../../components/product-card'
+
+const ProductCard = dynamic(() => import('../../components/product-card'), {
+  ssr: false,
+})
 
 export const PRODUCT_CARD_SECTION_FRAGMENT = groq`
  "backVector":backVector.asset->{
@@ -12,7 +16,7 @@ export const PRODUCT_CARD_SECTION_FRAGMENT = groq`
   },
  "productCards":cards[]{
     ...,
-    "videoFile":videoFile.asset->{
+    "lottieFile":lottieFile.asset->{
       ...
     },
     "backVector":backVector.asset->{
@@ -49,11 +53,11 @@ export default function ProductCardSection({
             <Heading type="h3" otherClasses="">
               {heading}
             </Heading>
-            <Button {...button} />
+            <Button {...button} mode="light" />
           </div>
           <div className="relative z-20 mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {productCards.map((node, index) => {
-              return <ProductCard key={index} {...node} />
+              return <ProductCard key={index} {...node} index={index} />
             })}
           </div>
         </div>

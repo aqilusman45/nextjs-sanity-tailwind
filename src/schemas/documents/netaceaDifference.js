@@ -57,18 +57,17 @@ export const netaceaDifference = {
               validation: (Rule) => Rule.required(),
             },
             {
-              name: 'heading',
-              title: 'Heading',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
-            },
-            {
               name: 'subText',
               title: 'SubText',
               type: 'bodyPortableText',
               validation: (Rule) => Rule.required(),
             },
           ],
+          preview: {
+            select: {
+              title: 'image.caption',
+            },
+          },
         },
       ],
     },

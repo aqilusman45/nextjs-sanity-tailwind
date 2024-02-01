@@ -26,21 +26,3 @@ export default function Layout({
     </>
   )
 }
-
-export const navFragment = groq`
-  *[_type == "navigation"][0]{
-  ...,
-  links{
-    ...,
-    "logo": logo.asset->{
-      ...,
-   },
-  nestedLinks[]{
-    ...,
-    subLinks[]{
-      ...,
-    }
-  }
- }
-}
-`

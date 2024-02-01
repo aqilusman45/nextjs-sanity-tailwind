@@ -1,79 +1,79 @@
-import classnames from "classnames";
-import Link from "next/link";
+import classnames from 'classnames'
+import Link from 'next/link'
 
-import Icon from "../icon/index";
+import Icon from '../icon/index'
 export default function Button({
-  label = "",
-  variant = "primary",
+  label = '',
+  variant = 'primary',
   otherClasses,
   slug,
   onClick,
   external,
-  mode = "light",
+  mode = 'light',
 }) {
   const buttonClasses = classnames(
     otherClasses,
-    "h-fit whitespace-nowrap",
-    variant === "primary" &&
+    'h-fit whitespace-nowrap',
+    variant === 'primary' &&
       `${
-        mode === "light"
-          ? "px-4 py-2 bg-blue-300 text-base text-white font-aeronik-pro rounded hover:bg-blue-500 transition-all duration-300"
-          : "px-4 py-2 bg-green-300 text-base text-blue-600 font-aeronik-pro rounded hover:bg-green-400 transition-all duration-300"
+        mode === 'light'
+          ? 'px-4 py-2 bg-blue-300 text-base text-white font-aeronik-pro rounded hover:bg-blue-500 transition-all duration-300'
+          : 'px-4 py-2 bg-green-300 text-base text-blue-600 font-aeronik-pro rounded hover:bg-green-400 transition-all duration-300'
       }`,
-    variant === "primary-arrow" &&
+    variant === 'primary-arrow' &&
       `${
-        mode === "light"
+        mode === 'light'
           ? `px-4 py-2 bg-blue-300 text-base text-white font-aeronik-pro rounded hover:bg-blue-500 transition-all duration-300 flex items-center gap-2  `
           : `px-4 py-2 bg-green-300 text-base text-blue-600 font-aeronik-pro rounded hover:bg-green-400 transition-all duration-300 flex items-center gap-2`
       }`,
-    variant === "secondary" &&
+    variant === 'secondary' &&
       `${
-        mode === "light"
-          ? "px-4 py-[7px] bg-transparent text-base text-blue-300 border-[1px] border-blue-300 font-aeronik-pro rounded hover:bg-blue-300 hover:text-white transition-all duration-300 flex items-center gap-2"
-          : "px-4 py-[7px] bg-transparent text-base text-green-300 border-[1px] border-green-300 font-aeronik-pro  rounded hover:bg-green-300 hover:text-blue-600 transition-all duration-300 flex items-center gap-2"
+        mode === 'light'
+          ? 'px-4 py-[7px] bg-transparent text-base text-blue-300 border-[1px] border-blue-300 font-aeronik-pro rounded hover:bg-blue-300 hover:text-white transition-all duration-300 flex items-center gap-2'
+          : 'px-4 py-[7px] bg-transparent text-base text-green-300 border-[1px] border-green-300 font-aeronik-pro  rounded hover:bg-green-300 hover:text-blue-600 transition-all duration-300 flex items-center gap-2'
       }`,
-    variant === "secondary-arrow" &&
+    variant === 'secondary-arrow' &&
       `${
-        mode === "light"
-          ? "px-4 py-[7px] bg-transparent text-base text-blue-300 border-[1px] border-blue-300 font-aeronik-pro rounded hover:bg-blue-300 hover:text-white transition-all duration-300 flex items-center gap-2 flex items-center gap-2 group"
-          : "px-4 py-[7px] bg-transparent text-base text-green-300 border-[1px] border-green-300 font-aeronik-pro rounded hover:bg-green-300 hover:text-blue-600 transition-all duration-300 flex items-center gap-2 flex items-center gap-2 group"
+        mode === 'light'
+          ? 'px-4 py-[7px] bg-transparent text-base text-blue-300 border-[1px] border-blue-300 font-aeronik-pro rounded hover:bg-blue-300 hover:text-white transition-all duration-300 flex items-center gap-2 flex items-center gap-2 group'
+          : 'px-4 py-[7px] bg-transparent text-base text-green-300 border-[1px] border-green-300 font-aeronik-pro rounded hover:bg-green-300 hover:text-blue-600 transition-all duration-300 flex items-center gap-2 flex items-center gap-2 group'
       }`,
-    variant === "text-link" &&
+    variant === 'text-link' &&
       `${
-        mode === "light"
-          ? "bg-transparent text-base text-blue-300 font-aeronik-pro hover:text-blue-500 transition-all duration-300 "
-          : "bg-transparent text-base text-green-300 font-aeronik-pro hover:text-green-400 transition-all duration-300"
+        mode === 'light'
+          ? 'bg-transparent text-base text-blue-300 font-aeronik-pro hover:text-blue-500 transition-all duration-300 '
+          : 'bg-transparent text-base text-green-300 font-aeronik-pro hover:text-green-400 transition-all duration-300'
       }`,
-    variant === "text-link-arrow" &&
+    variant === 'text-link-arrow' &&
       `${
-        mode === "light"
-          ? "bg-transparent text-base text-blue-300 font-aeronik-pro hover:text-blue-500 transition-all duration-300 flex gap-2  items-center group"
-          : "bg-transparent text-base text-green-300 font-aeronik-pro hover:text-green-400 transition-all duration-300 flex gap-2 items-center group"
-      }`
-  );
+        mode === 'light'
+          ? 'bg-transparent text-base text-blue-300 font-aeronik-pro hover:text-blue-500 transition-all duration-300 flex gap-2  items-center group'
+          : 'bg-transparent text-base text-green-300 font-aeronik-pro hover:text-green-400 transition-all duration-300 flex gap-2 items-center group'
+      }`,
+  )
 
-  const withIconWhite = variant === "primary-arrow";
-  const withIconBlue = variant === "secondary-arrow";
-  const withIconTextLink = variant === "text-link-arrow";
+  const withIconWhite = variant === 'primary-arrow'
+  const withIconBlue = variant === 'secondary-arrow'
+  const withIconTextLink = variant === 'text-link-arrow'
 
   if (onClick) {
     return (
       <button
         onClick={(e) => {
-          onClick && onClick(form, e);
+          onClick && onClick(form, e)
         }}
         className={buttonClasses}
         data-testid="button"
       >
         {label}
         {withIconWhite &&
-          (mode === "light" ? (
+          (mode === 'light' ? (
             <Icon icon="arrow-right-white" iconHeight={8} iconWidth={14} />
           ) : (
             <Icon icon="arrow-right-dark" iconHeight={8} iconWidth={14} />
           ))}
         {withIconBlue &&
-          (mode === "light" ? (
+          (mode === 'light' ? (
             <>
               <Icon
                 icon="arrow-right-blue"
@@ -105,7 +105,7 @@ export default function Button({
             </>
           ))}
         {withIconTextLink &&
-          (mode === "light" ? (
+          (mode === 'light' ? (
             <>
               <Icon
                 icon="arrow-right-blue"
@@ -137,32 +137,32 @@ export default function Button({
             </>
           ))}
       </button>
-    );
+    )
   }
-  const { current } = slug;
+  const { current } = slug
 
   return (
     <Link
-      className={classnames("w-fit", buttonClasses)}
+      className={classnames('w-fit', buttonClasses)}
       href={
         external
           ? `${current}`
-          : current?.startsWith("/")
+          : current?.startsWith('/')
           ? `${current}`
           : `/${current}`
       }
-      target={external ? "_blank" : "_self"}
-      rel={external ? "noopener noreferrer" : ""}
+      target={external ? '_blank' : '_self'}
+      rel={external ? 'noopener noreferrer' : ''}
     >
       {label}
       {withIconWhite &&
-        (mode === "light" ? (
+        (mode === 'light' ? (
           <Icon icon="arrow-right-white" iconHeight={8} iconWidth={14} />
         ) : (
           <Icon icon="arrow-right-dark" iconHeight={8} iconWidth={14} />
         ))}
       {withIconBlue &&
-        (mode === "light" ? (
+        (mode === 'light' ? (
           <>
             <Icon
               icon="arrow-right-blue"
@@ -194,7 +194,7 @@ export default function Button({
           </>
         ))}
       {withIconTextLink &&
-        (mode === "light" ? (
+        (mode === 'light' ? (
           <>
             <Icon
               icon="arrow-right-blue"
@@ -226,5 +226,5 @@ export default function Button({
           </>
         ))}
     </Link>
-  );
+  )
 }

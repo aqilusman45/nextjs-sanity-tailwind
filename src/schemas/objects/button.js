@@ -24,19 +24,6 @@ export const button = {
       },
     },
     {
-      title: 'Mode',
-      name: 'mode',
-      type: 'string',
-      initialValue: 'light',
-      options: {
-        list: [
-          { title: 'Light', value: 'light' },
-          { title: 'Dark', value: 'dark' },
-        ],
-      },
-      hidden: ({ parent }) => !parent?.variant || parent?.variant === '',
-    },
-    {
       title: 'External Link',
       name: 'externalLink',
       type: 'boolean',

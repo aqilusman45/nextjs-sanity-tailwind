@@ -6,11 +6,21 @@ import { fragment as navbarFragment } from '~/components/navbar'
 import { getClient } from './sanity.client'
 
 export const navigationQuery = groq`
-  *[_type == 'navigation'][0] {
-    ${navbarFragment},
-    ${footerFragment}
+*[_type == "navigation"][0]{
+...,
+links{
+  ...,
+  "logo": logo.asset->{
+    ...,
+ },
+nestedLinks[]{
+  ...,
+  subLinks[]{
+    ...,
   }
-
+}
+}
+}
 `
 
 export const getNavigation = async () => {

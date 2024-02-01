@@ -18,7 +18,7 @@ export default function FeaturedCard({
 }) {
   const featuredCardClasses = classnames(
     otherClasses,
-    'p-6 featured-card-container min-h-[330px] gap-10 flex flex-col justify-between',
+    'p-6 featured-card-container min-h-[330px] gap-10 flex flex-col justify-between  hover:border-[1px]  hover:scale-105 transition-all duration-300 hover:border-blue-300',
   )
 
   return (
@@ -30,7 +30,7 @@ export default function FeaturedCard({
         </Heading>
         <RichText richText={subText} />
       </div>
-      <Button {...button} />
+      <Button {...button} mode="light" />
     </div>
   )
 }

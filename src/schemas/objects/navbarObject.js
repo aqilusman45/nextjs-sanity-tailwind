@@ -18,7 +18,14 @@ export const navbarObject = {
           name: 'inline',
           fields: [
             { type: 'string', name: 'title', title: 'Title' },
-            { type: 'slug', name: 'slug', title: 'Slug' },
+            {
+              type: 'slug',
+              name: 'slug',
+              title: 'Slug',
+              options: {
+                disableArrayWarning: true,
+              },
+            },
             {
               title: 'Sub Links',
               name: 'subLinks',
@@ -35,6 +42,9 @@ export const navbarObject = {
                       name: 'slug',
                       title: 'Slug',
                       initialValue: false,
+                      options: {
+                        disableArrayWarning: true,
+                      },
                       hidden: ({ parent }) => parent?.url !== true,
                     },
                     {
@@ -47,7 +57,14 @@ export const navbarObject = {
                           name: 'inline',
                           fields: [
                             { type: 'string', name: 'title', title: 'Title' },
-                            { type: 'slug', name: 'slug', title: 'Slug' },
+                            {
+                              type: 'slug',
+                              name: 'slug',
+                              title: 'Slug',
+                              options: {
+                                disableArrayWarning: true,
+                              },
+                            },
                             {
                               title: 'Icon',
                               name: 'icon',

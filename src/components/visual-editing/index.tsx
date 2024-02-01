@@ -1,11 +1,11 @@
-import { enableOverlays } from '@sanity/overlays'
+import { enableOverlays, HistoryAdapterNavigate } from '@sanity/overlays'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 
 export default function VisualEditing() {
   const router = useRouter()
   const routerRef = useRef(router)
-  const [navigate, setNavigate] = useState()
+  const [navigate, setNavigate] = useState<HistoryAdapterNavigate | undefined>()
 
   useEffect(() => {
     routerRef.current = router

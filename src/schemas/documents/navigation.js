@@ -62,7 +62,14 @@ export const navigation = {
               name: 'inlineLinks',
               fields: [
                 { type: 'string', name: 'title', title: 'Title' },
-                { type: 'slug', name: 'slug', title: 'Slug' },
+                {
+                  type: 'slug',
+                  name: 'slug',
+                  title: 'Slug',
+                  options: {
+                    disableArrayWarning: true,
+                  },
+                },
               ],
             },
           ],
@@ -103,7 +110,14 @@ export const navigation = {
                           name: 'inline',
                           fields: [
                             { type: 'string', name: 'title', title: 'Title' },
-                            { type: 'slug', name: 'slug', title: 'Slug' },
+                            {
+                              type: 'slug',
+                              name: 'slug',
+                              title: 'Slug',
+                              options: {
+                                disableArrayWarning: true,
+                              },
+                            },
                           ],
                         },
                       ],

@@ -18,14 +18,20 @@ export default function FeaturedSection({
   heading,
   button,
   featuredCards,
+  _type,
   ...props
 }) {
   const featuredSectionClasses = classnames(
     otherClasses,
     'w-full featured-section-container',
   )
+
   return (
-    <section className={featuredSectionClasses} data-testid="featured-section">
+    <section
+      id={_type ? _type : ''}
+      className={featuredSectionClasses}
+      data-testid="featured-section"
+    >
       <div className="mx-auto max-w-default px-4 lg:px-6">
         <div className="featured-card-container-white relative w-full bg-white px-4 py-20 pt-20 lg:px-20 lg:pb-120">
           <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:gap-10">

@@ -1,14 +1,22 @@
 import classnames from 'classnames'
+import dynamic from 'next/dynamic'
 import { groq } from 'next-sanity'
 import { useEffect, useRef, useState } from 'react'
-import ReactStars from 'react-stars'
 
+// const ReactStars = dynamic(
+//   () => import('react-stars'),
+//   { ssr: false },
+// )
 import Button from '../../components/button/Button'
 import Heading from '../../components/heading'
 import Icon from '../../components/icon'
 import RichText from '../../components/rich-text'
 import Slider from '../../components/slider'
-import TestimonialStatsCard from '../../components/testimonial-stats-card'
+
+const TestimonialStatsCard = dynamic(
+  () => import('../../components/testimonial-stats-card'),
+  { ssr: false },
+)
 
 export const TESTIMONIAL_AND_STATS_SLIDER = groq`
  statsCards[]{
@@ -18,43 +26,10 @@ export const TESTIMONIAL_AND_STATS_SLIDER = groq`
       ...,
     }
 `
-
-// function NextArrow(props) {
-//   const { onClick } = props
-//   return (
-//     <button
-//       className="absolute right-[200px] lg:right-[35%] xl:right-[37%] top-0 z-10 "
-//       onClick={onClick}
-//     >
-//       <Icon
-//         icon="slider-arrow-green"
-//         iconHeight={32}
-//         iconWidth={32}
-//         otherClasses="rotate-180 hover:scale-110 "
-//       />
-//     </button>
-//   )
-// }
-
-// function PrevArrow(props) {
-//   const { onClick } = props
-//   return (
-// <button className="absolute right-[400px] lg:right-[40%] xl:right-[41.666667%] top-0 z-10" onClick={onClick}>
-//   <Icon
-//     icon="slider-arrow-green"
-//     otherClasses="hover:scale-110"
-//     iconHeight={32}
-//     iconWidth={32}
-//   />
-// </button>
-//   )
-// }
-
 export default function TestimonialAndStatsSlider({
   otherClasses,
   heading,
   button,
-  variant,
   statsCards,
   testimonial,
   sliderCards,
@@ -63,6 +38,7 @@ export default function TestimonialAndStatsSlider({
     otherClasses,
     'background-gradient-testimonial-and-stats-slider',
   )
+
   const [index, setIndex] = useState(0)
 
   const sliderRef = useRef(null)
@@ -103,13 +79,12 @@ export default function TestimonialAndStatsSlider({
           <Heading
             type="h3"
             otherClasses={classnames(
-              variant === 'light' ? 'text-blue' : 'text-white',
-              'capitalize font-aeronik-pro font-normal w-full text-center lg:text-start lg:max-w-760 xl:max-w-full',
+              'capitalize font-aeronik-pro font-normal text-white w-full text-center lg:text-start lg:max-w-760 xl:max-w-full',
             )}
           >
             {heading}
           </Heading>
-          <Button {...button} />
+          <Button {...button} mode="dark" />
         </div>
         <div className="border-gradient-testimonial-and-stats-slider mt-10 p-8 text-white lg:p-4 xl:p-10">
           <div className="flex w-full flex-col gap-0 lg:flex-row lg:gap-6">
@@ -145,7 +120,12 @@ export default function TestimonialAndStatsSlider({
           >
             {sliderCards?.map((node, i) => {
               return (
-                <TestimonialStatsCard onClick={goToSlide} {...node} key={i} />
+                <TestimonialStatsCard
+                  onClick={goToSlide}
+                  {...node}
+                  key={i}
+                  mode="dark"
+                />
               )
             })}
           </Slider>
@@ -156,13 +136,13 @@ export default function TestimonialAndStatsSlider({
             {Object.keys(testimonial)?.length > 0 && testimonial?.rating && (
               <div className="border-gradient-testimonial-and-stats-slider flex w-full flex-col gap-20  p-8 lg:w-2/4 lg:justify-between lg:gap-0 lg:p-10">
                 <div className="flex flex-col gap-6">
-                  <ReactStars
+                  {/* <ReactStars
                     value={testimonial?.rating}
                     count={5}
                     size={20}
                     color1={'#dfeefd'}
                     color2={'#ABF57A'}
-                  />
+                  /> */}
                   <RichText
                     otherClasses="[&>p]:text-2xl [&>p]:font-aeronik-pro  [&>p]:font-normal [&>p]:capitalize [&>p]:text-white "
                     richText={testimonial?.subText}
@@ -172,7 +152,11 @@ export default function TestimonialAndStatsSlider({
                   </p>
                 </div>
                 {testimonial?.button?.slug?.current && (
-                  <Button {...testimonial?.button} />
+                  <Button
+                    {...testimonial?.button}
+                    otherClasses="text-wrap"
+                    mode="dark"
+                  />
                 )}
               </div>
             )}

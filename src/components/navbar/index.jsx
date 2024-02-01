@@ -85,7 +85,13 @@ export default function Navbar({ button, logo, nestedLinks }) {
                                 {nestedNode.url ? (
                                   <div className="flex justify-between">
                                     <Link
-                                      href={nestedNode?.slug?.current.startsWith("/")?`${nestedNode?.slug?.current}`:`/${nestedNode?.slug?.current}`}
+                                      href={
+                                        nestedNode?.slug?.current.startsWith(
+                                          '/',
+                                        )
+                                          ? `${nestedNode?.slug?.current}`
+                                          : `/${nestedNode?.slug?.current}`
+                                      }
                                       className=" font-aeronik-pro text-lg font-normal text-white/50 lg:justify-start lg:text-xs"
                                     >
                                       {nestedNode?.category}
@@ -116,7 +122,13 @@ export default function Navbar({ button, logo, nestedLinks }) {
                                         className="border-b-[1px] border-b-blue-200 py-4 "
                                       >
                                         <Link
-                                          href={linksNode?.slug?.current.startsWith("/")?`${linksNode?.slug?.current}`:`/${linksNode?.slug?.current}`}
+                                          href={
+                                            linksNode?.slug?.current.startsWith(
+                                              '/',
+                                            )
+                                              ? `${linksNode?.slug?.current}`
+                                              : `/${linksNode?.slug?.current}`
+                                          }
                                           className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
                                         >
                                           <Icon
@@ -156,7 +168,7 @@ export default function Navbar({ button, logo, nestedLinks }) {
         </div>
         <div className="flex items-center gap-3 xl:gap-6">
           <button className="flex items-center gap-1">
-            <span className="block h-6 w-6 xl:h-4 xl:w-4">
+            <span className="block h-5 w-5">
               <Icon
                 icon="navbar-search-icon"
                 iconHeight="100%"
@@ -172,7 +184,11 @@ export default function Navbar({ button, logo, nestedLinks }) {
               <Button
                 {...node}
                 key={i}
-                otherClasses={classNames(i === 0 && 'lg:flex hidden')}
+                otherClasses={classNames(
+                  i === 0 && 'lg:flex hidden',
+                  i === 1 &&
+                    ' [&>svg]:xs:block px-2 xs:px-4 py-1 xs:py-2 [&>svg]:hidden',
+                )}
               />
             )
           })}
