@@ -19,7 +19,7 @@ export default function VideoWithSection({
   heading,
   videoUrl,
   backVideo,
-  ...props
+  _id,
 }) {
   const videoWithSectionClasses = classnames(
     otherClasses,
@@ -28,6 +28,7 @@ export default function VideoWithSection({
 
   return (
     <section
+      id={_id}
       className={videoWithSectionClasses}
       data-testid="video-with-section"
     >

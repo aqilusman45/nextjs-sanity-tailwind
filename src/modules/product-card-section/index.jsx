@@ -31,7 +31,7 @@ export default function ProductCardSection({
   button,
   productCards,
   backVector,
-  ...props
+  _id,
 }) {
   const productCardSectionClasses = classnames(
     otherClasses,
@@ -40,6 +40,7 @@ export default function ProductCardSection({
 
   return (
     <section
+      id={_id}
       className={productCardSectionClasses}
       data-testid="product-card-section"
     >

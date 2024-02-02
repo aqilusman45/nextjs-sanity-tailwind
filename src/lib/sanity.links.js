@@ -2,10 +2,20 @@ import { useRouter } from 'next/router'
 
 import { Link } from '~/utils/types'
 
-export function resolveHref(documentType, slug) {
+export function resolveHref(documentType, slug, id) {
   switch (documentType) {
     case 'page':
-      return slug ? (slug === '/' ? slug : `/${slug}`) : '/'
+      return slug
+        ? slug === '/'
+          ? id
+            ? `${slug}#${id}`
+            : slug
+          : id
+          ? `/${slug}#${id}`
+          : `/${slug}`
+        : id
+        ? `/${id}`
+        : '/'
     case 'post':
       return slug ? `/blogs/${slug}` : '/blogs/'
     default:

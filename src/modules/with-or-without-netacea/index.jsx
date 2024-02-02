@@ -25,6 +25,7 @@ export default function WithOrWithoutNetacea({
   variant,
   thead,
   tbody,
+  _id,
 }) {
   const withOrWithoutNetaceaClasses = classnames(
     otherClasses,
@@ -34,6 +35,7 @@ export default function WithOrWithoutNetacea({
 
   return (
     <section
+      id={_id}
       className={withOrWithoutNetaceaClasses}
       data-testid="with-or-without-netacea"
     >

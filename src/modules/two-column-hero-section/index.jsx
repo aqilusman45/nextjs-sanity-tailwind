@@ -32,6 +32,7 @@ export default function TwoColumnHeroSection({
   mobileImage,
   subText,
   variant,
+  _id,
 }) {
   const twoColumnHeroSectionClasses = classnames(
     otherClasses,
@@ -41,6 +42,7 @@ export default function TwoColumnHeroSection({
 
   return (
     <section
+      id={_id}
       className={twoColumnHeroSectionClasses}
       data-testid="two-columnn-hero-sectionn"
     >

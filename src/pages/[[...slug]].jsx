@@ -40,7 +40,6 @@ export const getStaticProps = async ({ draftMode = false, params }) => {
     const { slug: currentSlug } = params || {}
     slug = currentSlug?.join('/')
   }
-
   const client = getClient(draftMode ? readToken : undefined)
   const pageQuery = await getPageQuery(slug)
   const navigation = await getNavigation()

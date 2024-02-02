@@ -1,43 +1,73 @@
-/**
- * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
- */
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
-import { defineUrlResolver, Iframe } from 'sanity-plugin-iframe-pane'
+import { Iframe } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
 
-// see https://www.sanity.io/docs/api-versioning for how versioning works
 import {
   apiVersion,
   dataset,
   previewSecretId,
   projectId,
 } from '~/lib/sanity.api'
-// import { PageTypes } from '~/lib/sanity.links'
 import { documentTypesForWorkFlow, schemaTypes } from '~/schemas'
 import { structureResolver } from '~/schemas/desk'
 import { presentationTool } from 'sanity/presentation'
 import { locate } from '~/lib/presentation/locate'
-// import { workflow } from 'sanity-plugin-workflow'
+import { workflow } from 'sanity-plugin-workflow'
 import BrandLogo from './src/components/logo-cms'
-// Define the actions that should be available for singleton documents
+import { getClient } from './src/lib/sanity.client'
+import { groq } from 'next-sanity'
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
-// Define the singleton document types
 const singletonTypes = new Set(['navigation'])
 
 const requiresSlug = ['page']
-const iframeOptions = {
-  url: defineUrlResolver({
-    base: '/api/draft',
-    requiresSlug,
-  }),
-  urlSecretId: previewSecretId,
-  reload: { button: true },
+
+async function getPreviewUrl(doc) {
+  const {
+    slug: { current = '' } = {},
+    _id: docId,
+    _type: docType,
+  } = (await doc) || {}
+  if (docId?.startsWith('drafts') && !current) {
+    return `${window.location.origin}/api/draft?type=page&slug=/&secret=${process.env.SANITY_API_EDITOR_TOKEN}&draft=true`
+  } else if (current) {
+    return `${window.location.origin}/api/draft?type=${docType}&slug=${current}&secret=${process.env.SANITY_API_EDITOR_TOKEN}`
+  } else {
+    const query = groq`*[_type == "page" && references(*[_type == '${docType}' && _id == '${docId}']._id)][0] {
+    _id,
+    "slug": slug.current,
+    _type
+  }`
+    const client = getClient()
+    const childDoc = await client.fetch(query)
+    if (childDoc) {
+      const { _type: childDocType, slug: childDocSlug } = childDoc
+      const url = `${window.location.origin}/api/draft?type=${childDocType}&slug=${childDocSlug}&secret=${process.env.SANITY_API_EDITOR_TOKEN}&sectionId=${docId}`
+      return url
+    } else {
+      const url = `${window.location.origin}/api/draft?type=page&mode=draft&slug=/&secret=${process.env.SANITY_API_EDITOR_TOKEN}&reference=not`
+      return url
+    }
+  }
 }
 
-export const previewView = (S) =>
-  S.view.component(Iframe).options(iframeOptions).title('Preview')
+export const defaultDocumentNode = (S, { schemaType }) => {
+  if (!singletonTypes.has(schemaType)) {
+    return S.document().views([
+      S.view.form(),
+      S.view
+        .component(Iframe)
+        .options({
+          url: (doc) => getPreviewUrl(doc),
+        })
+        .title('Preview'),
+    ])
+  } else {
+    // Only show preview pane on `movie` schema type documents
+    return S.document().views([S.view.form()])
+  }
+}
 
 export default defineConfig({
   basePath: '/studio',
@@ -56,19 +86,7 @@ export default defineConfig({
   plugins: [
     deskTool({
       structure: structureResolver,
-      // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
-      // You can add any React component to `S.view.component` and it will be rendered in the pane
-      // and have access to content in the form in real-time.
-      // It's part of the Studio's “Structure Builder API” and is documented here:
-      // https://www.sanity.io/docs/structure-builder-reference
-      defaultDocumentNode: (S, { schemaType }) => {
-        return S.document().views([
-          // Default form view
-          S.view.form(),
-          // Preview
-          previewView(S),
-        ])
-      },
+      defaultDocumentNode,
     }),
     // Add the "Open preview" action
     previewUrl({
@@ -87,9 +105,9 @@ export default defineConfig({
         },
       },
     }),
-    // workflow({
-    //   schemaTypes: documentTypesForWorkFlow,
-    // }),
+    workflow({
+      schemaTypes: documentTypesForWorkFlow,
+    }),
   ],
   document: {
     // For singleton types, filter out actions that are not explicitly included
