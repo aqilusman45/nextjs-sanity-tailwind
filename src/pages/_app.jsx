@@ -1,6 +1,8 @@
 import '~/styles/global.scss'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 
 import Layout from '../components/layout'
 
@@ -10,6 +12,10 @@ const VisualEditing = lazy(() => import('~/components/visual-editing'))
 export default function App({ Component, pageProps }) {
   const { draftMode, token, navigation } = pageProps
 
+  useEffect(() => {
+    AOS.init();
+  }, [])
+  
   return (
     <>
       <Layout {...navigation}>

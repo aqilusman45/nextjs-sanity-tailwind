@@ -11,6 +11,9 @@ module.exports = {
       xl: '1440px',
     },
     extend: {
+      transitionDuration: {
+        '400': '0.4s',
+      },
       fontFamily: {
         Inter: ["'Inter', sans-serif"],
         'aeronik-pro': ["'Aeonik-Pro', sans-serif"],
