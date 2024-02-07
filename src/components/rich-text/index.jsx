@@ -4,10 +4,13 @@ import ImageUrlBuilder from '@sanity/image-url'
 import clsx from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import clientConfig from '../../../client-config'
 import Button from '../button/Button'
+import Heading from '../heading'
+import classNames from 'classnames'
+import Icon from '../icon'
 
 const builder = ImageUrlBuilder({
   ...clientConfig.sanity,
@@ -37,7 +40,8 @@ const SampleImageComponent = ({ value, isInline }) => {
     />
   )
 }
-export const RichText = ({ richText, otherClasses, toggleFunc }) => {
+
+export const RichText = ({ richText, otherClasses, toggleFunc,variant="dark" }) => {
   const richTextClasses = clsx(otherClasses, 'relative')
 
   const ButtonComponent = (props) => {
@@ -47,6 +51,31 @@ export const RichText = ({ richText, otherClasses, toggleFunc }) => {
       <Button {...data} onClick={() => toggleFunc(data?.form, data?.tab)} />
     )
   }
+
+  const ChecklistComponent = ({value}) => {
+    console.log(value);
+    const {heading,list } = value
+  console.log(variant);
+    return (
+      <div className='flex flex-col gap-6'>
+        <Heading otherClasses={ classNames('font-aeronik-pro caapitalize tracking-[0.48px]',variant==="dark"?"!text-green-300":"!text-blue")} type="h6" >{heading}</Heading>
+      <div className='flex flex-col gap-4'>
+          {
+            list?.map((node,index)=>{
+              return (
+                <div className='flex gap-2 items-center' key={index}>
+                <Icon icon={variant==="dark"?"checklist-green":"checklist-blue"} iconHeight={16} iconWidth={16} />
+                <p className={classNames("font-aeronik-pro text-base font-normal !mb-0", variant==="dark"?"text-white":"text-blue")}>{node}</p> 
+                </div>
+              )
+
+            })
+          }
+      </div>
+      </div>
+    )
+  }
+
   return (
     <div className={richTextClasses}>
       <PortableText
@@ -55,6 +84,7 @@ export const RichText = ({ richText, otherClasses, toggleFunc }) => {
           types: {
             image: SampleImageComponent,
             button: ButtonComponent,
+            checklistObject:ChecklistComponent
           },
           marks: {
             link: ({ children, value }) => {

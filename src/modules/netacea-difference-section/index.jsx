@@ -23,6 +23,7 @@ export default function NetaceaDifferenceSection({
   cards,
   variant,
   _id,
+  id
 }) {
   const netaceaDifferenceSectionClasses = classnames(
     otherClasses,
@@ -34,7 +35,7 @@ export default function NetaceaDifferenceSection({
 
   return (
     <section
-      id={_id}
+    id={_id?_id:id}
       className={netaceaDifferenceSectionClasses}
       data-testid="netacea-difference-section"
     >

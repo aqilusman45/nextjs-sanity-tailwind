@@ -36,6 +36,7 @@ export default function ProductCardSection({
   productCards,
   backVector,
   _id,
+  id
 }) {
   const [trigger, setTrigger] = useState(false)
   gsap.registerPlugin(ScrollTrigger)
@@ -58,7 +59,7 @@ export default function ProductCardSection({
   )
   return (
     <section
-      id={_id}
+    id={_id?_id:id}
       className={productCardSectionClasses}
       data-testid="product-card-section"
     >

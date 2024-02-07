@@ -93,6 +93,8 @@ module.exports = {
         800: '50rem',
         760: '47.5rem',
         720: '45rem',
+        450: '450px',
+        458: '458px',
         648: '40.5rem',
       },
       minWidth: {

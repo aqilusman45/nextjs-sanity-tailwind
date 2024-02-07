@@ -7,11 +7,13 @@ import { productCardsSection } from './documents/productCardsSection'
 import { testimonialAndStatsSlider } from './documents/testimonialAndStatsSlider'
 import { bodyPortableText } from './objects/bodyPortableText'
 import { button } from './objects/button'
+import { checklistObject } from './objects/checklistObject'
 import { iframe } from './objects/iframe'
 import { img } from './objects/img'
 import { navbarObject } from './objects/navbarObject'
 import { socialsObject } from './objects/socialsObject'
 import { staticSliceSections } from './objects/staticSliceSections'
+import { twoColumnForm } from './objects/twoColumnForm'
 import { twoColumnHeroSection } from './objects/twoColumnHeroSection'
 import { videoWithTextSection } from './objects/videoWithTextSection'
 import { youtube } from './objects/youtube'
@@ -34,6 +36,9 @@ export const schemaTypes = [
   productCardsSection,
   featureSection,
   netaceaWithOrWithout,
+  twoColumnForm,
+  checklistObject
+  
 ]
 
 // Add name of the document here in quotations so the workflow works find on that name as well

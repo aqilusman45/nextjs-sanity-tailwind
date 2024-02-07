@@ -1,0 +1,33 @@
+  .two-column-container {
+    &::after {
+      @media (min-width: 1024px) {
+        height: 32px;
+      }
+      content: '';
+      height: 24px;
+      width: 60%;
+      position: absolute;
+      z-index: 10;
+      right: 0px;
+      top: 0px;
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 3% 100%);
+      background: #0b48af;
+    }
+  }
+  .two-column-container-light {
+    &::after {
+      @media (min-width: 1024px) {
+        height: 32px;
+      }
+      content: '';
+      height: 24px;
+      width: 60%;
+      position: absolute;
+      z-index: 10;
+      right: 0px;
+      top: 0px;
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 3% 100%);
+      background: white;
+    }
+  }
+  

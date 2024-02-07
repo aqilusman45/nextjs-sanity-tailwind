@@ -33,16 +33,16 @@ export default function TwoColumnHeroSection({
   subText,
   variant,
   _id,
+  id
 }) {
   const twoColumnHeroSectionClasses = classnames(
     otherClasses,
     'pb-10 lg-xl:pb-0',
     variant === 'dark' ? 'hero-two-column-container' : 'bg-white',
   )
-
   return (
     <section
-      id={_id}
+      id={_id?_id:id}
       className={twoColumnHeroSectionClasses}
       data-testid="two-columnn-hero-sectionn"
     >

@@ -22,12 +22,11 @@ export const getPageQuery = (slug) => groq`
 
 const index = (props) => {
   const [page] = useLiveQuery(props?.page, getPageQuery(props?.slug))
-  const { metaDescription = '', seoTitle = '' } = page || {}
-
+  const { metaDescription = '', seoTitle = '',_id } = page || {}
   return (
     <>
       <SEO metaDescription={metaDescription} seoTitle={seoTitle} />
-      <ModuleRenderer modules={page?.modules} />
+      <ModuleRenderer _id={_id} modules={page?.modules} />
     </>
   )
 }

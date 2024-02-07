@@ -67,5 +67,8 @@ export const bodyPortableText = {
     {
       type: 'button',
     },
+    {
+      type: 'checklistObject',
+    },
   ],
 }

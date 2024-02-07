@@ -16,6 +16,9 @@ export const getModulesField = (group) => {
       {
         type: 'videoWithTextSection',
       },
+      {
+        type: 'twoColumnForm',
+      },
     ],
     components: {
       input: ModulesInput,

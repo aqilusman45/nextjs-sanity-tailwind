@@ -29,19 +29,19 @@ _type == 'staticSliceSections' =>{
 }
 `
 
-export default function StaticSliceSections({ section, storybook_Type }) {
+export default function StaticSliceSections({ section, storybook_Type ,id }) {
   const type = section?._type || storybook_Type || 'netaceaDifference'
   switch (type) {
     case 'netaceaDifference':
-      return <NetaceaDifferenceSection {...section} />
+      return <NetaceaDifferenceSection {...section} id={id} />
     case 'withOrWithoutNetacea':
-      return <WithOrWithoutNetacea {...section} />
+      return <WithOrWithoutNetacea {...section} id={id} />
     case 'testimonialAndStatsSlider':
-      return <TestimonialAndStatsSlider {...section} />
+      return <TestimonialAndStatsSlider {...section} id={id} />
     case 'featureSection':
-      return <FeaturedSection {...section} />
+      return <FeaturedSection {...section} id={id} />
     case 'productCardsSection':
-      return <ProductCardSection {...section} />
+      return <ProductCardSection {...section} id={id} />
     default:
       return null
   }

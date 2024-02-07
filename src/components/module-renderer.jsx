@@ -5,20 +5,22 @@ import { moduleComponents } from '~/lib/modules'
 import { STATIC_SLICE_SECTION } from '../modules/static-slice-sections'
 import { TWO_COLUMN_HERO_SECTIO_FRAGMENT } from '../modules/two-column-hero-section'
 import { VIDEO_WITH_SECTIO_FRAGMET } from '../modules/video-with-text-section'
+import { TWO_COLUMN_FORM } from '../modules/two-column-form'
 
 export const MODULE_FRAGMENT = groq`
   modules[] {
     ...,
     ${TWO_COLUMN_HERO_SECTIO_FRAGMENT},
     ${VIDEO_WITH_SECTIO_FRAGMET},
-    ${STATIC_SLICE_SECTION}
+    ${STATIC_SLICE_SECTION},
+    ${TWO_COLUMN_FORM}
 
   }
 `
 // Declare the below format fragment in above fragment
 // ${projectsHighlightFragment},
 
-export default function ModuleRenderer({ modules = [] }) {
+export default function ModuleRenderer({ _id,modules = [] }) {
   return modules?.map((module) => {
     // @ts-ignore
     const Component = moduleComponents[module._type]
@@ -29,6 +31,6 @@ export default function ModuleRenderer({ modules = [] }) {
       return null
     }
 
-    return <Component key={module._key} {...module} />
+    return <Component key={module._key} id={_id} {...module} />
   })
 }

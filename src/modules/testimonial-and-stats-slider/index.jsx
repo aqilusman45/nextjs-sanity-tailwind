@@ -31,6 +31,7 @@ export default function TestimonialAndStatsSlider({
   testimonial,
   _id,
   sliderCards,
+  id
 }) {
   const testimonialAndStatsSliderClasses = classnames(
     otherClasses,
@@ -69,7 +70,7 @@ export default function TestimonialAndStatsSlider({
   }
   return (
     <section
-      id={_id}
+    id={_id?_id:id}
       className={testimonialAndStatsSliderClasses}
       data-testid="testimonial-and-stats-slider"
     >

@@ -16,8 +16,8 @@ export default function FeaturedSection({
   heading,
   button,
   featuredCards,
-  _type,
   _id,
+  id
 }) {
   const featuredSectionClasses = classnames(
     otherClasses,
@@ -26,7 +26,7 @@ export default function FeaturedSection({
 
   return (
     <section
-      id={_id}
+    id={_id?_id:id}
       className={featuredSectionClasses}
       data-testid="featured-section"
     >
