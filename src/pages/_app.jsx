@@ -1,7 +1,7 @@
 import '~/styles/global.scss'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import 'aos/dist/aos.css'
 
+import AOS from 'aos'
 import { lazy, Suspense, useEffect } from 'react'
 
 import Layout from '../components/layout'
@@ -13,9 +13,9 @@ export default function App({ Component, pageProps }) {
   const { draftMode, token, navigation } = pageProps
 
   useEffect(() => {
-    AOS.init();
+    AOS.init()
   }, [])
-  
+
   return (
     <>
       <Layout {...navigation}>

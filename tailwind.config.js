@@ -12,7 +12,7 @@ module.exports = {
     },
     extend: {
       transitionDuration: {
-        '400': '0.4s',
+        400: '0.4s',
       },
       fontFamily: {
         Inter: ["'Inter', sans-serif"],
