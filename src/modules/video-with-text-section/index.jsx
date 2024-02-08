@@ -89,10 +89,10 @@ export default function VideoWithSection({
       <ModalComponent
         otherClasses=""
         show={show}
-        additionalClass="w-full"
+        additionalClass="max-w-648 w-full"
         handleClose={handleCancel}
       >
-        <div className="mx-auto flex max-w-648 flex-col items-center justify-center gap-6 text-white">
+        <div className="mx-auto flex  flex-col items-center justify-center gap-6 text-white">
           <div className="flex w-full justify-between text-white">
             <Heading type="h3" otherClasses={classnames('text-white w-[95%]')}>
               {videoTitle}
@@ -107,14 +107,14 @@ export default function VideoWithSection({
           </div>
           <div className="player-wrapper h-full w-full">
             <ReactPlayer
-              onClickPreview={() => setIsPlaying(true)}
+              // onClickPreview={() => setIsPlaying(true)}
               url={videoUrl}
               controls
               width="100%"
-              playing
+              playing={show}
               playsinline
               height={377}
-              className="react-player  aspect-video !h-[377px] !w-full [&>div>iframe]:aspect-video [&>div>iframe]:w-full"
+              className="video-with-text-react-player  aspect-video !h-[377px] !w-full [&>div>iframe]:aspect-video [&>div>iframe]:w-full"
             />
           </div>
         </div>

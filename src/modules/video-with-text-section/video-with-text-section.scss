@@ -31,11 +31,15 @@
     background: #113161;
   }
 }
-.react-player {
+.video-with-text-react-player {
   iframe {
     width: 100% !important;
     height: 100% !important;
     border-radius: 4px !important;
+
+    video {
+      border-radius: 20px !important;
+    }
   }
 }
 
