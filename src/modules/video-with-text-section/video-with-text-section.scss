@@ -7,7 +7,7 @@
     @media (min-width: 1024px) {
       height: 32px;
     }
-    content: '';
+    content: "";
     height: 24px;
     width: 60%;
     position: absolute;
@@ -20,7 +20,7 @@
     @media (min-width: 1024px) {
       height: 32px;
     }
-    content: '';
+    content: "";
     z-index: 10;
     height: 24px;
     width: 60%;
@@ -30,4 +30,116 @@
     clip-path: polygon(3% 0, 100% 0%, 100% 100%, 0% 100%);
     background: #113161;
   }
+}
+.react-player {
+  iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 4px !important;
+  }
+}
+
+/* Video play icon */
+
+.videoPlay,
+.videoPlay_inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.videoPlay,
+.videoPlay_inner_wrapper,
+.icon_videoPlay {
+  transition: 1.6s;
+  transition-timing-function: cubic-bezier(0, 1, 0.16, 1);
+}
+
+.videoPlay_wrapper {
+  background: linear-gradient(
+      92.19deg,
+      rgba(54, 124, 243, 0.5) -21.93%,
+      rgba(54, 124, 243, 0) 20.59%
+    ),
+    linear-gradient(
+      136.39deg,
+      rgba(54, 124, 243, 0.5) -14.01%,
+      rgba(54, 124, 243, 0) 17.78%
+    ),
+    linear-gradient(
+      312.21deg,
+      rgba(54, 124, 243, 0.5) -1.83%,
+      rgba(54, 124, 243, 0) 16.05%
+    );
+  width: 180px;
+  height: 180px;
+  display: flex;
+  border-radius: 50%;
+}
+
+.videoPlay {
+  background: #092549;
+  padding: 16px;
+  align-self: stretch;
+  flex-grow: 1;
+  margin: 1px;
+  position: relative;
+}
+
+.videoPlay_inner_wrapper {
+  background: linear-gradient(
+      92.19deg,
+      rgba(54, 124, 243, 0.5) -21.93%,
+      rgba(54, 124, 243, 0) 20.59%
+    ),
+    linear-gradient(
+      136.39deg,
+      rgba(54, 124, 243, 0.5) -14.01%,
+      rgba(54, 124, 243, 0) 17.78%
+    ),
+    linear-gradient(
+      312.21deg,
+      rgba(54, 124, 243, 0.5) -1.83%,
+      rgba(54, 124, 243, 0) 16.05%
+    );
+  display: flex;
+  border-radius: 50%;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
+
+.videoPlay_inner {
+  background: #113161;
+  align-self: stretch;
+  flex-grow: 1;
+  margin: 1px;
+}
+
+.icon_videoPlay {
+  width: 68px;
+  height: 68px;
+  color: #abf57a;
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
+
+.videoPlay:hover {
+  cursor: pointer;
+}
+
+.videoPlay:hover .videoPlay_inner_wrapper {
+  transform: scale(0.9);
+}
+
+.videoPlay:hover .icon_videoPlay {
+  transform: scale(1.05);
 }

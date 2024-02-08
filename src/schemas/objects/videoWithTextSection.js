@@ -24,6 +24,12 @@ export const videoWithTextSection = {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Video Title',
+      name: 'videoTitle',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Video Url',
       name: 'videoUrl',
       type: 'url',
