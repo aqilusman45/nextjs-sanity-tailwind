@@ -3,10 +3,7 @@ import dynamic from 'next/dynamic'
 import { groq } from 'next-sanity'
 import { useEffect, useRef, useState } from 'react'
 
-// const ReactStars = dynamic(
-//   () => import('react-stars'),
-//   { ssr: false },
-// )
+const ReactStars = dynamic(() => import('react-stars'), { ssr: false })
 import Button from '../../components/button/Button'
 import Heading from '../../components/heading'
 import Icon from '../../components/icon'
@@ -138,13 +135,13 @@ export default function TestimonialAndStatsSlider({
             {Object.keys(testimonial)?.length > 0 && testimonial?.rating && (
               <div className="border-gradient-testimonial-and-stats-slider flex w-full flex-col gap-20  p-8 lg:w-2/4 lg:justify-between lg:gap-0 lg:p-10">
                 <div className="flex flex-col gap-6">
-                  {/* <ReactStars
+                  <ReactStars
                     value={testimonial?.rating}
                     count={5}
                     size={20}
                     color1={'#dfeefd'}
                     color2={'#ABF57A'}
-                  /> */}
+                  />
                   <RichText
                     otherClasses="[&>p]:text-2xl [&>p]:font-aeronik-pro  [&>p]:font-normal [&>p]:capitalize [&>p]:text-white "
                     richText={testimonial?.subText}
@@ -175,9 +172,9 @@ export default function TestimonialAndStatsSlider({
                   return (
                     <div
                       key={stats}
-                      className="flex flex-col gap-6 border-t-[1px] border-t-blue-400 text-white"
+                      className="flex flex-col gap-4 border-t-[1px] border-t-blue-400 text-white"
                     >
-                      <p className="h2 pt-6 capitalize !text-green-300">
+                      <p className="h2 pt-4 capitalize !text-green-300">
                         {stats}
                       </p>
 

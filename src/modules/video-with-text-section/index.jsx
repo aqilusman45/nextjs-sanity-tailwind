@@ -67,7 +67,7 @@ export default function VideoWithSection({
                   <div class="videoPlay_inner"></div>
                 </div>
                 <svg
-                  class="icon_videoPlay"
+                  class="icon_videoPlay svg-currentColor"
                   width="68"
                   height="68"
                   viewBox="0 0 68 68"
@@ -107,7 +107,6 @@ export default function VideoWithSection({
           </div>
           <div className="player-wrapper h-full w-full">
             <ReactPlayer
-              // onClickPreview={() => setIsPlaying(true)}
               url={videoUrl}
               controls
               width="100%"

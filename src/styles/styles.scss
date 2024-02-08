@@ -30,9 +30,15 @@ html {
   margin: 0;
 }
 
-svg {
+.svg {
   width: 16px;
   height: 16px;
+  path {
+    stroke: currentColor;
+  }
+}
+
+.svg-currentColor {
   path {
     stroke: currentColor;
   }

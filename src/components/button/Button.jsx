@@ -71,21 +71,21 @@ export default function Button({
         {label}
         {withIconWhite &&
           (mode === 'light' ? (
-            <ArrowRightWhite className="translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+            <ArrowRightWhite className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
           ) : (
-            <ArrowRightDark className="translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+            <ArrowRightDark className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
           ))}
         {withIconBlue &&
           (mode === 'light' ? (
-            <ArrowRightBlue className=" translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+            <ArrowRightBlue className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
           ) : (
-            <ArrowRightGreen className=" translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+            <ArrowRightGreen className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
           ))}
         {withIconTextLink &&
           (mode === 'light' ? (
-            <ArrowRightBlue className=" translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+            <ArrowRightBlue className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
           ) : (
-            <ArrowRightGreen className=" translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+            <ArrowRightGreen className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
           ))}
       </button>
     )
@@ -108,21 +108,21 @@ export default function Button({
       {label}
       {withIconWhite &&
         (mode === 'light' ? (
-          <ArrowRightWhite className="translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+          <ArrowRightWhite className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
         ) : (
-          <ArrowRightDark className="translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+          <ArrowRightDark className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
         ))}
       {withIconBlue &&
         (mode === 'light' ? (
-          <ArrowRightBlue className=" translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+          <ArrowRightBlue className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
         ) : (
-          <ArrowRightGreen className=" translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+          <ArrowRightGreen className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
         ))}
       {withIconTextLink &&
         (mode === 'light' ? (
-          <ArrowRightBlue className=" translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+          <ArrowRightBlue className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
         ) : (
-          <ArrowRightGreen className=" translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
+          <ArrowRightGreen className="svg translate-x-0  translate-y-[3px] transition-all duration-400 ease-out group-hover:translate-x-1" />
         ))}
     </Link>
   )
