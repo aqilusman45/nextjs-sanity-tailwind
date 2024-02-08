@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 
 import { hideBodyScroll, showBodyScroll } from '../../utils/helpers'
 
-
 export default function ModalComponent({
   otherClasses,
   show,
@@ -42,8 +41,7 @@ export default function ModalComponent({
       <button
         aria-label="button"
         className={
-          
-          'modal-overlay absolute  left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%] z-[-1] h-full w-full cursor-auto '
+          'modal-overlay absolute  left-2/4 top-2/4 z-[-1] h-full w-full translate-x-[-50%] translate-y-[-50%] cursor-auto '
         }
         onClick={() => handleClose()}
       />

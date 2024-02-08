@@ -1,12 +1,12 @@
-import classnames from "classnames";
-import { groq } from "next-sanity";
-import ReactPlayer from "react-player";
+import classnames from 'classnames'
+import { ReactComponent as CancelModalIcon } from 'icons/cancel-modal.svg'
+import { groq } from 'next-sanity'
+import { useState } from 'react'
+import ReactPlayer from 'react-player'
 
-import Heading from "../../components/heading";
-import Icon from "../../components/icon";
-import { useState } from "react";
-import ModalComponent from "../../components/modal-component";
-import { ReactComponent as CancelModalIcon } from "icons/cancel-modal.svg";
+import Heading from '../../components/heading'
+import Icon from '../../components/icon'
+import ModalComponent from '../../components/modal-component'
 
 export const VIDEO_WITH_SECTIO_FRAGMET = groq`
    _type == 'videoWithTextSection' =>{
@@ -15,7 +15,7 @@ export const VIDEO_WITH_SECTIO_FRAGMET = groq`
       ...,
     }
   }
-`;
+`
 
 export default function VideoWithSection({
   otherClasses,
@@ -27,13 +27,13 @@ export default function VideoWithSection({
 }) {
   const videoWithSectionClasses = classnames(
     otherClasses,
-    "relative video-with-text-container"
-  );
-  const [show, setShow] = useState(false);
+    'relative video-with-text-container',
+  )
+  const [show, setShow] = useState(false)
 
   const handleCancel = () => {
-    setShow(false);
-  };
+    setShow(false)
+  }
 
   return (
     <section
@@ -53,12 +53,15 @@ export default function VideoWithSection({
             className="absolute left-0 top-0 h-full w-full object-cover"
           />
           <div className="relative w-full lg:w-2/4">
-            <Heading type="h2" otherClasses={classnames("text-white")}>
+            <Heading type="h2" otherClasses={classnames('text-white')}>
               {heading}
             </Heading>
           </div>
           <div className="4 relative z-10 w-full lg:h-710 lg:w-2/4 lg:py-20">
-            <button onClick={()=>setShow(true)} class="absolute left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%] videoPlay_wrapper">
+            <button
+              onClick={() => setShow(true)}
+              class="videoPlay_wrapper absolute left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%]"
+            >
               <div class="videoPlay">
                 <div class="videoPlay_inner_wrapper">
                   <div class="videoPlay_inner"></div>
@@ -89,20 +92,20 @@ export default function VideoWithSection({
         additionalClass="w-full"
         handleClose={handleCancel}
       >
-        <div className="flex items-center justify-center gap-6 flex-col max-w-648 mx-auto text-white">
-          <div className="flex justify-between w-full text-white">
-            <Heading type="h3" otherClasses={classnames("text-white w-[95%]")}>
+        <div className="mx-auto flex max-w-648 flex-col items-center justify-center gap-6 text-white">
+          <div className="flex w-full justify-between text-white">
+            <Heading type="h3" otherClasses={classnames('text-white w-[95%]')}>
               {videoTitle}
             </Heading>
             <button
               onClick={() => setShow(false)}
-              className="flex items-start mt-2 justify-end
-             w-[5%]"
+              className="mt-2 flex w-[5%] items-start
+             justify-end"
             >
-              <CancelModalIcon className="!w-[18px] !h-[17px]" />
+              <CancelModalIcon className="!h-[17px] !w-[18px]" />
             </button>
           </div>
-          <div className="player-wrapper w-full h-full">
+          <div className="player-wrapper h-full w-full">
             <ReactPlayer
               onClickPreview={() => setIsPlaying(true)}
               url={videoUrl}
@@ -111,11 +114,11 @@ export default function VideoWithSection({
               playing
               playsinline
               height={377}
-              className="!h-[377px]  react-player aspect-video !w-full [&>div>iframe]:aspect-video [&>div>iframe]:w-full"
+              className="react-player  aspect-video !h-[377px] !w-full [&>div>iframe]:aspect-video [&>div>iframe]:w-full"
             />
           </div>
         </div>
       </ModalComponent>
     </section>
-  );
+  )
 }

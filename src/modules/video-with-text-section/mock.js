@@ -1,6 +1,7 @@
 export const mock = {
   videoUrl: 'https://vimeo.com/49583118',
-  videoTitle:"Cybersecurity Sessions S02E07: Validating AI Value, Securing Supply Chains, Fake Account Creation",
+  videoTitle:
+    'Cybersecurity Sessions S02E07: Validating AI Value, Securing Supply Chains, Fake Account Creation',
   backVideo: {
     originalFilename: '-41cf-4deb-be01-4f777d608ad0.mp4',
     path: 'files/uiptp553/production/46fd24fa967eec89dbedd0794229c8a7845c0200.mp4',
