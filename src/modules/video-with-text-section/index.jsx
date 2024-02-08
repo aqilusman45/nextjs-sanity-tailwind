@@ -52,12 +52,12 @@ export default function VideoWithSection({
             src={backVideo?.url}
             className="absolute left-0 top-0 h-full w-full object-cover"
           />
-          <div className="relative w-full lg:w-2/4">
+          <div className="relative w-full lg:w-2/4 pb-20 lg:pb-0">
             <Heading type="h2" otherClasses={classnames('text-white')}>
               {heading}
             </Heading>
           </div>
-          <div className="4 relative z-10 w-full lg:h-710 lg:w-2/4 lg:py-20">
+          <div className="pb-30 lg:pb-0 relative z-10 w-full lg:h-710 lg:w-2/4 lg:py-20">
             <button
               onClick={() => setShow(true)}
               class="videoPlay_wrapper absolute left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%]"

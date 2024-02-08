@@ -36,7 +36,7 @@ export default function TwoColumnHeroSection({
 }) {
   const twoColumnHeroSectionClasses = classnames(
     otherClasses,
-    'pb-20',
+    'pb-10 lg-xl:pb-0',
     variant === 'dark' ? 'hero-two-column-container' : 'bg-white',
   )
 
@@ -61,7 +61,7 @@ export default function TwoColumnHeroSection({
             <RichText
               richText={subText}
               otherClasses={classnames(
-                'mt-10 mb-14',
+                'mt-6 mb-8',
                 variant === 'dark'
                   ? 'global-richtext-dark'
                   : 'global-richtext-light',
