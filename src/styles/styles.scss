@@ -43,3 +43,33 @@ html {
     stroke: currentColor;
   }
 }
+
+.svg-fill-currentColor {
+  path {
+    fill: currentColor;
+  }
+}
+
+.footer {
+  .svg-currentColor {
+    &:hover {
+      path {
+        &:nth-child(1) {
+          fill: #abf57a;
+        }
+        &:nth-child(2) {
+          fill: #001831;
+        }
+      }
+    }
+    path {
+      &:nth-child(1) {
+        fill: white;
+      }
+
+      &:nth-child(2) {
+        fill: #001831;
+      }
+    }
+  }
+}

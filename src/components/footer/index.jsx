@@ -1,6 +1,11 @@
+import { ReactComponent as Facebook } from 'icons/facebook.svg'
+import { ReactComponent as FooterNetaceaLogo } from 'icons/footer-netacea-logo.svg'
+import { ReactComponent as Linkedin } from 'icons/linkedin.svg'
+import { ReactComponent as Podcast } from 'icons/podcast.svg'
+import { ReactComponent as Twitter } from 'icons/twitter.svg'
+import { ReactComponent as Youtube } from 'icons/youtube.svg'
 import Link from 'next/link'
 
-import Icon from '../icon'
 import RichText from '../rich-text'
 
 export default function Footer({
@@ -21,112 +26,53 @@ export default function Footer({
         <div className="flex flex-col">
           <div className="grid grid-cols-1 gap-6 border-b-[1px] border-b-blue-500 pb-92 text-white sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6">
             <div className="col-span-1 flex w-full flex-col gap-6 sm:col-span-2 md:col-span-4 md:w-2/4 xl:col-span-2 xl:w-full xl:pr-24">
-              <Link href="/" className="group w-fit">
-                <Icon
-                  icon="footer-netacea-logo"
-                  iconHeight={88}
-                  iconWidth={88}
-                  otherClasses="block group-hover:hidden"
-                />
-                <Icon
-                  icon="footer-netace-blue-logo"
-                  iconHeight={88}
-                  iconWidth={88}
-                  otherClasses="hidden group-hover:block"
-                />
-              </Link>
-              <hr className="mb-6 border-[1px] border-blue-500" />
-              <div className="flex w-full gap-6">
+              <div className="flex flex-col gap-6">
                 <Link
-                  href={youtubeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
+                  href="/"
+                  className="footer w-fit text-white transition-all  duration-400 hover:text-green-300"
                 >
-                  <Icon
-                    icon="youtube"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="block group-hover:hidden"
-                  />
-                  <Icon
-                    icon="youtube-blue"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="hidden group-hover:block"
-                  />
+                  <FooterNetaceaLogo className="svg-currentColor " />
                 </Link>
-                <Link
-                  href={facebookUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <Icon
-                    icon="facebook"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="block group-hover:hidden"
-                  />
-                  <Icon
-                    icon="facebook-blue"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="hidden group-hover:block"
-                  />
-                </Link>
-                <Link
-                  href={linkedInUrl}
-                  target="_blank"
-                  className="group"
-                  rel="noopener noreferrer"
-                >
-                  <Icon
-                    icon="linkedin"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="block group-hover:hidden"
-                  />
-                  <Icon
-                    icon="linkedin-blue"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="hidden group-hover:block"
-                  />
-                </Link>
-                <Link
-                  href={twitterUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <Icon
-                    icon="twitter"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="block group-hover:hidden"
-                  />
-                  <Icon
-                    icon="twitter-blue"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="hidden group-hover:block"
-                  />
-                </Link>
-                <Link href={podcastUrl?.current} className="group">
-                  <Icon
-                    icon="podcast"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="block group-hover:hidden"
-                  />
-                  <Icon
-                    icon="podcast-blue"
-                    iconHeight={24}
-                    iconWidth={24}
-                    otherClasses="hidden group-hover:block"
-                  />
-                </Link>
+                <div className="flex w-full gap-6 border-t-[1px] border-t-blue-500 pt-6 ">
+                  <Link
+                    href={youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white transition-all duration-400 hover:text-green-300"
+                  >
+                    <Youtube className="svg-currentColor svg-fill-currentColor" />
+                  </Link>
+                  <Link
+                    href={facebookUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white transition-all duration-400 hover:text-green-300"
+                  >
+                    <Facebook className="svg-currentColor svg-fill-currentColor" />
+                  </Link>
+                  <Link
+                    href={linkedInUrl}
+                    target="_blank"
+                    className="text-white transition-all duration-400 hover:text-green-300"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin className="svg-currentColor svg-fill-currentColor" />
+                  </Link>
+                  <Link
+                    href={twitterUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white transition-all duration-400 hover:text-green-300"
+                  >
+                    <Twitter className="svg-currentColor svg-fill-currentColor" />
+                  </Link>
+                  <Link
+                    href={podcastUrl?.current}
+                    className="text-white transition-all duration-400 hover:text-green-300"
+                  >
+                    <Podcast className="svg-currentColor svg-fill-currentColor" />
+                  </Link>
+                </div>
               </div>
             </div>
             {footerLinks?.map(({ parentLinks }, i) => {
@@ -136,15 +82,15 @@ export default function Footer({
                     return (
                       <div key={title} className="flex flex-col gap-10">
                         <div className="flex flex-col gap-5">
-                          <p className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-gray">
+                          <p className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-footer">
                             {title}
                           </p>
-                          <ul className="flex flex-col gap-3">
+                          <ul className="flex flex-col gap-2">
                             {childLinks?.map(({ title, slug: { current } }) => {
                               return (
                                 <li key={title}>
                                   <Link
-                                    className="font-aeronik-pro text-base font-normal text-white hover:text-blue-200"
+                                    className="font-aeronik-pro text-base font-normal text-white transition-all duration-400 hover:text-green-300"
                                     href={`/${current}`}
                                   >
                                     {title}
@@ -165,7 +111,7 @@ export default function Footer({
             <div className=" w-full lg:w-2/4">
               <RichText
                 richText={copyright}
-                otherClasses="[&>p]:text-12-more [&>p]:text-white [&>p]:font-normal [&>p]:font-normal [&>p]:font-aeronik-pro [&>p]:pb-3"
+                otherClasses="[&>p]:text-12-more [&>p]:text-white [&>p]:font-normal  [&>p]:font-aeronik-pro [&>p]:pb-3"
               />
 
               <p className="font-aeronik-pro text-12-more font-normal text-white">
@@ -183,7 +129,7 @@ export default function Footer({
                 return (
                   <Link
                     key={title}
-                    className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-blue-100 hover:text-blue-200"
+                    className="font-aeronik-pro text-12-less font-normal capitalize tracking-[0.48px] text-white transition-all duration-400 hover:text-green-300"
                     href={`/${current}`}
                   >
                     {title}

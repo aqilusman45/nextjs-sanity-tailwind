@@ -8,7 +8,7 @@ module.exports = {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      "lg-xl":"1280px",
+      'lg-xl': '1280px',
       xl: '1440px',
     },
     extend: {
@@ -38,6 +38,7 @@ module.exports = {
         '32-more': ['2rem', '2.8rem'], //[32px,44.8px]
       },
       colors: {
+        footer: '#ffffff80',
         green: {
           DEFAULT: '#43980B',
           100: '#ECFDE1',
