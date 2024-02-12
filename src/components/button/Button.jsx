@@ -32,14 +32,14 @@ export default function Button({
     variant === 'secondary' &&
       `${
         mode === 'light'
-          ? 'px-4 py-3 h-10  bg-transparent text-base text-blue-300 border-[1px] border-blue-300 font-aeronik-pro rounded hover:bg-blue-400 hover:text-white '
-          : 'px-4 py-3 h-10  bg-transparent text-base text-green-300 border-[1px] border-green-300 font-aeronik-pro  rounded hover:bg-green-400 hover:text-blue'
+          ? 'px-4 py-3 h-10  bg-transparent text-base text-blue-300 border-[1px] border-blue-300 font-aeronik-pro rounded hover:bg-blue-400 hover:border-blue-400 hover:text-white '
+          : 'px-4 py-3 h-10  bg-transparent text-base text-green-300 border-[1px] border-green-300 font-aeronik-pro  rounded hover:bg-green-400 hover:border-green-400 hover:text-blue'
       }`,
     variant === 'secondary-arrow' &&
       `${
         mode === 'light'
-          ? 'px-4 py-3 h-10 bg-transparent text-base text-blue-300 border-[1px] border-blue-300 font-aeronik-pro rounded hover:bg-blue-400 hover:text-white'
-          : 'px-4 py-3 h-10 bg-transparent text-base text-green-300 border-[1px] border-green-300 font-aeronik-pro rounded hover:bg-green-400 hover:text-blue '
+          ? 'px-4 py-3 h-10 bg-transparent text-base text-blue-300 border-[1px] border-blue-300 font-aeronik-pro rounded hover:bg-blue-400 hover:border-blue-400 hover:text-white'
+          : 'px-4 py-3 h-10 bg-transparent text-base text-green-300 border-[1px] border-green-300 font-aeronik-pro rounded hover:bg-green-400 hover:border-green-400 hover:text-blue '
       }`,
     variant === 'text-link' &&
       `${

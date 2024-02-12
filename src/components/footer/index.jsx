@@ -29,18 +29,18 @@ export default function Footer({
               <div className="flex flex-col gap-6">
                 <Link
                   href="/"
-                  className="footer w-fit text-white transition-all  duration-400 hover:text-green-300"
+                  className="footer w-fit text-white transition-all duration-400 hover:text-green-300"
                 >
-                  <FooterNetaceaLogo className="svg-currentColor " />
+                  <FooterNetaceaLogo className="svg-fill-currentColor " />
                 </Link>
-                <div className="flex w-full gap-6 border-t-[1px] border-t-blue-500 pt-6 ">
+                <div className="flex w-full items-center gap-6 border-t-[1px] border-t-blue-500 pt-6 ">
                   <Link
                     href={youtubeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white transition-all duration-400 hover:text-green-300"
                   >
-                    <Youtube className="svg-currentColor svg-fill-currentColor" />
+                    <Youtube className=" svg-fill-currentColor" />
                   </Link>
                   <Link
                     href={facebookUrl}
@@ -48,7 +48,7 @@ export default function Footer({
                     rel="noopener noreferrer"
                     className="text-white transition-all duration-400 hover:text-green-300"
                   >
-                    <Facebook className="svg-currentColor svg-fill-currentColor" />
+                    <Facebook className="svg-fill-currentColor" />
                   </Link>
                   <Link
                     href={linkedInUrl}
@@ -56,7 +56,7 @@ export default function Footer({
                     className="text-white transition-all duration-400 hover:text-green-300"
                     rel="noopener noreferrer"
                   >
-                    <Linkedin className="svg-currentColor svg-fill-currentColor" />
+                    <Linkedin className="svg-fill-currentColor" />
                   </Link>
                   <Link
                     href={twitterUrl}
@@ -64,13 +64,13 @@ export default function Footer({
                     rel="noopener noreferrer"
                     className="text-white transition-all duration-400 hover:text-green-300"
                   >
-                    <Twitter className="svg-currentColor svg-fill-currentColor" />
+                    <Twitter className="svg-fill-currentColor" />
                   </Link>
                   <Link
                     href={podcastUrl?.current}
                     className="text-white transition-all duration-400 hover:text-green-300"
                   >
-                    <Podcast className="svg-currentColor svg-fill-currentColor" />
+                    <Podcast className="svg-fill-currentColor" />
                   </Link>
                 </div>
               </div>
