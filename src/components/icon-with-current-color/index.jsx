@@ -1,19 +1,42 @@
-import { AccountTackover, CardingFraud, ChevronDown } from '../../../icons'
+import {
+  AccountTackover,
+  ActiveBotProtection,
+  BotAttackIntel,
+  BussinessLoginIcon,
+  CardingFraud,
+  ChevronDown,
+  CredentialStuffing,
+  FileIcon,
+  MarketingAnalytics,
+  NavbarSearchIcon,
+  ScaperIcon,
+} from '../../../icons'
 
-export default function IconWithCurrentColor({  icon ,...props},) {
+export default function IconWithCurrentColor({ icon, ...props }) {
   switch (icon) {
     case 'chevron-down':
       return <ChevronDown {...props} />
+    case 'file-icon':
+      return <FileIcon {...props} />
+    case 'search-icon':
+      return <NavbarSearchIcon {...props} />
+    // link icon
+    case 'active-bot-protection':
+      return <ActiveBotProtection {...props} />
+    case 'bot-attack-intel':
+      return <BotAttackIntel {...props} />
+    case 'bussiness-login-icon':
+      return <BussinessLoginIcon {...props} />
     case 'account-tackover':
       return <AccountTackover {...props} />
     case 'carding-fraud':
       return <CardingFraud {...props} />
-    case '':
-      return (
-        <svg width={24} height={24} viewBox="0 0 24 24" {...props}>
-          <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" />
-        </svg>
-      )
+    case 'credential-stuffing':
+      return <CredentialStuffing {...props} />
+    case 'marketing-analytics':
+      return <MarketingAnalytics {...props} />
+    case 'scaper-icon':
+      return <ScaperIcon {...props} />
 
     default:
       return null

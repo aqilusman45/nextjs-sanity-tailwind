@@ -6,8 +6,6 @@ import Button from '../button/Button'
 import Heading from '../heading'
 import Icon from '../icon'
 import NextImage from '../next-image'
-import { ChevronDown } from 'icons'
-import { FileIcon, NavbarSearchIcon } from '../../../icons'
 import RichText from '../rich-text'
 import IconWithCurrentColor from '../icon-with-current-color'
 
@@ -33,7 +31,7 @@ export default function Navbar({ button, logo, nestedLinks }) {
           </Link>
           <div
             className={classNames(
-              'mobile-nav-main-container absolute left-0 top-14 flex w-full flex-col justify-between gap-10 overflow-auto bg-blue-600 px-4 py-10 lg:static lg:left-auto lg:top-auto lg:w-auto lg:gap-0 lg:overflow-visible lg:bg-transparent lg:px-0 lg:py-0',
+              'mobile-nav-main-container absolute left-0 top-[52px] flex w-full flex-col justify-between gap-10 overflow-auto bg-blue-600 px-4 py-10 lg:static lg:left-auto lg:top-auto lg:w-auto lg:gap-0 lg:overflow-visible lg:bg-transparent lg:px-0 lg:py-0',
               state.toggle ? 'block' : 'hidden lg:block',
             )}
           >
@@ -52,11 +50,9 @@ export default function Navbar({ button, logo, nestedLinks }) {
                         <p className="w-fit font-aeronik-pro text-20 font-normal text-white lg:w-auto lg:text-base">
                           {node?.title}
                         </p>
-                        {node?.subLinks?.length > 0 && <ChevronDown />}
-                        <IconWithCurrentColor
-                          icon="chevron-down"
-                          className="bg-red-500"
-                        />
+                        {node?.subLinks?.length > 0 && (
+                          <IconWithCurrentColor icon="chevron-down" />
+                        )}
                       </button>
                     ) : (
                       <Link
@@ -66,7 +62,9 @@ export default function Navbar({ button, logo, nestedLinks }) {
                         <p className="w-fit font-aeronik-pro text-20 font-normal text-white lg:w-auto lg:text-base">
                           {node?.title}
                         </p>
-                        {node?.subLinks?.length > 0 && <ChevronDown />}
+                        {node?.subLinks?.length > 0 && (
+                          <IconWithCurrentColor icon="chevron-down" />
+                        )}
                       </Link>
                     )}
 
@@ -79,15 +77,15 @@ export default function Navbar({ button, logo, nestedLinks }) {
                           }))
                         }
                         className={classNames(
-                          'mx-auto h-auto w-full bg-blue-600 transition-all duration-300 lg:absolute lg:left-2/4 lg:top-88 lg:max-w-1320 lg:-translate-x-2/4 lg:px-8',
+                          ' mx-auto h-auto w-full rounded  bg-blue-600 transition-all duration-300 lg:absolute lg:left-2/4 lg:top-[87px] lg:max-w-1320 lg:-translate-x-2/4 lg:px-8',
                           state.toggleTab === node.title
-                            ? 'mt-6 max-h-[700px] overflow-visible lg:mt-0 lg:py-8'
-                            : 'max-h-[0px] overflow-hidden',
+                            ? 'main-container-menu mt-6 max-h-[1300px] overflow-visible lg:mt-0 lg:max-h-[700px] lg:py-8'
+                            : 'max-h-[0px] overflow-hidden border-[0px] border-transparent',
                         )}
                       >
                         <div
                           className={classNames(
-                            'mb-10 hidden transition-all delay-300 duration-500 lg:flex lg:justify-between',
+                            'mb-8 hidden transition-all delay-300 duration-500 lg:flex lg:justify-between',
                             state.toggleTab === node.title
                               ? 'opacity-100'
                               : 'opacity-0',
@@ -131,11 +129,15 @@ export default function Navbar({ button, logo, nestedLinks }) {
                                     >
                                       {nestedNode?.category}
                                     </Link>
-                                    <Icon
+                                    {/* <Icon
                                       icon="chevron-down"
                                       iconHeight={16}
                                       iconWidth={16}
                                       otherClasses="lg:hidden block group-hover/nested-menu:rotate-180 transition-all duration-300"
+                                    /> */}
+                                    <IconWithCurrentColor
+                                      icon="chevron-down"
+                                      className="block transition-all duration-300 group-hover/nested-menu:rotate-180 lg:hidden"
                                     />
                                   </div>
                                 ) : (
@@ -154,7 +156,7 @@ export default function Navbar({ button, logo, nestedLinks }) {
                                     return (
                                       <li
                                         key={`${index}-${linksNode?.title}`}
-                                        className="border-b-[1px] border-b-blue-200 py-4 "
+                                        className="border-b-[1px] border-b-blue-500 py-4 "
                                       >
                                         <Link
                                           href={
@@ -164,12 +166,16 @@ export default function Navbar({ button, logo, nestedLinks }) {
                                               ? `${linksNode?.slug?.current}`
                                               : `/${linksNode?.slug?.current}`
                                           }
-                                          className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-blue-200"
+                                          className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-green-300"
                                         >
-                                          <Icon
+                                          {/* <Icon
                                             icon={linksNode?.icon}
                                             iconHeight={16}
                                             iconWidth={16}
+                                          /> */}
+                                          <IconWithCurrentColor
+                                            icon={linksNode?.icon}
+                                            className="[&>g>path]:stroke-current  [&>path]:fill-none [&>path]:stroke-current"
                                           />
                                           {linksNode?.title}
                                         </Link>
@@ -193,7 +199,7 @@ export default function Navbar({ button, logo, nestedLinks }) {
                               <div className="my-6 flex justify-between">
                                 <div className="flex items-center gap-2">
                                   <span className="rounded border-[1px] border-green-300 p-2">
-                                    <FileIcon />
+                                    <IconWithCurrentColor icon="file-icon" />
                                   </span>
                                   <p className="text-xs font-normal text-white">
                                     Blog
@@ -240,7 +246,7 @@ export default function Navbar({ button, logo, nestedLinks }) {
         </div>
         <div className="flex items-center gap-3 xl:gap-6">
           <button className="hidden items-center gap-1 lg:flex">
-            <NavbarSearchIcon className="h-4 w-4" />
+            <IconWithCurrentColor icon="search-icon" className="h-4 w-4" />
             <span className="hidden font-aeronik-pro text-base text-white xl:block">
               Search
             </span>

@@ -62,3 +62,27 @@
     }
   }
 }
+
+.main-container-menu {
+  background:
+    linear-gradient(#001831, #001831) padding-box,
+    linear-gradient(
+      92.19deg,
+      rgba(54, 124, 243, 0.5) -21.93%,
+      rgba(54, 124, 243, 0) 20.59%
+    ),
+    linear-gradient(
+      136.39deg,
+      rgba(54, 124, 243, 0.5) -14.01%,
+      rgba(54, 124, 243, 0) 17.78%
+    ),
+    linear-gradient(
+        312.21deg,
+        rgba(54, 124, 243, 0.5) -1.83%,
+        rgba(54, 124, 243, 0) 16.05%
+      )
+      border-box;
+  border: 1px solid transparent;
+
+  // border: 1px solid;
+}
