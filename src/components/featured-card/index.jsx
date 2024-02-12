@@ -1,13 +1,10 @@
 import classnames from 'classnames'
-import { groq } from 'next-sanity'
 
 import Button from '../button/Button'
 import Heading from '../heading'
-import NextImage from '../next-image'
 import RichText from '../rich-text'
+import IconWithCurrentColor from '../icon-with-current-color'
 
-export const fragment = groq`
-`
 
 export default function FeaturedCard({
   otherClasses,
@@ -18,14 +15,18 @@ export default function FeaturedCard({
 }) {
   const featuredCardClasses = classnames(
     otherClasses,
-    'p-6 featured-card-container min-h-[330px] gap-10 flex flex-col justify-between  hover:border-[1px]  hover:scale-105 transition-all duration-300 hover:border-blue-300',
+    'p-6 featured-card-container min-h-[330px] gap-14 flex flex-col justify-between group outline outline-[1px] outline-transparent hover:outline-blue-300/50 rounded transition-all duration-400',
   )
-
+console.log(icon);
   return (
     <div className={featuredCardClasses} data-testid="featured-card">
       <div>
-        <NextImage {...icon} otherClasses="w-12 h-12" />
-        <Heading type="h4" otherClasses="mt-8 mb-10 text-blue">
+        <div className='p-4 border-[1px] border-blue-300 w-fit rounded backdrop-blur text-blue-300 group-hover:bg-blue-300 group-hover:text-white transition-all duration-400'>
+
+        <IconWithCurrentColor icon={icon} className="h-auto w-auto [&>path]:stroke-current" />
+        </div>
+        {/* <NextImage {...icon} otherClasses="w-12 h-12 " /> */}
+        <Heading type="h4" otherClasses="mt-6 mb-6 text-blue">
           {heading}
         </Heading>
         <RichText richText={subText} />

@@ -1,10 +1,13 @@
-import { ChevronDown } from '../../../icons'
+import { AccountTackover, CardingFraud, ChevronDown } from '../../../icons'
 
-export default function IconWithCurrentColor({ className, icon }) {
-  const props = { fill: 'currentColor', className }
+export default function IconWithCurrentColor({  icon ,...props},) {
   switch (icon) {
     case 'chevron-down':
       return <ChevronDown {...props} />
+    case 'account-tackover':
+      return <AccountTackover {...props} />
+    case 'carding-fraud':
+      return <CardingFraud {...props} />
     case '':
       return (
         <svg width={24} height={24} viewBox="0 0 24 24" {...props}>

@@ -7,9 +7,7 @@ import Heading from '../../components/heading'
 
 export const FEATURED_SECTION_FRAGMENT = groq`
  featuredCards[]{
-     ...,
-     "icon":icon.asset->{
-...,}
+     ...
    }
 `
 

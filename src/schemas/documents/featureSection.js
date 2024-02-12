@@ -35,8 +35,20 @@ export const featureSection = {
             {
               title: 'Icon',
               name: 'icon',
-              type: 'img',
-              validation: (Rule) => Rule.required(),
+              type: 'string',
+              initialValue: 'account-takeover',
+              options: {
+                list: [
+                  { title: 'Account Takeover', value: 'account-takeover' },
+                  { title: 'Carding fraud', value: 'carding-fraud' },
+                  { title: 'Credential stuffing', value: 'credential-stuffing' },
+                  { title: 'Fake account creation', value: 'fake-account-creation' },
+                  { title: 'Loyalty point fraud', value: 'loyalty-point-fraud' },
+                  { title: 'Scalper bots', value: 'scalper-bots' },
+                  { title: 'Skewed analytics', value: 'skewed-analytics'},
+                  { title: 'Web scraping', value: 'web-scraping' },
+                ],
+              },
             },
             {
               title: 'Heading',
