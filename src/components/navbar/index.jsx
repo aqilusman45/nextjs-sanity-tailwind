@@ -9,6 +9,7 @@ import NextImage from '../next-image'
 import { ChevronDown } from 'icons'
 import { FileIcon, NavbarSearchIcon } from '../../../icons'
 import RichText from '../rich-text'
+import IconWithCurrentColor from '../icon-with-current-color'
 
 export default function Navbar({ button, logo, nestedLinks }) {
   const [state, setState] = useState({
@@ -22,8 +23,6 @@ export default function Navbar({ button, logo, nestedLinks }) {
       toggleTab: state.toggleTab === e ? null : e,
     }))
   }
-
-  console.log(state)
 
   return (
     <nav className="fixed left-0 top-0 z-50 w-full bg-blue-600">
@@ -54,6 +53,10 @@ export default function Navbar({ button, logo, nestedLinks }) {
                           {node?.title}
                         </p>
                         {node?.subLinks?.length > 0 && <ChevronDown />}
+                        <IconWithCurrentColor
+                          icon="chevron-down"
+                          className="bg-red-500"
+                        />
                       </button>
                     ) : (
                       <Link
