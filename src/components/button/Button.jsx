@@ -14,6 +14,7 @@ export default function Button({
   external,
   mode = 'light',
 }) {
+  console.log(slug)
   const buttonClasses = classnames(
     otherClasses,
     'flex justify-between items-center gap-2 whitespace-nowrap min-width-120 cursor-pointer group transition-all duration-400 ',
@@ -90,7 +91,7 @@ export default function Button({
       </button>
     )
   }
-  const { current } = slug
+  const { current } = slug || {}
 
   return (
     <Link

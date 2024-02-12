@@ -15,6 +15,9 @@ links{
  },
 nestedLinks[]{
   ...,
+  "blogImage":blogImage.asset->{
+    ...,
+  },
   subLinks[]{
     ...,
   }

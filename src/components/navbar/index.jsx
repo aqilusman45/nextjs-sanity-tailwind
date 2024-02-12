@@ -6,22 +6,35 @@ import Button from '../button/Button'
 import Heading from '../heading'
 import Icon from '../icon'
 import NextImage from '../next-image'
+import { ChevronDown } from 'icons'
+import { FileIcon, NavbarSearchIcon } from '../../../icons'
+import RichText from '../rich-text'
 
 export default function Navbar({ button, logo, nestedLinks }) {
   const [state, setState] = useState({
     toggle: false,
+    toggleTab: '',
   })
+
+  const handleClickNavTab = (e) => {
+    setState((prev) => ({
+      ...prev,
+      toggleTab: state.toggleTab === e ? null : e,
+    }))
+  }
+
+  console.log(state)
 
   return (
     <nav className="fixed left-0 top-0 z-50 w-full bg-blue-600">
-      <div className="relative mx-auto flex w-full max-w-default items-center justify-between px-4 py-2 lg:px-16 lg:py-0 xl:px-108">
+      <div className="relative mx-auto flex w-full max-w-default items-center justify-between px-4 py-4 lg:px-16 lg:py-0 xl:px-108">
         <div className="flex items-center justify-between gap-10 lg:justify-start lg:gap-4 xl:gap-10">
           <Link href="/">
             <NextImage {...logo} otherClasses="w-28 h-5" />
           </Link>
           <div
             className={classNames(
-              'mobile-nav-main-container absolute left-0 top-14 flex w-full flex-col justify-between overflow-auto bg-blue-600 px-4 py-10 lg:static lg:left-auto lg:top-auto lg:w-auto lg:overflow-visible lg:bg-transparent lg:px-0 lg:py-0',
+              'mobile-nav-main-container absolute left-0 top-14 flex w-full flex-col justify-between gap-10 overflow-auto bg-blue-600 px-4 py-10 lg:static lg:left-auto lg:top-auto lg:w-auto lg:gap-0 lg:overflow-visible lg:bg-transparent lg:px-0 lg:py-0',
               state.toggle ? 'block' : 'hidden lg:block',
             )}
           >
@@ -32,32 +45,51 @@ export default function Navbar({ button, logo, nestedLinks }) {
                     key={`${index}-${node?.title}`}
                     className="menu-container group flex w-full flex-col items-start lg:h-88 lg:w-auto lg:flex-row lg:items-center"
                   >
-                    <div className="flex w-full items-center justify-between gap-1 lg:w-auto lg:justify-start">
+                    {node?.subLinks?.length > 0 ? (
+                      <button
+                        onClick={() => handleClickNavTab(node.title)}
+                        className="flex w-full items-center justify-between gap-1 lg:w-auto lg:justify-start"
+                      >
+                        <p className="w-fit font-aeronik-pro text-20 font-normal text-white lg:w-auto lg:text-base">
+                          {node?.title}
+                        </p>
+                        {node?.subLinks?.length > 0 && <ChevronDown />}
+                      </button>
+                    ) : (
                       <Link
                         href={node?.slug?.current}
-                        className="w-fit font-aeronik-pro text-20 font-normal text-white lg:w-auto lg:text-base"
+                        className="flex w-full items-center justify-between gap-1 lg:w-auto lg:justify-start"
                       >
-                        {node?.title}
+                        <p className="w-fit font-aeronik-pro text-20 font-normal text-white lg:w-auto lg:text-base">
+                          {node?.title}
+                        </p>
+                        {node?.subLinks?.length > 0 && <ChevronDown />}
                       </Link>
-                      {node?.subLinks?.length > 0 && (
-                        <Icon
-                          icon="chevron-down"
-                          iconHeight={16}
-                          iconWidth={16}
-                          otherClasses="group-hover:rotate-180 transition-all duration-300"
-                        />
-                      )}
-                    </div>
+                    )}
+
                     {node?.subLinks?.length > 0 && (
                       <div
+                        onMouseLeave={() =>
+                          setState((prev) => ({
+                            ...prev,
+                            toggleTab: '',
+                          }))
+                        }
                         className={classNames(
-                          'category-menu-link mx-auto w-full bg-blue-600 group-hover:mt-6 lg:absolute lg:left-2/4 lg:top-88 lg:-translate-x-2/4 lg:px-8 lg:group-hover:mt-0 lg:group-hover:py-8',
-                          node?.subLinks?.length === 1 && 'lg:max-w-80',
-                          node?.subLinks?.length === 2 && 'lg:max-w-720',
-                          node?.subLinks?.length === 3 && 'lg:max-w-1320',
+                          'mx-auto h-auto w-full bg-blue-600 transition-all duration-300 lg:absolute lg:left-2/4 lg:top-88 lg:max-w-1320 lg:-translate-x-2/4 lg:px-8',
+                          state.toggleTab === node.title
+                            ? 'mt-6 max-h-[700px] overflow-visible lg:mt-0 lg:py-8'
+                            : 'max-h-[0px] overflow-hidden',
                         )}
                       >
-                        <div className="mb-10 hidden lg:flex lg:justify-between">
+                        <div
+                          className={classNames(
+                            'mb-10 hidden transition-all delay-300 duration-500 lg:flex lg:justify-between',
+                            state.toggleTab === node.title
+                              ? 'opacity-100'
+                              : 'opacity-0',
+                          )}
+                        >
                           <Heading type="h4" otherClasses="text-white">
                             {node?.title}
                           </Heading>
@@ -70,10 +102,10 @@ export default function Navbar({ button, logo, nestedLinks }) {
                         </div>
                         <div
                           className={classNames(
-                            'grid gap-6 lg:gap-16 xl:gap-28',
-                            node?.subLinks?.length === 1 && 'lg:grid-cols-1',
-                            node?.subLinks?.length === 2 && 'lg:grid-cols-2',
-                            node?.subLinks?.length === 3 && 'lg:grid-cols-3',
+                            'grid gap-6 transition-all delay-300 duration-500 lg:grid-cols-3 lg:gap-16 xl:gap-28',
+                            state.toggleTab === node.title
+                              ? 'opacity-100'
+                              : 'opacity-0',
                           )}
                         >
                           {node.subLinks.map((nestedNode, index) => {
@@ -149,6 +181,43 @@ export default function Navbar({ button, logo, nestedLinks }) {
                               </div>
                             )
                           })}
+                          {node?.name && (
+                            <div className="w-full border-l-[1px] border-l-blue-500 pl-6">
+                              <NextImage
+                                {...node.blogImage}
+                                otherClasses="w-full"
+                              />
+                              <div className="my-6 flex justify-between">
+                                <div className="flex items-center gap-2">
+                                  <span className="rounded border-[1px] border-green-300 p-2">
+                                    <FileIcon />
+                                  </span>
+                                  <p className="text-xs font-normal text-white">
+                                    Blog
+                                  </p>
+                                </div>
+                                <div className="flex gap-1">
+                                  <p className="text-sm text-white">
+                                    {`${node.name} |`}
+                                  </p>
+                                  <p className="text-sm text-white">
+                                    {` ${node.publishAt}`}
+                                  </p>
+                                </div>
+                              </div>
+                              <Heading
+                                type="h5"
+                                otherClasses="text-20 text-white mb-5"
+                              >
+                                {node.heading}
+                              </Heading>
+                              <RichText
+                                richText={node.subText}
+                                otherClasses="global-richtext-dark"
+                              />
+                              <Button {...node.button} otherClasses="mt-10" />
+                            </div>
+                          )}
                         </div>
                       </div>
                     )}
@@ -160,21 +229,15 @@ export default function Navbar({ button, logo, nestedLinks }) {
               <div className="w-full lg:hidden">
                 <Button
                   {...button[0]}
-                  otherClasses="w-full block text-center justify-center"
+                  otherClasses="w-full block text-center !justify-center"
                 />
               </div>
             )}
           </div>
         </div>
         <div className="flex items-center gap-3 xl:gap-6">
-          <button className="flex items-center gap-1">
-            <span className="block h-5 w-5">
-              <Icon
-                icon="navbar-search-icon"
-                iconHeight="100%"
-                iconWidth="100%"
-              />
-            </span>
+          <button className="hidden items-center gap-1 lg:flex">
+            <NavbarSearchIcon className="h-4 w-4" />
             <span className="hidden font-aeronik-pro text-base text-white xl:block">
               Search
             </span>
@@ -185,7 +248,8 @@ export default function Navbar({ button, logo, nestedLinks }) {
                 {...node}
                 key={i}
                 otherClasses={classNames(
-                  i === 0 && 'lg:flex hidden',
+                  'lg:flex hidden',
+                  i === 0 && '',
                   i === 1 &&
                     ' [&>svg]:xs:block px-2 xs:px-4 py-1 xs:py-2 [&>svg]:hidden',
                 )}
@@ -193,7 +257,7 @@ export default function Navbar({ button, logo, nestedLinks }) {
             )
           })}
           <button
-            className="flex h-10 w-10 flex-col items-center justify-center gap-1 overflow-hidden lg:hidden"
+            className="flex h-4 w-4 flex-col items-center justify-center gap-1 overflow-hidden lg:hidden"
             onClick={() =>
               setState((prev) => ({
                 ...prev,
@@ -203,22 +267,24 @@ export default function Navbar({ button, logo, nestedLinks }) {
           >
             <span
               className={classNames(
-                'block h-[2px] w-6 rounded bg-white transition-all duration-300',
+                'block h-[2px]   bg-white transition-all duration-300',
                 state.toggle
-                  ? 'translate-x-0 translate-y-[6px] rotate-[45deg]'
-                  : '',
+                  ? 'w-4 translate-x-0 translate-y-[6px] rotate-[45deg]'
+                  : 'w-[10px] translate-x-[3px]',
               )}
             ></span>
             <span
               className={classNames(
-                'block h-[2px] w-6 rounded bg-white transition-all duration-300',
-                state.toggle ? 'translate-x-10' : '',
+                'block h-[2px]  bg-white transition-all duration-300',
+                state.toggle ? 'w-4 translate-x-10' : 'w-[10px]',
               )}
             ></span>
             <span
               className={classNames(
-                'block h-[2px] w-6 rounded bg-white transition-all duration-300',
-                state.toggle ? '-translate-y-[6px] rotate-[-45deg]' : '',
+                'block h-[2px] bg-white transition-all duration-300',
+                state.toggle
+                  ? 'w-4 -translate-y-[6px] rotate-[-45deg]'
+                  : 'w-[10px] translate-x-[-3px]',
               )}
             ></span>
           </button>

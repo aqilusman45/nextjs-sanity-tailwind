@@ -95,6 +95,36 @@ export const navbarObject = {
                 },
               ],
             },
+            {
+              title: 'Blog Image',
+              name: 'blogImage',
+              type: 'img',
+            },
+            {
+              title: 'Name',
+              name: 'name',
+              type: 'string',
+            },
+            {
+              title: 'Publish At',
+              name: 'publishAt',
+              type: 'date',
+            },
+            {
+              title: 'Heading',
+              name: 'heading',
+              type: 'string',
+            },
+            {
+              title: 'Sub Text',
+              name: 'subText',
+              type: 'bodyPortableText',
+            },
+            {
+              type: 'button',
+              name: 'button',
+              title: 'Button',
+            },
           ],
         },
       ],
