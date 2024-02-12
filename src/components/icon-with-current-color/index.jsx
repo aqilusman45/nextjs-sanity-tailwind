@@ -10,6 +10,14 @@ import {
   MarketingAnalytics,
   NavbarSearchIcon,
   ScaperIcon,
+  CardingFraud,
+  ChevronDown,
+  CredentialStuffing,
+  FakeAccountCreation,
+  LoyaltyPointFraud,
+  ScalperBots,
+  SkewedAnalytics,
+  WebScrapping,
 } from '../../../icons'
 
 export default function IconWithCurrentColor({ icon, ...props }) {
@@ -37,6 +45,16 @@ export default function IconWithCurrentColor({ icon, ...props }) {
       return <MarketingAnalytics {...props} />
     case 'scaper-icon':
       return <ScaperIcon {...props} />
+    case 'fake-account-creation':
+      return <FakeAccountCreation {...props} />
+    case 'loyalty-point-fraud':
+      return <LoyaltyPointFraud {...props} />
+    case 'scalper-bots':
+      return <ScalperBots {...props} />
+    case 'skewed-analytics':
+      return <SkewedAnalytics {...props} />
+    case 'web-scrapping':
+      return <WebScrapping {...props} />
 
     default:
       return null

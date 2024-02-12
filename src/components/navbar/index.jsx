@@ -1,13 +1,17 @@
 import classNames from 'classnames'
+import { ChevronDown } from 'icons'
 import Link from 'next/link'
 import { useState } from 'react'
 
+import { FileIcon, NavbarSearchIcon } from '../../../icons'
 import Button from '../button/Button'
 import Heading from '../heading'
 import Icon from '../icon'
 import NextImage from '../next-image'
 import RichText from '../rich-text'
 import IconWithCurrentColor from '../icon-with-current-color'
+import NextImage from '../next-image'
+import RichText from '../rich-text'
 
 export default function Navbar({ button, logo, nestedLinks }) {
   const [state, setState] = useState({

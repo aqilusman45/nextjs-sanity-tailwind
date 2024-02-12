@@ -2,9 +2,8 @@ import classnames from 'classnames'
 
 import Button from '../button/Button'
 import Heading from '../heading'
-import RichText from '../rich-text'
 import IconWithCurrentColor from '../icon-with-current-color'
-
+import RichText from '../rich-text'
 
 export default function FeaturedCard({
   otherClasses,
@@ -17,13 +16,16 @@ export default function FeaturedCard({
     otherClasses,
     'p-6 featured-card-container min-h-[330px] gap-14 flex flex-col justify-between group outline outline-[1px] outline-transparent hover:outline-blue-300/50 rounded transition-all duration-400',
   )
-console.log(icon);
   return (
     <div className={featuredCardClasses} data-testid="featured-card">
       <div>
-        <div className='p-4 border-[1px] border-blue-300 w-fit rounded backdrop-blur text-blue-300 group-hover:bg-blue-300 group-hover:text-white transition-all duration-400'>
-
-        <IconWithCurrentColor icon={icon} className="h-auto w-auto [&>path]:stroke-current" />
+        <div className="w-fit rounded border-[1px] border-blue-300 p-4 text-blue-300 backdrop-blur transition-all duration-400 group-hover:bg-blue-300 group-hover:text-white">
+          <IconWithCurrentColor
+            icon={icon}
+            className={classnames(
+              'h-auto w-auto [&>g>path]:stroke-current [&>path]:stroke-current',
+            )}
+          />
         </div>
         {/* <NextImage {...icon} otherClasses="w-12 h-12 " /> */}
         <Heading type="h4" otherClasses="mt-6 mb-6 text-blue">

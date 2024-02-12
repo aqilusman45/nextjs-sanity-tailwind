@@ -1,18 +1,18 @@
-import classnames from "classnames";
-import dynamic from "next/dynamic";
-import { groq } from "next-sanity";
-import lottie from "lottie-web";
-import gsap from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import classnames from 'classnames'
+import gsap from 'gsap/dist/gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import lottie from 'lottie-web'
+import dynamic from 'next/dynamic'
+import { groq } from 'next-sanity'
+import { useEffect, useRef, useState } from 'react'
 
-import Button from "../../components/button/Button";
-import Heading from "../../components/heading";
-import NextImage from "../../components/next-image";
-import { useEffect, useRef, useState } from "react";
+import Button from '../../components/button/Button'
+import Heading from '../../components/heading'
+import NextImage from '../../components/next-image'
 
-const ProductCard = dynamic(() => import("../../components/product-card"), {
+const ProductCard = dynamic(() => import('../../components/product-card'), {
   ssr: false,
-});
+})
 
 export const PRODUCT_CARD_SECTION_FRAGMENT = groq`
  "backVector":backVector.asset->{
@@ -27,7 +27,7 @@ export const PRODUCT_CARD_SECTION_FRAGMENT = groq`
       ...,
     }
   }
-`;
+`
 
 export default function ProductCardSection({
   otherClasses,
@@ -37,24 +37,25 @@ export default function ProductCardSection({
   backVector,
   _id,
 }) {
-
-  const [trigger,setTrigger] = useState(false);
-  gsap.registerPlugin(ScrollTrigger);
+  const [trigger, setTrigger] = useState(false)
+  gsap.registerPlugin(ScrollTrigger)
 
   useEffect(() => {
     ScrollTrigger.create({
-      trigger:".ai__main",
-      start:"top center",
-      end:"bottom center",
-      onEnter:() =>{ setTrigger(true)},
+      trigger: '.ai__main',
+      start: 'top center',
+      end: 'bottom center',
+      onEnter: () => {
+        setTrigger(true)
+      },
     })
-  }, []);
+  }, [])
 
   const productCardSectionClasses = classnames(
     otherClasses,
-    "w-full product-card-section-main-container",
-    "ai__main"
-  );
+    'w-full product-card-section-main-container',
+    'ai__main',
+  )
   return (
     <section
       id={_id}
@@ -75,11 +76,18 @@ export default function ProductCardSection({
           </div>
           <div className="relative z-20 mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {productCards.map((node, index) => {
-              return <ProductCard key={index} {...node} index={index} trigger={trigger}/>;
+              return (
+                <ProductCard
+                  key={index}
+                  {...node}
+                  index={index}
+                  trigger={trigger}
+                />
+              )
             })}
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

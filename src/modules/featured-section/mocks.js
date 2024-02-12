@@ -3,7 +3,7 @@ export const mocks = {
     {
       heading: 'Account takeover',
       _type: 'featuredCardsObject',
-      icon:"account-tackover",
+      icon: 'account-tackover',
       _key: 'cb9a45cc6343',
       subText: [
         {
@@ -34,7 +34,7 @@ export const mocks = {
       },
     },
     {
-      icon:"carding-fraud",
+      icon: 'carding-fraud',
       button: {
         label: 'Stop Carding Attacks',
         slug: {
@@ -78,7 +78,7 @@ export const mocks = {
         },
         mode: 'light',
       },
-      icon:"account-tackover",
+      icon: 'credential-stuffing',
       heading: 'Credential stuffing',
       _type: 'featuredCardsObject',
       _key: '71b2b3b25eec',
@@ -101,7 +101,7 @@ export const mocks = {
     },
     {
       _type: 'featuredCardsObject',
-      icon:"account-tackover",
+      icon: 'fake-account-creation',
       _key: '809d530f50cf',
       subText: [
         {
@@ -150,7 +150,7 @@ export const mocks = {
           _key: 'ac5c466f0472',
         },
       ],
-      icon:"account-tackover",
+      icon: 'loyalty-point-fraud',
       button: {
         mode: 'light',
         externalLink: false,
@@ -167,7 +167,7 @@ export const mocks = {
     },
     {
       _key: '6df232b802b8',
-      icon:"account-tackover",
+      icon: 'scalper-bots',
       subText: [
         {
           markDefs: [],
@@ -200,9 +200,9 @@ export const mocks = {
     },
     {
       _type: 'featuredCardsObject',
-      icon:"account-tackover",
+      icon: 'skewed-analytics',
       _key: 'dcea083d5244',
-      
+
       subText: [
         {
           markDefs: [],
@@ -262,7 +262,7 @@ export const mocks = {
       },
       heading: 'Web scraping',
       _type: 'featuredCardsObject',
-      icon:"account-tackover",
+      icon: 'web-scrapping',
       _key: 'cfcaa881446a',
     },
   ],

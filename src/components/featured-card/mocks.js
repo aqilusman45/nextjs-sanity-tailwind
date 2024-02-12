@@ -1,7 +1,7 @@
 export const mocks = {
   heading: 'Account takeover',
   _type: 'featuredCardsObject',
-  icon:"account-tackover",
+  icon: 'account-tackover',
   _key: 'cb9a45cc6343',
   subText: [
     {

@@ -1,11 +1,10 @@
-import classnames from "classnames";
-import {  useEffect, useRef, useState } from "react";
+import classnames from 'classnames'
+import { useEffect, useRef, useState } from 'react'
+import Lottie from 'react-lottie-player'
 
-import Lottie from "react-lottie-player";
-
-import Button from "../button/Button";
-import Heading from "../heading";
-import RichText from "../rich-text";
+import Button from '../button/Button'
+import Heading from '../heading'
+import RichText from '../rich-text'
 
 export default function ProductCard({
   otherClasses,
@@ -18,24 +17,22 @@ export default function ProductCard({
 }) {
   const productCardClasses = classnames(
     otherClasses,
-    "w-full p-6 product-card-component flex flex-col rounded group "
-  );
-  const scrollRef = useRef(null);
-  const [animationPosition, setAnimationPosition] = useState(28);
-  const [animation, setAnimation] = useState(true);
+    'w-full p-6 product-card-component flex flex-col rounded group ',
+  )
+  const scrollRef = useRef(null)
+  const [animationPosition, setAnimationPosition] = useState(28)
 
   useEffect(() => {
     function handleScroll(e) {
-      console.log(e);
-      setAnimationPosition(Math.max((0, e.target.scrollTop - 50) * 0.3));
+      setAnimationPosition(Math.max((0, e.target.scrollTop - 50) * 0.3))
     }
-    const scroller = scrollRef.current;
-    scroller.addEventListener('scroll', handleScroll, { passive: true });
+    const scroller = scrollRef.current
+    scroller.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
-      scroller.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      scroller.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <div
@@ -50,7 +47,7 @@ export default function ProductCard({
           play={trigger}
           loop={false}
           goTo={animationPosition}
-          className={classnames("w-[160px] h-[160px]")}
+          className={classnames('h-[160px] w-[160px]')}
         />
       </div>
 
@@ -61,5 +58,5 @@ export default function ProductCard({
       <RichText richText={subText} otherClasses="global-richtext-light my-6" />
       <Button {...button} mode="light" />
     </div>
-  );
+  )
 }
