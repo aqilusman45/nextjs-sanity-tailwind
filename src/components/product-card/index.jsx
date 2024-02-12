@@ -17,7 +17,7 @@ export default function ProductCard({
 }) {
   const productCardClasses = classnames(
     otherClasses,
-    'w-full p-6 product-card-component flex flex-col rounded group ',
+    'w-full p-6 product-card-component flex flex-col group outline outline-[1px] outline-transparent hover:outline-blue-300/50 rounded transition-all duration-400 ',
   )
   const scrollRef = useRef(null)
   const [animationPosition, setAnimationPosition] = useState(28)
