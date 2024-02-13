@@ -63,8 +63,8 @@ export default function TwoColumnHeroSection({
               otherClasses={classnames(
                 'mt-6 mb-8',
                 variant === 'dark'
-                  ? 'global-richtext-dark'
-                  : 'global-richtext-light',
+                  ? 'global-richtext-dark [&>p]:text-20'
+                  : 'global-richtext-light [&>p]:text-20',
               )}
             />
             <div className="flex items-center justify-center gap-4 lg:justify-start">

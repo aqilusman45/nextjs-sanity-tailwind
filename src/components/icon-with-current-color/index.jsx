@@ -5,12 +5,15 @@ import {
   BussinessLoginIcon,
   CardingFraud,
   ChevronDown,
+  CostlyToAttack,
   CredentialStuffing,
   FakeAccountCreation,
   FileIcon,
   LoyaltyPointFraud,
   MarketingAnalytics,
   NavbarSearchIcon,
+  NoComplexity,
+  PlanMoreEffectively,
   ScalperBots,
   ScaperIcon,
   SkewedAnalytics,
@@ -52,6 +55,13 @@ export default function IconWithCurrentColor({ icon, ...props }) {
       return <SkewedAnalytics {...props} />
     case 'web-scrapping':
       return <WebScrapping {...props} />
+    // Netacea Differences
+    case 'no-complexity':
+      return <NoComplexity {...props} />
+    case 'costly-to-attack':
+      return <CostlyToAttack {...props} />
+    case 'plan-more-effectively':
+      return <PlanMoreEffectively {...props} />
 
     default:
       return null

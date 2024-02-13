@@ -29,7 +29,7 @@ export default function WithOrWithoutNetacea({
 }) {
   const withOrWithoutNetaceaClasses = classnames(
     otherClasses,
-    'w-full py-20 lg:py-120 ',
+    'w-full py-20 lg:py-120',
     variant === 'dark' ? 'with-or-without-netacea-continer' : 'bg-white',
   )
 
@@ -86,8 +86,8 @@ export default function WithOrWithoutNetacea({
                     'text-center  ',
                     variant === 'dark' ? 'text-white' : 'text-blue',
                     thead.length - 1 === index
-                      ? '!text-green-300 rounded list-last-heading py-[23px]'
-                      : 'py-6',
+                      ? '!text-green-300 rounded list-last-heading py-[15px]'
+                      : 'py-4',
                   )}
                 >
                   {node}
@@ -99,7 +99,7 @@ export default function WithOrWithoutNetacea({
             {tbody.map(({ withNetacea, withoutNetacea }, i) => {
               return (
                 <Fragment key={i}>
-                  <li className="flex items-start gap-2 border-b-[1px] border-r-[1px] border-blue-500 bg-blue-400 px-2 py-4 font-aeronik-pro text-base font-normal text-white lg:p-4">
+                  <li className="flex items-start gap-2 border-b-[1px] border-r-[1px] border-blue-500 bg-blue-400 px-2 py-4 font-aeronik-pro text-base font-normal text-white transition-all duration-400 hover:bg-blue-500/50 lg:p-4">
                     <Icon
                       icon="checklist-cancel-icon"
                       iconHeight={20}
@@ -108,7 +108,7 @@ export default function WithOrWithoutNetacea({
                     />
                     {withoutNetacea}
                   </li>
-                  <li className="flex items-start gap-2 border-b-[1px] border-blue-500 bg-blue-400 px-2 py-4 font-aeronik-pro text-base font-normal text-white lg:p-4">
+                  <li className="flex items-start gap-2 border-b-[1px] border-blue-500 bg-blue-400 px-2 py-4 font-aeronik-pro text-base font-normal text-white transition-all duration-400 hover:bg-blue-500/50 lg:p-4">
                     <Icon
                       icon="checklist-check-icon"
                       iconHeight={20}

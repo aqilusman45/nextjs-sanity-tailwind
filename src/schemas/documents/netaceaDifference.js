@@ -51,10 +51,19 @@ export const netaceaDifference = {
           type: 'object',
           fields: [
             {
-              name: 'image',
-              title: 'Image',
-              type: 'img',
-              validation: (Rule) => Rule.required(),
+              title: 'Icon',
+              name: 'icon',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'No complexity', value: 'no-complexity' },
+                  { title: 'Costly to attack', value: 'costly-to-attack' },
+                  {
+                    title: 'Plan more effectively',
+                    value: 'plan-more-effectively',
+                  },
+                ],
+              },
             },
             {
               name: 'subText',
@@ -65,7 +74,7 @@ export const netaceaDifference = {
           ],
           preview: {
             select: {
-              title: 'image.caption',
+              title: 'icon',
             },
           },
         },

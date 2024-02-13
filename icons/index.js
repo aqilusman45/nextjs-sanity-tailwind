@@ -15,3 +15,7 @@ export { ReactComponent as LoyaltyPointFraud } from './loyalty-point-fraud.svg'
 export { ReactComponent as ScalperBots } from './scalper-bots.svg'
 export { ReactComponent as SkewedAnalytics } from './skewed-analytics.svg'
 export { ReactComponent as WebScrapping } from './web-scrapping.svg'
+// netacea difference Icon
+export { ReactComponent as NoComplexity } from './no-complexity.svg'
+export { ReactComponent as CostlyToAttack } from './costly-to-attack.svg'
+export { ReactComponent as PlanMoreEffectively } from './plan-more-effectively.svg'

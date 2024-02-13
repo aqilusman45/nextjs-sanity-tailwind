@@ -68,7 +68,7 @@ export default function NetaceaDifferenceSection({
           </Heading>
           <Button {...button} mode={variant} />
         </div>
-        <div className="grid grid-cols-1 gap-10 pt-14 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 items-stretch gap-10 pt-14 md:grid-cols-2 lg:grid-cols-3">
           {cards?.map((node, index) => {
             return (
               <NetaceaDifferenceCard {...node} key={index} variant={variant} />

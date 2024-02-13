@@ -41,25 +41,27 @@ export default function ProductCard({
       className={productCardClasses}
       data-testid="product-card"
     >
-      <div className="product-card-component group flex h-full cursor-pointer flex-col rounded p-6 transition-all duration-400">
-        <div className="flex justify-end">
-          <Lottie
-            path={url}
-            play={trigger}
-            loop={false}
-            goTo={animationPosition}
-            className={classnames('h-[160px] w-[160px]')}
+      <div className="product-card-component group flex h-full cursor-pointer flex-col justify-between rounded-[3px] p-6 transition-all duration-400">
+        <div>
+          <div className="flex justify-end">
+            <Lottie
+              path={url}
+              play={trigger}
+              loop={false}
+              goTo={animationPosition}
+              className={classnames('h-[160px] w-[160px]')}
+            />
+          </div>
+
+          <Heading type="h3" otherClasses="mt-4 mb-4 flex-grow">
+            {heading}
+          </Heading>
+          <div className="products-line-gradient h-[1px] w-full" />
+          <RichText
+            richText={subText}
+            otherClasses="global-richtext-light my-4"
           />
         </div>
-
-        <Heading type="h3" otherClasses="mt-4 mb-4 flex-grow">
-          {heading}
-        </Heading>
-        <div className="products-line-gradient h-[1px] w-full" />
-        <RichText
-          richText={subText}
-          otherClasses="global-richtext-light my-6"
-        />
         <Button {...button} mode="light" />
       </div>
     </div>
