@@ -59,7 +59,7 @@ export default function WithOrWithoutNetacea({
           <Heading
             type="h3"
             otherClasses={classnames(
-              'mt-4 mb-8',
+              'my-4',
               variant === 'dark' ? 'text-white' : 'text-blue',
             )}
           >
@@ -86,8 +86,8 @@ export default function WithOrWithoutNetacea({
                     'text-center  ',
                     variant === 'dark' ? 'text-white' : 'text-blue',
                     thead.length - 1 === index
-                      ? '!text-green-300 rounded list-last-heading py-[15px]'
-                      : 'py-4',
+                      ? '!text-green-300 rounded list-last-heading py-[23px]'
+                      : 'py-6',
                   )}
                 >
                   {node}
