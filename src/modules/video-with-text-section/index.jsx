@@ -67,7 +67,7 @@ export default function VideoWithSection({
                   <div class="videoPlay_inner"></div>
                 </div>
                 <svg
-                  class="icon_videoPlay svg-currentColor"
+                  class="icon_videoPlay"
                   width="68"
                   height="68"
                   viewBox="0 0 68 68"
@@ -75,11 +75,11 @@ export default function VideoWithSection({
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M33.5442 67.0885C52.0702 67.0885 67.0885 52.0702 67.0885 33.5442C67.0885 15.0183 52.0702 0 33.5442 0C15.0183 0 0 15.0183 0 33.5442C0 52.0702 15.0183 67.0885 33.5442 67.0885ZM47.6819 35.6574C49.0991 34.8543 49.0991 32.8125 47.6819 32.0094L28.0051 20.8592C26.6075 20.0673 24.875 21.0769 24.875 22.6833L24.875 44.9836C24.875 46.59 26.6075 47.5995 28.0051 46.8076L47.6819 35.6574Z"
                     fill="currentColor"
-                  />
+                  ></path>
                 </svg>
               </div>
             </button>
@@ -102,7 +102,7 @@ export default function VideoWithSection({
               className="mt-2 flex w-[5%] items-start
              justify-end"
             >
-              <CancelModalIcon className="!h-[17px] !w-[18px]" />
+              <CancelModalIcon className="h-[18px] w-[18px]" />
             </button>
           </div>
           <div className="player-wrapper h-full w-full">
