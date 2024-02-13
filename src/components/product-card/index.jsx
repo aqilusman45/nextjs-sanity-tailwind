@@ -17,7 +17,7 @@ export default function ProductCard({
 }) {
   const productCardClasses = classnames(
     otherClasses,
-    'w-full p-6 product-card-component flex flex-col group outline outline-[1px] outline-transparent hover:outline-blue-300/50 rounded transition-all duration-400 ',
+    'w-full product-card-container',
   )
   const scrollRef = useRef(null)
   const [animationPosition, setAnimationPosition] = useState(28)
@@ -41,22 +41,27 @@ export default function ProductCard({
       className={productCardClasses}
       data-testid="product-card"
     >
-      <div className="flex justify-end">
-        <Lottie
-          path={url}
-          play={trigger}
-          loop={false}
-          goTo={animationPosition}
-          className={classnames('h-[160px] w-[160px]')}
-        />
-      </div>
+      <div className="product-card-component group flex h-full cursor-pointer flex-col rounded p-6 transition-all duration-400">
+        <div className="flex justify-end">
+          <Lottie
+            path={url}
+            play={trigger}
+            loop={false}
+            goTo={animationPosition}
+            className={classnames('h-[160px] w-[160px]')}
+          />
+        </div>
 
-      <Heading type="h3" otherClasses="mt-4 mb-4 flex-grow">
-        {heading}
-      </Heading>
-      <div className="products-line-gradient h-[1px] w-full" />
-      <RichText richText={subText} otherClasses="global-richtext-light my-6" />
-      <Button {...button} mode="light" />
+        <Heading type="h3" otherClasses="mt-4 mb-4 flex-grow">
+          {heading}
+        </Heading>
+        <div className="products-line-gradient h-[1px] w-full" />
+        <RichText
+          richText={subText}
+          otherClasses="global-richtext-light my-6"
+        />
+        <Button {...button} mode="light" />
+      </div>
     </div>
   )
 }

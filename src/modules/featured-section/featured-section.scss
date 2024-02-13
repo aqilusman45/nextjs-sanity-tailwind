@@ -6,25 +6,38 @@
   &::after {
     @media (min-width: 1024px) {
       height: 32px;
+      bottom: -31px;
     }
     content: '';
     height: 24px;
-    width: 60%;
+    width: 40%;
     position: absolute;
-    left: 0;
-    bottom: -1px;
-    clip-path: polygon(0% 0%, 97% 0%, 100% 100%, 0% 100%);
-    background: #113263;
+    border-bottom-right-radius: 4px;
+    right: 0;
+    bottom: -23px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 3% 100%);
+    background: white;
+  }
+}
+
+.featured-card-container-main {
+  padding: 1px;
+  background: linear-gradient(
+      291.3deg,
+      #c8ccd0 -32.02%,
+      rgba(200, 204, 208, 0) 59.64%
+    ),
+    linear-gradient(163.4deg, #c8ccd0 -60.67%, rgba(200, 204, 208, 0) 47.35%);
+  box-shadow: 4px 4px 8px 0px #0000000a;
+  border-radius: 4px;
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgb(33 110 242 / 0.5) border-box;
   }
 }
 
 .featured-card-container {
-  border: 1px solid transparent;
-  box-shadow: 4px 4px 8px 0px #0000000a;
-
-  background:
-    linear-gradient(white, white) padding-box,
-    linear-gradient(211.3deg, #c8ccd0 -32.02%, rgba(200, 204, 208, 0) 59.64%),
-    linear-gradient(-165.6deg, #c8ccd0 -60.67%, rgba(200, 204, 208, 0) 47.35%)
-      border-box;
+  outline: 1px solid transparent;
+  background-color: white;
 }

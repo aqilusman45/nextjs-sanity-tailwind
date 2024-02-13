@@ -3,19 +3,23 @@
 }
 
 .product-card-container-white {
+  border-top-right-radius: 4px;
+
   &::after {
     @media (min-width: 1024px) {
       height: 32px;
+      top: -31px;
     }
+    border-top-left-radius: 4px;
     content: '';
     height: 24px;
     width: 60%;
     position: absolute;
     z-index: 10;
-    right: -1px;
-    top: -1px;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 3% 100%);
-    background: #0a4bba;
+    left: 0px;
+    top: -23px;
+    clip-path: polygon(0 0, 97% 0%, 100% 100%, 0% 100%);
+    background: white;
   }
 }
 
@@ -23,13 +27,24 @@
   background: linear-gradient(270deg, #c8ccd0 0%, rgba(200, 204, 208, 0) 100%);
 }
 
-.product-card-component {
-  border: 1px solid transparent;
+.product-card-container {
+  padding: 1px;
+  background: linear-gradient(
+      291.3deg,
+      #c8ccd0 -32.02%,
+      rgba(200, 204, 208, 0) 59.64%
+    ),
+    linear-gradient(163.4deg, #c8ccd0 -60.67%, rgba(200, 204, 208, 0) 47.35%);
   box-shadow: 4px 4px 8px 0px #0000000a;
+  border-radius: 4px;
+  transition: all 0.3s;
 
-  background:
-    linear-gradient(white, white) padding-box,
-    linear-gradient(211.3deg, #c8ccd0 -32.02%, rgba(200, 204, 208, 0) 59.64%),
-    linear-gradient(-165.6deg, #c8ccd0 -60.67%, rgba(200, 204, 208, 0) 47.35%)
-      border-box;
+  &:hover {
+    background: rgb(33 110 242 / 0.5) border-box;
+  }
+}
+
+.product-card-component {
+  outline: 1px solid transparent;
+  background-color: white;
 }

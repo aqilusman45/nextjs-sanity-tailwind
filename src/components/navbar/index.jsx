@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { ChevronDown } from 'icons'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import Button from '../button/Button'
 import Heading from '../heading'
@@ -11,6 +11,8 @@ import NextImage from '../next-image'
 import RichText from '../rich-text'
 
 export default function Navbar({ button, logo, nestedLinks }) {
+  const iconButtonRef = useRef()
+
   const [state, setState] = useState({
     toggle: false,
     toggleTab: '',
@@ -23,8 +25,53 @@ export default function Navbar({ button, logo, nestedLinks }) {
     }))
   }
 
+  // useEffect(() => {
+  //   const checkIfClickedOutside = (e) => {
+  //     if (
+  //       state.toggleTab &&
+  //       iconButtonRef.current &&
+  //       !iconButtonRef.current.contains(e.target) &&
+  //       !iconButtonRef.current.contains(e.target.parentElement) // Check if the click is not inside iconButtonRef or its parent
+  //     ) {
+  //       setState((prev) => ({
+  //         ...prev,
+  //         toggleTab: '',
+  //       }))
+  //     }
+  //   }
+
+  //   document.addEventListener('mousedown', checkIfClickedOutside)
+
+  //   return () => {
+  //     document.removeEventListener('mousedown', checkIfClickedOutside)
+  //   }
+  // }, [state.toggleTab, iconButtonRef])
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        iconButtonRef.current &&
+        !iconButtonRef.current.contains(event.target)
+      ) {
+        setState((prev) => ({
+          ...prev,
+          toggleTab: '',
+        }))
+      }
+    }
+
+    document.addEventListener('mousedown', handleOutsideClick)
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick)
+    }
+  }, [])
+
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full bg-blue-600">
+    <nav
+      ref={iconButtonRef}
+      className="fixed left-0 top-0 z-50 w-full bg-blue-600"
+    >
       <div className="relative mx-auto flex w-full max-w-default items-center justify-between px-4 py-4 lg:px-16 lg:py-0 xl:px-108">
         <div className="flex items-center justify-between gap-10 lg:justify-start lg:gap-4 xl:gap-10">
           <Link href="/">
@@ -71,14 +118,8 @@ export default function Navbar({ button, logo, nestedLinks }) {
 
                     {node?.subLinks?.length > 0 && (
                       <div
-                        onMouseLeave={() =>
-                          setState((prev) => ({
-                            ...prev,
-                            toggleTab: '',
-                          }))
-                        }
                         className={classNames(
-                          ' mx-auto h-auto w-full rounded  bg-blue-600 transition-all duration-300 lg:absolute lg:left-2/4 lg:top-[87px] lg:max-w-1320 lg:-translate-x-2/4 lg:px-8',
+                          ' mx-auto h-auto w-full rounded  bg-blue-600 transition-all duration-300 lg:absolute lg:left-2/4 lg:top-[96px] lg:max-w-1320 lg:-translate-x-2/4 lg:px-8',
                           state.toggleTab === node.title
                             ? 'main-container-menu mt-6 max-h-[1300px] overflow-visible lg:mt-0 lg:max-h-[700px] lg:py-8'
                             : 'max-h-[0px] overflow-hidden border-[0px] border-transparent',
@@ -169,11 +210,6 @@ export default function Navbar({ button, logo, nestedLinks }) {
                                           }
                                           className="flex items-center gap-4 font-aeronik-pro text-base font-normal text-white transition-all duration-300 hover:text-green-300"
                                         >
-                                          {/* <Icon
-                                            icon={linksNode?.icon}
-                                            iconHeight={16}
-                                            iconWidth={16}
-                                          /> */}
                                           <IconWithCurrentColor
                                             icon={linksNode?.icon}
                                             className="[&>g>path]:stroke-current  [&>path]:fill-none [&>path]:stroke-current"
@@ -186,6 +222,7 @@ export default function Navbar({ button, logo, nestedLinks }) {
                                 </ul>
                                 <Button
                                   {...nestedNode?.button}
+                                  mode="dark"
                                   otherClasses="hidden lg:flex"
                                 />
                               </div>
@@ -225,7 +262,11 @@ export default function Navbar({ button, logo, nestedLinks }) {
                                 richText={node.subText}
                                 otherClasses="global-richtext-dark"
                               />
-                              <Button {...node.button} otherClasses="mt-10" />
+                              <Button
+                                {...node.button}
+                                mode="dark"
+                                otherClasses="mt-10"
+                              />
                             </div>
                           )}
                         </div>

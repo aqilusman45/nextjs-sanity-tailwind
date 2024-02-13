@@ -90,14 +90,15 @@ module.exports = {
       maxWidth: {
         default: '96rem',
         1320: '82.5rem',
+        800: '50rem',
         760: '47.5rem',
         720: '45rem',
-
         648: '40.5rem',
       },
       minWidth: {
         default: '96rem',
         1320: '82.5rem',
+        800: '50rem',
         720: '45rem',
       },
       spacing: {
@@ -107,6 +108,8 @@ module.exports = {
         710: '44.375rem',
         88: '5.5rem',
         30: '7.5rem',
+        104: '6.5rem',
+        152: '9.5rem',
       },
     },
   },

@@ -66,7 +66,7 @@ export default function ProductCardSection({
         <div className="product-card-container-white relative w-full bg-white px-4 py-20 lg:px-20 lg:py-120">
           <NextImage
             {...backVector}
-            otherClasses="w-auto absolute top-0 z-10 right-0 h-full lg:block hidden"
+            otherClasses="w-auto absolute top-0 z-10 right-0 h-full lg:block hidden rounded-tr"
           />
           <div className="relative z-20 flex flex-col items-start justify-between gap-6 md:flex-row md:gap-10">
             <Heading type="h3" otherClasses="">
@@ -74,7 +74,7 @@ export default function ProductCardSection({
             </Heading>
             <Button {...button} mode="light" />
           </div>
-          <div className="relative z-20 mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="relative z-20 mt-10 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
             {productCards.map((node, index) => {
               return (
                 <ProductCard

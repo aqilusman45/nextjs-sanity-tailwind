@@ -89,12 +89,12 @@ export default function VideoWithSection({
       <ModalComponent
         otherClasses=""
         show={show}
-        additionalClass="max-w-648 w-full"
+        additionalClass="px-4 lg:px-0 max-w-800 w-full"
         handleClose={handleCancel}
       >
         <div className="mx-auto flex  flex-col items-center justify-center gap-6 text-white">
           <div className="flex w-full justify-between text-white">
-            <Heading type="h3" otherClasses={classnames('text-white w-[95%]')}>
+            <Heading type="h4" otherClasses={classnames('text-white w-[95%]')}>
               {videoTitle}
             </Heading>
             <button
@@ -113,7 +113,7 @@ export default function VideoWithSection({
               playing={show}
               playsinline
               height={377}
-              className="video-with-text-react-player  aspect-video !h-[377px] !w-full [&>div>iframe]:aspect-video [&>div>iframe]:w-full"
+              className="video-with-text-react-player aspect-video !h-auto !w-full [&>div>iframe]:aspect-video [&>div>iframe]:w-full"
             />
           </div>
         </div>

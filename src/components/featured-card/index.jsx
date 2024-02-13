@@ -14,26 +14,28 @@ export default function FeaturedCard({
 }) {
   const featuredCardClasses = classnames(
     otherClasses,
-    'p-6 featured-card-container min-h-[330px] gap-14 flex flex-col justify-between group outline outline-[1px] outline-transparent hover:outline-blue-300/50 rounded transition-all duration-400',
+    'w-full featured-card-container-main cursor-pointer',
   )
   return (
     <div className={featuredCardClasses} data-testid="featured-card">
-      <div>
-        <div className="w-fit rounded border-[1px] border-blue-300 p-4 text-blue-300 backdrop-blur transition-all duration-400 group-hover:bg-blue-300 group-hover:text-white">
-          <IconWithCurrentColor
-            icon={icon}
-            className={classnames(
-              'h-auto w-auto [&>g>path]:stroke-current [&>path]:stroke-current',
-            )}
-          />
+      <div className="featured-card-container group flex min-h-[330px] flex-col justify-between gap-14 rounded p-6 transition-all duration-400">
+        <div>
+          <div className="w-fit rounded border-[1px] border-blue-300 p-4 text-blue-300 backdrop-blur transition-all duration-400 group-hover:bg-blue-300 group-hover:text-white">
+            <IconWithCurrentColor
+              icon={icon}
+              className={classnames(
+                'h-auto w-auto [&>g>path]:stroke-current [&>path]:stroke-current',
+              )}
+            />
+          </div>
+          {/* <NextImage {...icon} otherClasses="w-12 h-12 " /> */}
+          <Heading type="h4" otherClasses="mt-5 mb-4 text-blue">
+            {heading}
+          </Heading>
+          <RichText richText={subText} />
         </div>
-        {/* <NextImage {...icon} otherClasses="w-12 h-12 " /> */}
-        <Heading type="h4" otherClasses="mt-6 mb-6 text-blue">
-          {heading}
-        </Heading>
-        <RichText richText={subText} />
+        <Button {...button} mode="light" />
       </div>
-      <Button {...button} mode="light" />
     </div>
   )
 }

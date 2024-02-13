@@ -12,8 +12,8 @@ export default function ModalComponent({
 }) {
   const modalComponentClasses = classnames(
     otherClasses,
-    'flex justify-center fixed top-0 left-0 bottom-0 right-0 transition duration-300 bg-blue/90 overflow-auto',
-    show ? 'opacity-1 z-50 visible' : ' opacity-0 invisible',
+    'flex justify-center fixed top-0 left-0 bottom-0 right-0 transition-all duration-500 bg-blue/90 overflow-auto',
+    show ? 'opacity-100 z-50 visible' : 'invisible -z-10 opacity-0',
   )
 
   useEffect(() => {

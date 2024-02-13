@@ -39,7 +39,7 @@ export const featureSection = {
               initialValue: 'account-takeover',
               options: {
                 list: [
-                  { title: 'Account Takeover', value: 'account-takeover' },
+                  { title: 'Account Takeover', value: 'account-tackover' },
                   { title: 'Carding fraud', value: 'carding-fraud' },
                   {
                     title: 'Credential stuffing',
@@ -55,7 +55,7 @@ export const featureSection = {
                   },
                   { title: 'Scalper bots', value: 'scalper-bots' },
                   { title: 'Skewed analytics', value: 'skewed-analytics' },
-                  { title: 'Web scraping', value: 'web-scraping' },
+                  { title: 'Web scraping', value: 'web-scrapping' },
                 ],
               },
             },

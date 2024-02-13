@@ -73,7 +73,7 @@ export default function TestimonialAndStatsSlider({
       className={testimonialAndStatsSliderClasses}
       data-testid="testimonial-and-stats-slider"
     >
-      <div className="mx-auto flex max-w-default flex-col gap-6 px-4  py-20 lg:px-20 lg:pb-120 lg:pt-6 xl:px-108 ">
+      <div className="mx-auto flex max-w-default flex-col gap-6 px-4  pb-104 pt-20 lg:px-20 lg:pb-152 lg:pt-6 xl:px-108 ">
         <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
           <Heading
             type="h3"
