@@ -41,7 +41,12 @@ const SampleImageComponent = ({ value, isInline }) => {
   )
 }
 
-export const RichText = ({ richText, otherClasses, toggleFunc,variant="dark" }) => {
+export const RichText = ({
+  richText,
+  otherClasses,
+  toggleFunc,
+  variant = 'dark',
+}) => {
   const richTextClasses = clsx(otherClasses, 'relative')
 
   const ButtonComponent = (props) => {
@@ -52,26 +57,42 @@ export const RichText = ({ richText, otherClasses, toggleFunc,variant="dark" }) 
     )
   }
 
-  const ChecklistComponent = ({value}) => {
-    console.log(value);
-    const {heading,list } = value
-  console.log(variant);
+  const ChecklistComponent = ({ value }) => {
+    const { heading, list } = value
     return (
-      <div className='flex flex-col gap-6'>
-        <Heading otherClasses={ classNames('font-aeronik-pro caapitalize tracking-[0.48px]',variant==="dark"?"!text-green-300":"!text-blue")} type="h6" >{heading}</Heading>
-      <div className='flex flex-col gap-4'>
-          {
-            list?.map((node,index)=>{
-              return (
-                <div className='flex gap-2 items-center' key={index}>
-                <Icon icon={variant==="dark"?"checklist-green":"checklist-blue"} iconHeight={16} iconWidth={16} />
-                <p className={classNames("font-aeronik-pro text-base font-normal !mb-0", variant==="dark"?"text-white":"text-blue")}>{node}</p> 
-                </div>
-              )
-
-            })
-          }
-      </div>
+      <div className="flex flex-col gap-6">
+        <Heading
+          otherClasses={classNames(
+            'font-aeronik-pro caapitalize tracking-[0.48px]',
+            variant === 'dark' ? '!text-green-300' : '!text-blue',
+          )}
+          type="h6"
+        >
+          {heading}
+        </Heading>
+        <div className="flex flex-col gap-4">
+          {list?.map((node, index) => {
+            return (
+              <div className="flex items-start gap-2" key={index}>
+                <Icon
+                  icon={
+                    variant === 'dark' ? 'checklist-green' : 'checklist-blue'
+                  }
+                  iconHeight={16}
+                  iconWidth={16}
+                />
+                <p
+                  className={classNames(
+                    '!mb-0 font-aeronik-pro text-base font-normal',
+                    variant === 'dark' ? 'text-white' : 'text-blue',
+                  )}
+                >
+                  {node}
+                </p>
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
   }
@@ -84,7 +105,7 @@ export const RichText = ({ richText, otherClasses, toggleFunc,variant="dark" }) 
           types: {
             image: SampleImageComponent,
             button: ButtonComponent,
-            checklistObject:ChecklistComponent
+            checklistObject: ChecklistComponent,
           },
           marks: {
             link: ({ children, value }) => {

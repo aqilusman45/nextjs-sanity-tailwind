@@ -17,10 +17,9 @@ export default function FeaturedCard({
     'w-full featured-card-container-main cursor-pointer',
   )
 
-  console.log(icon)
   return (
     <div className={featuredCardClasses} data-testid="featured-card">
-      <div className="featured-card-container group flex min-h-[330px] flex-col justify-between gap-14 rounded-[3px] p-6 transition-all duration-400">
+      <div className="featured-card-container group flex h-full min-h-[330px] flex-col justify-between gap-14 rounded-[3px] p-6 transition-all duration-400">
         <div>
           <div className="w-fit rounded border-[1px] border-blue-300 p-4 text-blue-300 backdrop-blur transition-all duration-400 group-hover:bg-blue-300 group-hover:text-white">
             <IconWithCurrentColor

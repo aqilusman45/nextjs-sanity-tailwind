@@ -12,6 +12,7 @@ export default function Button({
   slug,
   onClick,
   external,
+  type,
   mode = 'light',
 }) {
   const buttonClasses = classnames(
@@ -59,7 +60,7 @@ export default function Button({
   const withIconBlue = variant === 'secondary-arrow'
   const withIconTextLink = variant === 'text-link-arrow'
 
-  if (onClick) {
+  if (type === 'button') {
     return (
       <button
         onClick={(e) => {

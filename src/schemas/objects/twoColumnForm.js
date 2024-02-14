@@ -36,17 +36,24 @@ export const twoColumnForm = {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Title',
+      name: 'title',
+      type: 'string',
+    },
+    {
+      title: 'Description',
+      name: 'description',
+      type: 'bodyPortableText',
+    },
+    {
       title: 'Form',
       name: 'form',
       type: 'string',
-      initialValue: 'demo-form',
+      initialValue: 'book-form',
       options: {
-        list: [
-          { title: 'Demo Form', value: 'demo-form' },
-        ],
+        list: [{ title: 'Book Form', value: 'book-form' }],
       },
     },
-   
   ],
   components: {
     preview: ModulePreview,
