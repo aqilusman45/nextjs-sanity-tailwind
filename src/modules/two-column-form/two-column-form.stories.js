@@ -1,5 +1,5 @@
 import TwoColumnForm from './index'
-import {mocks} from './mocks'
+import { mocks } from './mocks'
 
 const meta = {
   title: 'Modules/TwoColumnForm',
@@ -23,17 +23,14 @@ const meta = {
   argTypes: {
     variant: {
       defaultValue: 'dark',
-      options: [
-        'dark',
-        'light',
-      ],
+      options: ['dark', 'light'],
       control: { type: 'select' },
     },
   },
 }
 
-export default meta;
+export default meta
 
 export const Default = {
-   args: {...mocks},
+  args: { ...mocks },
 }

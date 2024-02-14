@@ -4,55 +4,43 @@ export const post = {
   type: 'document',
   fields: [
     {
-      name: 'title',
       title: 'Title',
+      name: 'title',
       type: 'string',
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      title: 'Featured',
+      name: 'featured',
+      type: 'boolean',
+      initial: false,
     },
     {
-      name: 'author',
       title: 'Author',
+      name: 'author',
       type: 'reference',
       to: { type: 'author' },
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-        },
-      ],
+      title: 'Card Image',
+      name: 'cardImage',
+      type: 'img',
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'categories',
       title: 'Categories',
+      name: 'categories',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }],
     },
     {
-      name: 'publishedAt',
       title: 'Published at',
+      name: 'publishedAt',
       type: 'datetime',
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      title: 'Sub Description',
+      name: 'subDescription',
+      type: 'bodyPortableText',
     },
   ],
 
@@ -60,7 +48,7 @@ export const post = {
     select: {
       title: 'title',
       author: 'author.name',
-      media: 'mainImage',
+      media: 'cardImage',
     },
     prepare(selection) {
       const { author } = selection

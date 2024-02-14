@@ -4,7 +4,7 @@ import { groq } from 'next-sanity'
 import { useEffect, useRef, useState } from 'react'
 
 const ReactStars = dynamic(() => import('react-stars'), { ssr: false })
-import Button from '../../components/button/Button'
+import Button, { BUTTON_FRAGMENT } from '../../components/button/Button'
 import Heading from '../../components/heading'
 import Icon from '../../components/icon'
 import RichText from '../../components/rich-text'
@@ -16,12 +16,33 @@ const TestimonialStatsCard = dynamic(
 )
 
 export const TESTIMONIAL_AND_STATS_SLIDER = groq`
- statsCards[]{
-      ...,
-    },
-    sliderCards[]{
-      ...,
-    }
+_type == 'testimonialAndStatsSlider' => {
+       ...,
+       heading,
+       button{
+        ${BUTTON_FRAGMENT}
+       },
+       statsCards[]{
+         description,
+         stats
+       },
+       sliderCards[]{
+         graph,
+         button{
+          ${BUTTON_FRAGMENT}
+         },
+         text,
+       },
+       testimonial{
+       button{
+        ${BUTTON_FRAGMENT}
+       },
+         name,
+       rating,
+       subText
+         
+       }
+     }
 `
 export default function TestimonialAndStatsSlider({
   otherClasses,
@@ -31,7 +52,7 @@ export default function TestimonialAndStatsSlider({
   testimonial,
   _id,
   sliderCards,
-  id
+  id,
 }) {
   const testimonialAndStatsSliderClasses = classnames(
     otherClasses,
@@ -70,7 +91,7 @@ export default function TestimonialAndStatsSlider({
   }
   return (
     <section
-    id={_id?_id:id}
+      id={_id ? _id : id}
       className={testimonialAndStatsSliderClasses}
       data-testid="testimonial-and-stats-slider"
     >

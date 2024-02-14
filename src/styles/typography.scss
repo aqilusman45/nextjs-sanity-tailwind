@@ -111,7 +111,7 @@ largeText {
     @apply header-6 font-aeronik-pro font-normal text-blue;
   }
   p {
-    @apply font-aeronik-pro text-base font-normal text-blue mb-4;
+    @apply mb-4 font-aeronik-pro text-base font-normal text-blue;
   }
 }
 
@@ -140,6 +140,6 @@ largeText {
     @apply header-6 font-aeronik-pro font-normal text-white;
   }
   p {
-    @apply font-aeronik-pro text-base font-normal text-white mb-4;
+    @apply mb-4 font-aeronik-pro text-base font-normal text-white;
   }
 }

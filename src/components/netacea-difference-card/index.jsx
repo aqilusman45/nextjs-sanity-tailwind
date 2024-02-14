@@ -1,9 +1,9 @@
 import classnames from 'classnames'
 
 import Heading from '../heading'
+import IconWithCurrentColor from '../icon-with-current-color'
 import NextImage from '../next-image'
 import RichText from '../rich-text'
-import IconWithCurrentColor from '../icon-with-current-color'
 
 export default function NetaceaDifferenceCard({
   otherClasses,

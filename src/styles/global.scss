@@ -5,14 +5,16 @@
 @import './typography.scss';
 
 // component
+@import '../components/featured-blog-card/featured-blog-card.scss';
 @import '../components/navbar/navbar.scss';
-@import './slick-carousel.scss';
 @import './styles.scss';
+@import './slick-carousel.scss';
 // modules
 @import '../modules/two-column-hero-section/two-column-hero-section.scss';
 @import '../modules/video-with-text-section/video-with-text-section.scss';
 @import '../modules/netacea-difference-section/netacea-difference-section.scss';
 @import '../modules/with-or-without-netacea/with-or-without-netacea.scss';
+@import '../modules/featured-blog-section/featured-blog-section.scss';
 @import '../modules/testimonial-and-stats-slider/testimonial-and-stats-slider.scss';
 @import '../modules/product-card-section/product-card-section.scss';
 @import '../modules/featured-section/featured-section.scss';

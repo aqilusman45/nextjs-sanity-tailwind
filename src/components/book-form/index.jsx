@@ -1,10 +1,11 @@
 import classnames from 'classnames'
 import { useState } from 'react'
+
+import { countries } from '../../utils/helpers'
+import Button from '../button/Button'
 import Input from '../input'
 import Select from '../select'
-import { countries } from '../../utils/helpers'
 import TextArea from '../text-area'
-import Button from '../button/Button'
 
 export default function BookForm({ otherClasses, variant }) {
   const bookFormClasses = classnames(otherClasses)

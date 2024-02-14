@@ -4,16 +4,23 @@ import { Fragment } from 'react'
 
 import Heading from '../../components/heading'
 import Icon from '../../components/icon'
-import NextImage from '../../components/next-image'
+import NextImage, { IMAGE_FRAGMENT } from '../../components/next-image'
 import RichText from '../../components/rich-text'
 
 export const WITH_OR_WITHOUT_NETACEA_FRAGMET = groq`
-    "logo":logo.asset->{
-      ...,
-    },
-    "backPattern":backPattern.asset->{
-      ...,
-    }
+_type == "withOrWithoutNetacea"=>{
+       "backPattern":backPattern.asset->{
+          ${IMAGE_FRAGMENT}
+       },
+       "logo":logo.asset->{
+          ${IMAGE_FRAGMENT}
+       },
+      heading,
+         subText,
+         variant,
+         thead,
+         tbody,
+       }
 `
 
 export default function WithOrWithoutNetacea({
@@ -26,7 +33,7 @@ export default function WithOrWithoutNetacea({
   thead,
   tbody,
   _id,
-  id
+  id,
 }) {
   const withOrWithoutNetaceaClasses = classnames(
     otherClasses,
@@ -36,7 +43,7 @@ export default function WithOrWithoutNetacea({
 
   return (
     <section
-    id={_id?_id:id}
+      id={_id ? _id : id}
       className={withOrWithoutNetaceaClasses}
       data-testid="with-or-without-netacea"
     >

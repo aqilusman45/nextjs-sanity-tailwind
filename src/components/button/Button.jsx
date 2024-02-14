@@ -4,7 +4,14 @@ import { ReactComponent as ArrowRightDark } from 'icons/arrow-right-dark.svg'
 import { ReactComponent as ArrowRightGreen } from 'icons/arrow-right-green.svg'
 import { ReactComponent as ArrowRightWhite } from 'icons/arrow-right-white.svg'
 import Link from 'next/link'
+import { groq } from 'next-sanity'
 
+export const BUTTON_FRAGMENT = groq`
+    label,
+    variant,
+    externalLink,
+    slug
+`
 export default function Button({
   label = '',
   variant = 'primary',

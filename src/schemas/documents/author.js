@@ -4,51 +4,15 @@ export const author = {
   type: 'document',
   fields: [
     {
-      name: 'name',
       title: 'Name',
+      name: 'name',
       type: 'string',
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'name',
-        maxLength: 96,
-      },
-    },
-    {
-      name: 'image',
       title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-        },
-      ],
-    },
-    {
-      name: 'button',
-      title: 'Button',
-      type: 'link',
-    },
-    {
-      name: 'bio',
-      title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-        },
-      ],
+      name: 'image',
+      type: 'img',
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {

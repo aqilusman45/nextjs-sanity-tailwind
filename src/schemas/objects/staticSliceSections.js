@@ -31,6 +31,9 @@ export const staticSliceSections = {
         {
           type: 'featureSection',
         },
+        {
+          type: 'featuredBlogSection',
+        },
       ],
     },
   ],

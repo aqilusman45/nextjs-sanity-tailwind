@@ -1,15 +1,16 @@
-import { groq } from 'next-sanity'
 import classnames from 'classnames'
-import Heading from '../../components/heading'
-import RichText from '../../components/rich-text'
 import Image from 'next/image'
-import Input from '../../components/input'
+import { groq } from 'next-sanity'
 import { useState } from 'react'
-import { countries } from '../../utils/helpers'
-import Select from '../../components/select'
+
 import Button from '../../components/button/Button'
-import TextArea from '../../components/text-area'
 import DynamicForms from '../../components/dynamic-forms'
+import Heading from '../../components/heading'
+import Input from '../../components/input'
+import RichText from '../../components/rich-text'
+import Select from '../../components/select'
+import TextArea from '../../components/text-area'
+import { countries } from '../../utils/helpers'
 export const TWO_COLUMN_FORM = groq`
 _type == 'twoColumnForm' =>{
     ...
@@ -34,7 +35,6 @@ export default function TwoColumnForm({
       : 'two-column-container-light bg-neutral-200',
   )
 
-  console.log(variant)
   return (
     <section
       id={_id ? _id : id}

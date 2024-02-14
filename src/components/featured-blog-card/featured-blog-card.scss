@@ -1,0 +1,20 @@
+.featured-blog-box-shadow {
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    .featured-blog-card-inner {
+      background: rgb(33 110 242);
+    }
+  }
+}
+
+.featured-blog-card-inner {
+  background: linear-gradient(
+      291.3deg,
+      #c8ccd0 -32.02%,
+      rgba(200, 204, 208, 0) 59.64%
+    ),
+    linear-gradient(163.4deg, #c8ccd0 -60.67%, rgba(200, 204, 208, 0) 47.35%);
+
+  padding: 1px;
+}

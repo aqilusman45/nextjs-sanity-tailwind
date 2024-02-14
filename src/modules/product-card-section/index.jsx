@@ -6,27 +6,32 @@ import dynamic from 'next/dynamic'
 import { groq } from 'next-sanity'
 import { useEffect, useRef, useState } from 'react'
 
-import Button from '../../components/button/Button'
+import Button, { BUTTON_FRAGMENT } from '../../components/button/Button'
 import Heading from '../../components/heading'
-import NextImage from '../../components/next-image'
+import NextImage, { IMAGE_FRAGMENT } from '../../components/next-image'
 
 const ProductCard = dynamic(() => import('../../components/product-card'), {
   ssr: false,
 })
 
 export const PRODUCT_CARD_SECTION_FRAGMENT = groq`
- "backVector":backVector.asset->{
-    ...,
-  },
- "productCards":cards[]{
-    ...,
-    "lottieFile":lottieFile.asset->{
-      ...
-    },
-    "backVector":backVector.asset->{
-      ...,
-    }
-  }
+_type == 'productCardsSection' =>{
+  "productCards":cards[]{
+           heading,
+           subText,
+           button,
+           "lottieFile":lottieFile.asset->{
+             url
+           }
+         },
+         button{
+          ${BUTTON_FRAGMENT}
+         },
+       "backVector":backVector.asset->{
+         ${IMAGE_FRAGMENT}
+       },
+       heading
+       }
 `
 
 export default function ProductCardSection({
@@ -36,7 +41,7 @@ export default function ProductCardSection({
   productCards,
   backVector,
   _id,
-  id
+  id,
 }) {
   const [trigger, setTrigger] = useState(false)
   gsap.registerPlugin(ScrollTrigger)
@@ -59,7 +64,7 @@ export default function ProductCardSection({
   )
   return (
     <section
-    id={_id?_id:id}
+      id={_id ? _id : id}
       className={productCardSectionClasses}
       data-testid="product-card-section"
     >

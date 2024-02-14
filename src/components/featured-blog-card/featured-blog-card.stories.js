@@ -1,8 +1,8 @@
-import BookForm from './index'
+import FeaturedBlogCard from './index'
 
 const meta = {
-  title: 'Components/BookForm',
-  component: BookForm,
+  title: 'Components/FeaturedBlogCard',
+  component: FeaturedBlogCard,
   parameters: {
     design: [
       {

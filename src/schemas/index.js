@@ -1,8 +1,12 @@
+import { author } from './documents/author'
+import { category } from './documents/category'
+import { featuredBlogSection } from './documents/featuredBlogSection'
 import { featureSection } from './documents/featureSection'
 import { navigation } from './documents/navigation'
 import { netaceaDifference } from './documents/netaceaDifference'
 import { netaceaWithOrWithout } from './documents/netaceaWithOrWithout'
 import { page } from './documents/page'
+import { post } from './documents/post'
 import { productCardsSection } from './documents/productCardsSection'
 import { testimonialAndStatsSlider } from './documents/testimonialAndStatsSlider'
 import { bodyPortableText } from './objects/bodyPortableText'
@@ -26,6 +30,9 @@ export const schemaTypes = [
   button,
   socialsObject,
   bodyPortableText,
+  post,
+  author,
+  category,
   iframe,
   youtube,
   twoColumnHeroSection,
@@ -37,12 +44,12 @@ export const schemaTypes = [
   featureSection,
   netaceaWithOrWithout,
   twoColumnForm,
-  checklistObject
-  
+  checklistObject,
+  featuredBlogSection,
 ]
 
 // Add name of the document here in quotations so the workflow works find on that name as well
-export const documentTypesForWorkFlow = ['page']
+export const documentTypesForWorkFlow = ['page', 'post']
 
 export const STATIC_SLICES = [
   {
@@ -64,5 +71,9 @@ export const STATIC_SLICES = [
   {
     sectionType: 'featureSection',
     sectionTitle: 'Feature Section',
+  },
+  {
+    sectionType: 'featuredBlogSection',
+    sectionTitle: 'Featured Blog Section',
   },
 ]

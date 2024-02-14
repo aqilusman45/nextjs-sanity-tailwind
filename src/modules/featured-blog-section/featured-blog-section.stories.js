@@ -1,8 +1,9 @@
-import BookForm from './index'
+import FeaturedBlogSection from './index'
+import { mocks } from './mocks'
 
 const meta = {
-  title: 'Components/BookForm',
-  component: BookForm,
+  title: 'Modules/FeaturedBlogSection',
+  component: FeaturedBlogSection,
   parameters: {
     design: [
       {
@@ -20,8 +21,9 @@ const meta = {
     ],
   },
 }
+
 export default meta
 
 export const Default = {
-  args: {},
+  args: { ...mocks },
 }

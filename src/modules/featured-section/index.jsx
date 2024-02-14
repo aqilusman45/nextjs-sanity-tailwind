@@ -1,14 +1,26 @@
 import classnames from 'classnames'
 import { groq } from 'next-sanity'
 
-import Button from '../../components/button/Button'
+import Button, { BUTTON_FRAGMENT } from '../../components/button/Button'
 import FeaturedCard from '../../components/featured-card'
 import Heading from '../../components/heading'
 
 export const FEATURED_SECTION_FRAGMENT = groq`
- featuredCards[]{
-     ...
-   }
+ _type == 'featureSection' =>{
+         ...,
+         button{
+          ${BUTTON_FRAGMENT}
+         },
+         heading,
+         featuredCards[]{
+           icon,
+           subText,
+           button{
+            ${BUTTON_FRAGMENT}
+           },
+           heading,
+         }
+       }
 `
 
 export default function FeaturedSection({
@@ -17,7 +29,7 @@ export default function FeaturedSection({
   button,
   featuredCards,
   _id,
-  id
+  id,
 }) {
   const featuredSectionClasses = classnames(
     otherClasses,
@@ -26,7 +38,7 @@ export default function FeaturedSection({
 
   return (
     <section
-    id={_id?_id:id}
+      id={_id ? _id : id}
       className={featuredSectionClasses}
       data-testid="featured-section"
     >

@@ -2,18 +2,22 @@ import classnames from 'classnames'
 import Image from 'next/image'
 import { groq } from 'next-sanity'
 
-import Button from '../../components/button/Button'
+import Button, { BUTTON_FRAGMENT } from '../../components/button/Button'
 import Heading from '../../components/heading'
 import NetaceaDifferenceCard from '../../components/netacea-difference-card'
 
 export const NETACEA_DIFFERENCE = groq`
- cards[]{
-      ...,
-        "image":image.asset->{
-   ...,
-      },
-      
-    }
+  _type =="netaceaDifference"=>{
+         button{
+          ${BUTTON_FRAGMENT}
+         },
+         heading,
+         variant,
+         cards[]{
+           icon,
+           subText
+         }
+       }
 `
 
 export default function NetaceaDifferenceSection({
@@ -23,7 +27,7 @@ export default function NetaceaDifferenceSection({
   cards,
   variant,
   _id,
-  id
+  id,
 }) {
   const netaceaDifferenceSectionClasses = classnames(
     otherClasses,
@@ -35,7 +39,7 @@ export default function NetaceaDifferenceSection({
 
   return (
     <section
-    id={_id?_id:id}
+      id={_id ? _id : id}
       className={netaceaDifferenceSectionClasses}
       data-testid="netacea-difference-section"
     >

@@ -15,6 +15,5 @@ export const moduleComponents = {
   videoWithTextSection,
   staticSliceSections,
   testimonialAndStatsSlider,
-  twoColumnForm
-
+  twoColumnForm,
 }
