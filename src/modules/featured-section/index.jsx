@@ -47,7 +47,7 @@ export default function FeaturedSection({
     >
       <div className="mx-auto max-w-default px-4 lg:px-6">
         <div className="featured-card-container-white relative w-full rounded-bl bg-white px-4 pb-20  lg:px-20 lg:pb-120">
-          <div class="featured-section-form-line mb-10 h-[1px] w-full lg:hidden"></div>
+          <div className="featured-section-form-line mb-10 h-[1px] w-full lg:hidden"></div>
           <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:gap-10">
             <Heading type="h3" otherClasses="">
               {heading}

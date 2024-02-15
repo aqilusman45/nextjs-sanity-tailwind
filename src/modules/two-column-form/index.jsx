@@ -71,7 +71,7 @@ export default function TwoColumnForm({
               )}
             />
           </div>
-          <div class="two-column-form h-[1px] w-full lg:hidden "></div>
+          <div className="two-column-form h-[1px] w-full lg:hidden "></div>
           <div className="w-full text-white lg:w-2/4">
             <RichText
               richText={description}

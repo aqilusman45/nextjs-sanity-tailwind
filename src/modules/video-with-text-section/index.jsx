@@ -61,14 +61,14 @@ export default function VideoWithSection({
           <div className="relative z-10 w-full pb-30 lg:h-710 lg:w-2/4 lg:py-20 lg:pb-0">
             <button
               onClick={() => setShow(true)}
-              class="videoPlay_wrapper absolute left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%]"
+              className="videoPlay_wrapper absolute left-2/4 top-2/4 translate-x-[-50%] translate-y-[-50%]"
             >
-              <div class="videoPlay">
-                <div class="videoPlay_inner_wrapper">
-                  <div class="videoPlay_inner"></div>
+              <div className="videoPlay">
+                <div className="videoPlay_inner_wrapper">
+                  <div className="videoPlay_inner"></div>
                 </div>
                 <svg
-                  class="icon_videoPlay"
+                  className="icon_videoPlay"
                   width="68"
                   height="68"
                   viewBox="0 0 68 68"

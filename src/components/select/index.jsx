@@ -22,18 +22,14 @@ export default function Select({
         name={name}
         required={required}
         id={name}
+        defaultValue={list[0]}
         onChange={(e) => onChange(e)}
         placeholder={placeholder}
-        className="w-full appearance-none rounded border-[1px] border-neutral-300 px-4 py-3 font-aeronik-pro text-base font-normal leading-4 text-blue outline outline-[2px] outline-offset-[-2px] outline-transparent transition-all duration-400 placeholder:text-blue hover:border-blue hover:bg-neutral-200 focus:border-blue-300 focus:outline-blue-550"
+        className="w-full appearance-none rounded border-[1px] border-neutral-300 px-4 py-3 font-aeronik-pro text-base font-normal leading-5 text-blue outline outline-[2px] outline-offset-[-2px] outline-transparent transition-all duration-400 placeholder:text-blue hover:border-blue hover:bg-neutral-200 focus:border-blue-300 focus:outline-blue-550"
       >
         {list.map((node, i) => {
           return (
-            <option
-              key={i}
-              value={i === 0 ? '' : node}
-              selected={i === 0}
-              disabled={i === 0}
-            >
+            <option key={i} value={i === 0 ? '' : node}>
               {node}
             </option>
           )
