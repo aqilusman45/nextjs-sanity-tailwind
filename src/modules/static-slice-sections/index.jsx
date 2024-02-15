@@ -71,18 +71,4 @@ export default function StaticSliceSections({
       )}
     </>
   )
-  // switch (type) {
-  //   case 'netaceaDifference':
-  //     return <NetaceaDifferenceSection {...section} id={id} />
-  //   case 'withOrWithoutNetacea':
-  //     return <WithOrWithoutNetacea {...section} id={id} />
-  //   case 'testimonialAndStatsSlider':
-  //     return <TestimonialAndStatsSlider {...section} id={id} />
-  //   case 'featureSection':
-  //     return <FeaturedSection {...section} id={id} />
-  //   case 'productCardsSection':
-  //     return <ProductCardSection {...section} id={id} />
-  //   default:
-  //     return null
-  // }
 }

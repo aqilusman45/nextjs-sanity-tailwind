@@ -71,7 +71,7 @@ export default function Button({
     return (
       <button
         onClick={(e) => {
-          onClick && onClick(form, e)
+          onClick && onClick(e)
         }}
         className={buttonClasses}
         data-testid="button"

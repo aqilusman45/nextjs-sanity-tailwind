@@ -25,12 +25,12 @@ export default function TestimonialStatsCard({
       <div className="w-full px-2 pt-20 text-white lg:w-2/4 lg:pt-0 xl:px-5 ">
         <SvgAnimator type={graph} otherClasses="" />
       </div>
-      <div className="relative mt-14 flex h-full w-full flex-col gap-6 px-0 lg:w-2/4 lg:gap-10 lg:px-8 xl:px-16">
+      <div className="relative mt-20 flex h-full w-full flex-col gap-6 px-0 lg:w-2/4 lg:gap-10 lg:px-8 xl:px-16">
         <RichText
           richText={text}
           otherClasses="[&>p]:text-white [&>p]:font-aeronik-pro [&>p]:header-3 [&>p]:font-normal [&>p]:capitalize "
         />
-        <Button {...button} otherClasses="z-10" mode={mode} />
+        <Button {...button} otherClasses="z-10 flex" mode={mode} />
       </div>
     </div>
   )

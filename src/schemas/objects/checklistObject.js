@@ -7,7 +7,6 @@ export const checklistObject = {
       title: 'Heading',
       name: 'heading',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     },
     {
       title: 'list',

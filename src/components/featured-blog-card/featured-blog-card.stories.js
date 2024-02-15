@@ -1,4 +1,5 @@
 import FeaturedBlogCard from './index'
+import { mocks } from './mocks'
 
 const meta = {
   title: 'Components/FeaturedBlogCard',
@@ -23,5 +24,5 @@ const meta = {
 export default meta
 
 export const Default = {
-  args: {},
+  args: { ...mocks },
 }

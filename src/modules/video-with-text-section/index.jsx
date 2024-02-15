@@ -43,7 +43,7 @@ export default function VideoWithSection({
       data-testid="video-with-section"
     >
       <div className="relative mx-auto w-full max-w-default px-4 lg:px-6">
-        <div className="video-inner-container relative flex flex-col items-center gap-10 px-4 py-20 lg:flex-row lg:px-20 lg:py-0">
+        <div className="video-inner-container relative flex flex-col-reverse items-center gap-120 px-4 pb-152 pt-282 lg:flex-row lg:px-20 lg:py-0">
           <video
             autoPlay
             controls={false}
@@ -53,7 +53,7 @@ export default function VideoWithSection({
             src={backVideo?.url}
             className="absolute left-0 top-0 h-full w-full object-cover"
           />
-          <div className="relative w-full pb-20 lg:w-2/4 lg:pb-0">
+          <div className="relative w-full pt-6 lg:w-2/4 lg:pt-0">
             <Heading type="h2" otherClasses={classnames('text-white')}>
               {heading}
             </Heading>

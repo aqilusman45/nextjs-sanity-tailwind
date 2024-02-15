@@ -37,7 +37,7 @@ export default function TwoColumnHeroSection({
 }) {
   const twoColumnHeroSectionClasses = classnames(
     otherClasses,
-    'pb-10 lg-xl:pb-0',
+    'pb-20 lg-xl:pb-0',
     variant === 'dark' ? 'hero-two-column-container' : 'bg-white',
   )
   return (
@@ -67,7 +67,7 @@ export default function TwoColumnHeroSection({
                   : 'global-richtext-light [&>p]:text-20',
               )}
             />
-            <div className="flex items-center justify-center gap-4 lg:justify-start">
+            <div className="hidden items-center justify-center gap-4 lg:flex lg:justify-start">
               {buttons?.map((node, index) => {
                 return <Button key={index} {...node} mode={variant} />
               })}
@@ -79,6 +79,18 @@ export default function TwoColumnHeroSection({
               otherClasses="w-full lg:block hidden"
             />
             <NextImage {...mobileImage} otherClasses="w-full lg:hidden" />
+            <div className="mt-8 grid items-center gap-4 sm:grid-cols-2 lg:hidden">
+              {buttons?.map((node, index) => {
+                return (
+                  <Button
+                    key={index}
+                    {...node}
+                    mode={variant}
+                    otherClasses="w-full !justify-center"
+                  />
+                )
+              })}
+            </div>
           </div>
         </div>
         <div className="flex max-w-648 flex-col gap-6">
@@ -90,7 +102,7 @@ export default function TwoColumnHeroSection({
           >
             {title}
           </Heading>
-          <div className="grid grid-cols-3 items-center gap-x-12 gap-y-6 sm:flex sm:justify-between">
+          <div className="grid grid-cols-4 items-center gap-x-12 gap-y-6 pr-14 sm:flex sm:justify-between lg:pr-0">
             {logos?.map((node, i) => {
               return (
                 <div key={i} className="w-auto min-w-10">

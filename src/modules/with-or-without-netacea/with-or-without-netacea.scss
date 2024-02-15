@@ -36,6 +36,8 @@
     border-bottom: 0px;
   }
   li:nth-last-child(2) {
-    border-bottom: 0px;
+    @media (min-width: 1024px) {
+      border-bottom: 0px;
+    }
   }
 }

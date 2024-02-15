@@ -1,22 +1,36 @@
 export const mocks = {
-  id: '93779a56-c885-40e0-8889-a2250859e4c6',
-  _key: '70d03d8a1760',
+  form: 'book-form',
+  heading: 'Book a Demo. See Netacea in Action.',
+  _type: 'twoColumnForm',
+  variant: 'dark',
+  description: [
+    {
+      markDefs: [],
+      children: [
+        {
+          text: 'Share a few details and an expert will get in touch shortly.',
+          _key: 'e4f3157d308d0',
+          _type: 'span',
+          marks: [],
+        },
+      ],
+      _type: 'block',
+      style: 'normal',
+      _key: 'e136b13b3ddb',
+    },
+  ],
+  _key: '0cf399e396ae',
   subText: [
     {
-      heading: 'Why cybersecurity teams choose us:',
+      heading: 'Why Cybersecurity teams choose us:',
       _type: 'checklistObject',
-      _key: '5a475d5323b0',
+      _key: 'e4f60ce672b3',
       list: [
         '33x better detection rate vs conventional solutions',
-        'Single integration, cuts complexity reduces costs',
+        'Single integration, cuts complexity and reduces costs',
         'Enhanced insights for incident response',
       ],
     },
   ],
-  identifier: 'Two Column Form With Text',
-  form: 'demo-form',
-  heading:
-    'Detect and stop sophisticated bot attacks at scale with visibility across your entire attack surface.',
-  _type: 'twoColumnForm',
-  variant: 'dark',
+  identifier: 'Home Form',
 }

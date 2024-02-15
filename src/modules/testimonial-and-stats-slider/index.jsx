@@ -56,7 +56,7 @@ export default function TestimonialAndStatsSlider({
 }) {
   const testimonialAndStatsSliderClasses = classnames(
     otherClasses,
-    'background-gradient-testimonial-and-stats-slider',
+    'background-gradient-testimonial-and-stats-slider lg:pb-152 lg:pt-6 pb-104 pt-10 ',
   )
 
   const [index, setIndex] = useState(0)
@@ -95,22 +95,26 @@ export default function TestimonialAndStatsSlider({
       className={testimonialAndStatsSliderClasses}
       data-testid="testimonial-and-stats-slider"
     >
-      <div className="mx-auto flex max-w-default flex-col gap-6 px-4  pb-104 pt-20 lg:px-20 lg:pb-152 lg:pt-6 xl:px-108 ">
-        <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
+      <div className="mx-auto flex max-w-default flex-col gap-6 px-4 lg:px-20 xl:px-108 ">
+        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
           <Heading
             type="h3"
             otherClasses={classnames(
-              'capitalize font-aeronik-pro font-normal text-white w-full text-center lg:text-start lg:max-w-760 xl:max-w-full',
+              'capitalize font-aeronik-pro font-normal text-white w-full lg:max-w-760 xl:max-w-full',
             )}
           >
             {heading}
           </Heading>
-          <Button {...button} mode="dark" />
+          <Button
+            {...button}
+            mode="dark"
+            otherClasses="w-full !justify-center lg:justify-between lg:w-auto "
+          />
         </div>
-        <div className="border-gradient-testimonial-and-stats-slider mt-10 p-8 text-white lg:p-4 xl:p-10">
-          <div className="flex w-full flex-col gap-0 lg:flex-row lg:gap-6">
+        <div className="border-gradient-testimonial-and-stats-slider relative mt-4 rounded p-4 text-white lg:mt-10 lg:p-4 xl:p-10">
+          <div className=" flex w-full flex-col gap-0 lg:flex-row lg:gap-6">
             <div className="w-2/4 text-white"></div>
-            <div className="-mb-10 flex w-2/4 gap-4 px-0 lg:px-8 xl:px-16">
+            <div className="absolute top-[55%] z-10 -mb-10 flex w-2/4 -translate-y-2/4 gap-4 px-0 sm:top-[70%] lg:static lg:left-auto lg:top-auto lg:translate-y-0 lg:px-8 xl:px-16">
               <button
                 className="z-10 hover:scale-110"
                 onClick={() => goToSlide(index - 1)}
@@ -155,7 +159,7 @@ export default function TestimonialAndStatsSlider({
           (Object.keys(testimonial)?.length > 0 && testimonial?.rating)) && (
           <div className="flex w-full flex-col gap-6 text-white lg:flex-row ">
             {Object.keys(testimonial)?.length > 0 && testimonial?.rating && (
-              <div className="border-gradient-testimonial-and-stats-slider flex w-full flex-col gap-20  p-8 lg:w-2/4 lg:justify-between lg:gap-0 lg:p-10">
+              <div className="border-gradient-testimonial-and-stats-slider flex w-full flex-col gap-20  rounded p-4 lg:w-2/4 lg:justify-between lg:gap-0 lg:p-10">
                 <div className="flex flex-col gap-6">
                   <ReactStars
                     value={testimonial?.rating}
@@ -184,17 +188,17 @@ export default function TestimonialAndStatsSlider({
             {statsCards?.length > 0 && (
               <div
                 className={classnames(
-                  'border-gradient-testimonial-and-stats-slider grid w-full p-8 lg:p-10 ',
+                  'border-gradient-testimonial-and-stats-slider grid w-full rounded p-4 lg:p-10',
                   !Object.keys(testimonial)?.length > 0 && !testimonial?.rating
-                    ? 'grid-cols-1  gap-20 md:grid-cols-2 lg:w-full lg:grid-cols-4 '
-                    : 'grid-cols-1  gap-20 md:grid-cols-2 lg:w-2/4',
+                    ? 'grid-cols-1  md:grid-cols-2 lg:w-full lg:grid-cols-4 lg:gap-20 '
+                    : 'grid-cols-1  md:grid-cols-2 lg:w-2/4 lg:gap-20',
                 )}
               >
                 {statsCards?.map(({ stats, description }, i) => {
                   return (
                     <div
                       key={stats}
-                      className="flex flex-col gap-4 border-t-[1px] border-t-blue-400 text-white"
+                      className="flex flex-col gap-4 border-t-[1px] border-t-blue-400 pb-6 text-white first:border-t-0 lg:pb-0 lg:first:border-t-[1px]"
                     >
                       <p className="h2 pt-4 capitalize !text-green-300">
                         {stats}

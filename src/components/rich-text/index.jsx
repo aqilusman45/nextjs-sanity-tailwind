@@ -61,15 +61,17 @@ export const RichText = ({
     const { heading, list } = value
     return (
       <div className="flex flex-col gap-6">
-        <Heading
-          otherClasses={classNames(
-            'font-aeronik-pro caapitalize tracking-[0.48px]',
-            variant === 'dark' ? '!text-green-300' : '!text-blue',
-          )}
-          type="h6"
-        >
-          {heading}
-        </Heading>
+        {heading && (
+          <Heading
+            otherClasses={classNames(
+              'font-aeronik-pro caapitalize tracking-[0.48px]',
+              variant === 'dark' ? '!text-green-300' : '!text-blue',
+            )}
+            type="h6"
+          >
+            {heading}
+          </Heading>
+        )}
         <div className="flex flex-col gap-4">
           {list?.map((node, index) => {
             return (
@@ -80,6 +82,7 @@ export const RichText = ({
                   }
                   iconHeight={16}
                   iconWidth={16}
+                  otherClasses="translate-y-1"
                 />
                 <p
                   className={classNames(

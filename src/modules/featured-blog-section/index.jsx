@@ -71,7 +71,7 @@ export default function FeaturedBlogSection({
         <Button
           {...button}
           mode={variant}
-          otherClasses="w-full !justify-center lg:justify-start mt-4x md:hidden"
+          otherClasses="w-full !justify-center lg:justify-start mt-4 md:hidden"
         />
       </div>
     </section>
